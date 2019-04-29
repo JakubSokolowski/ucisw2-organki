@@ -1,0 +1,9 @@
+[Inputs]
+Clr
+Clk
+F0
+K_rdy
+=IN_klaw[7:0]=
+[Outputs]
+=FreqOUT[3:0]=
+[BiDir]

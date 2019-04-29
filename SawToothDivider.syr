@@ -1,0 +1,308 @@
+Release 14.7 - xst P.20131013 (nt)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.16 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.16 secs
+ 
+--> Reading design: SawToothDivider.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "SawToothDivider.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "SawToothDivider"
+Output Format                      : NGC
+Target Device                      : XC9500XL CPLDs
+
+---- Source Options
+Top Module Name                    : SawToothDivider
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+
+---- Target Options
+Add IO Buffers                     : YES
+MACRO Preserve                     : YES
+XOR Preserve                       : YES
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : Yes
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Verilog 2001                       : YES
+
+---- Other Options
+Clock Enable                       : YES
+wysiwyg                            : NO
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "C:/Users/lab/Desktop/ucisw2-organki/ucisw2-organki/Sawtooth.vhd" in Library work.
+Entity <SawToothDivider> compiled.
+Entity <SawToothDivider> (Architecture <Behavioral>) compiled.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <SawToothDivider> in library <work> (architecture <Behavioral>).
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <SawToothDivider> in library <work> (Architecture <Behavioral>).
+Entity <SawToothDivider> analyzed. Unit <SawToothDivider> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <SawToothDivider>.
+    Related source file is "C:/Users/lab/Desktop/ucisw2-organki/ucisw2-organki/Sawtooth.vhd".
+WARNING:Xst:1780 - Signal <Cmd<31:4>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:653 - Signal <Cmd<3:0>> is used but never assigned. This sourceless signal will be automatically connected to value 0011.
+WARNING:Xst:1780 - Signal <Addr<31:4>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:653 - Signal <Addr<3:0>> is used but never assigned. This sourceless signal will be automatically connected to value 0010.
+    Found 1-bit register for signal <StartOUT>.
+    Found 32-bit up counter for signal <iFreqDiv>.
+    Found 32-bit up counter for signal <iSawGen>.
+    Found 32-bit up counter for signal <stCnt>.
+    Found 1-bit register for signal <tmpFreqDiv>.
+    Summary:
+	inferred   3 Counter(s).
+	inferred   2 D-type flip-flop(s).
+Unit <SawToothDivider> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Counters                                             : 3
+ 32-bit up counter                                     : 3
+# Registers                                            : 2
+ 1-bit register                                        : 2
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Counters                                             : 3
+ 32-bit up counter                                     : 3
+# Registers                                            : 2
+ Flip-Flops                                            : 2
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:2677 - Node <stCnt_1> of sequential type is unconnected in block <SawToothDivider>.
+WARNING:Xst:2677 - Node <stCnt_2> of sequential type is unconnected in block <SawToothDivider>.
+WARNING:Xst:2677 - Node <stCnt_3> of sequential type is unconnected in block <SawToothDivider>.
+WARNING:Xst:2677 - Node <stCnt_4> of sequential type is unconnected in block <SawToothDivider>.
+WARNING:Xst:2677 - Node <stCnt_5> of sequential type is unconnected in block <SawToothDivider>.
+WARNING:Xst:2677 - Node <stCnt_6> of sequential type is unconnected in block <SawToothDivider>.
+WARNING:Xst:2677 - Node <stCnt_7> of sequential type is unconnected in block <SawToothDivider>.
+WARNING:Xst:2677 - Node <stCnt_8> of sequential type is unconnected in block <SawToothDivider>.
+WARNING:Xst:2677 - Node <stCnt_9> of sequential type is unconnected in block <SawToothDivider>.
+WARNING:Xst:2677 - Node <stCnt_10> of sequential type is unconnected in block <SawToothDivider>.
+WARNING:Xst:2677 - Node <stCnt_11> of sequential type is unconnected in block <SawToothDivider>.
+WARNING:Xst:2677 - Node <stCnt_12> of sequential type is unconnected in block <SawToothDivider>.
+WARNING:Xst:2677 - Node <stCnt_13> of sequential type is unconnected in block <SawToothDivider>.
+WARNING:Xst:2677 - Node <stCnt_14> of sequential type is unconnected in block <SawToothDivider>.
+WARNING:Xst:2677 - Node <stCnt_15> of sequential type is unconnected in block <SawToothDivider>.
+WARNING:Xst:2677 - Node <stCnt_16> of sequential type is unconnected in block <SawToothDivider>.
+WARNING:Xst:2677 - Node <stCnt_17> of sequential type is unconnected in block <SawToothDivider>.
+WARNING:Xst:2677 - Node <stCnt_18> of sequential type is unconnected in block <SawToothDivider>.
+WARNING:Xst:2677 - Node <stCnt_19> of sequential type is unconnected in block <SawToothDivider>.
+WARNING:Xst:2677 - Node <stCnt_20> of sequential type is unconnected in block <SawToothDivider>.
+WARNING:Xst:2677 - Node <stCnt_21> of sequential type is unconnected in block <SawToothDivider>.
+WARNING:Xst:2677 - Node <stCnt_22> of sequential type is unconnected in block <SawToothDivider>.
+WARNING:Xst:2677 - Node <stCnt_23> of sequential type is unconnected in block <SawToothDivider>.
+WARNING:Xst:2677 - Node <stCnt_24> of sequential type is unconnected in block <SawToothDivider>.
+WARNING:Xst:2677 - Node <stCnt_25> of sequential type is unconnected in block <SawToothDivider>.
+WARNING:Xst:2677 - Node <stCnt_26> of sequential type is unconnected in block <SawToothDivider>.
+WARNING:Xst:2677 - Node <stCnt_27> of sequential type is unconnected in block <SawToothDivider>.
+WARNING:Xst:2677 - Node <stCnt_28> of sequential type is unconnected in block <SawToothDivider>.
+WARNING:Xst:2677 - Node <stCnt_29> of sequential type is unconnected in block <SawToothDivider>.
+WARNING:Xst:2677 - Node <stCnt_30> of sequential type is unconnected in block <SawToothDivider>.
+WARNING:Xst:2677 - Node <stCnt_31> of sequential type is unconnected in block <SawToothDivider>.
+
+Optimizing unit <SawToothDivider> ...
+  implementation constraint: INIT=r	 : tmpFreqDiv
+  implementation constraint: INIT=r	 : stCnt_0
+  implementation constraint: INIT=r	 : iSawGen_0
+  implementation constraint: INIT=r	 : iFreqDiv_31
+  implementation constraint: INIT=r	 : iFreqDiv_30
+  implementation constraint: INIT=r	 : iFreqDiv_29
+  implementation constraint: INIT=r	 : iFreqDiv_28
+  implementation constraint: INIT=r	 : iFreqDiv_27
+  implementation constraint: INIT=r	 : iFreqDiv_26
+  implementation constraint: INIT=r	 : iFreqDiv_25
+  implementation constraint: INIT=r	 : iFreqDiv_24
+  implementation constraint: INIT=r	 : iFreqDiv_23
+  implementation constraint: INIT=r	 : iFreqDiv_22
+  implementation constraint: INIT=r	 : iFreqDiv_21
+  implementation constraint: INIT=r	 : iFreqDiv_20
+  implementation constraint: INIT=r	 : iFreqDiv_19
+  implementation constraint: INIT=r	 : iFreqDiv_18
+  implementation constraint: INIT=r	 : iFreqDiv_17
+  implementation constraint: INIT=r	 : iFreqDiv_16
+  implementation constraint: INIT=r	 : iFreqDiv_15
+  implementation constraint: INIT=r	 : iFreqDiv_14
+  implementation constraint: INIT=r	 : iFreqDiv_13
+  implementation constraint: INIT=r	 : iFreqDiv_12
+  implementation constraint: INIT=r	 : iFreqDiv_11
+  implementation constraint: INIT=r	 : iFreqDiv_10
+  implementation constraint: INIT=r	 : iFreqDiv_9
+  implementation constraint: INIT=r	 : iFreqDiv_8
+  implementation constraint: INIT=r	 : iFreqDiv_7
+  implementation constraint: INIT=r	 : iFreqDiv_6
+  implementation constraint: INIT=r	 : iFreqDiv_5
+  implementation constraint: INIT=r	 : iFreqDiv_4
+  implementation constraint: INIT=r	 : iFreqDiv_3
+  implementation constraint: INIT=r	 : iFreqDiv_2
+  implementation constraint: INIT=r	 : iFreqDiv_1
+  implementation constraint: INIT=s	 : iFreqDiv_0
+  implementation constraint: INIT=r	 : iSawGen_31
+  implementation constraint: INIT=r	 : iSawGen_30
+  implementation constraint: INIT=r	 : iSawGen_29
+  implementation constraint: INIT=r	 : iSawGen_28
+  implementation constraint: INIT=r	 : iSawGen_27
+  implementation constraint: INIT=r	 : iSawGen_26
+  implementation constraint: INIT=r	 : iSawGen_25
+  implementation constraint: INIT=r	 : iSawGen_24
+  implementation constraint: INIT=r	 : iSawGen_23
+  implementation constraint: INIT=r	 : iSawGen_22
+  implementation constraint: INIT=r	 : iSawGen_21
+  implementation constraint: INIT=r	 : iSawGen_20
+  implementation constraint: INIT=r	 : iSawGen_19
+  implementation constraint: INIT=r	 : iSawGen_18
+  implementation constraint: INIT=r	 : iSawGen_17
+  implementation constraint: INIT=r	 : iSawGen_16
+  implementation constraint: INIT=r	 : iSawGen_15
+  implementation constraint: INIT=r	 : iSawGen_14
+  implementation constraint: INIT=r	 : iSawGen_13
+  implementation constraint: INIT=r	 : iSawGen_12
+  implementation constraint: INIT=r	 : iSawGen_11
+  implementation constraint: INIT=r	 : iSawGen_10
+  implementation constraint: INIT=r	 : iSawGen_9
+  implementation constraint: INIT=r	 : iSawGen_8
+  implementation constraint: INIT=r	 : iSawGen_7
+  implementation constraint: INIT=r	 : iSawGen_6
+  implementation constraint: INIT=r	 : iSawGen_5
+  implementation constraint: INIT=r	 : iSawGen_4
+  implementation constraint: INIT=r	 : iSawGen_3
+  implementation constraint: INIT=r	 : iSawGen_2
+  implementation constraint: INIT=r	 : iSawGen_1
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : SawToothDivider.ngr
+Top Level Output File Name         : SawToothDivider
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : Yes
+Target Technology                  : XC9500XL CPLDs
+Macro Preserve                     : YES
+XOR Preserve                       : YES
+Clock Enable                       : YES
+wysiwyg                            : NO
+
+Design Statistics
+# IOs                              : 23
+
+Cell Usage :
+# BELS                             : 334
+#      AND2                        : 132
+#      AND3                        : 3
+#      AND4                        : 2
+#      AND8                        : 6
+#      GND                         : 1
+#      INV                         : 126
+#      OR2                         : 1
+#      VCC                         : 1
+#      XOR2                        : 62
+# FlipFlops/Latches                : 67
+#      FDC                         : 63
+#      FDCE                        : 3
+#      FDP                         : 1
+# IO Buffers                       : 23
+#      IBUF                        : 2
+#      OBUF                        : 21
+=========================================================================
+
+
+Total REAL time to Xst completion: 5.00 secs
+Total CPU time to Xst completion: 4.65 secs
+ 
+--> 
+
+Total memory usage is 200380 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   35 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

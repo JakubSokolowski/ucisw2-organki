@@ -1,0 +1,13 @@
+xst -intstyle ise -ifn "C:/Users/lab/Desktop/ucisw2-organki/ucisw2-organki/SawToothDivider.xst" -ofn "C:/Users/lab/Desktop/ucisw2-organki/ucisw2-organki/SawToothDivider.syr" 
+ngdbuild -intstyle ise -dd _ngo -i -p xc9572xl-PC44-10 SawToothDivider.ngc SawToothDivider.ngd  
+cpldfit -intstyle ise -p xc9572xl-10-PC44 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper SawToothDivider.ngd 
+XSLTProcess SawToothDivider_build.xml 
+tsim -intstyle ise SawToothDivider SawToothDivider.nga 
+taengine -intstyle ise -f SawToothDivider -w --format html1 -l SawToothDivider_html/tim/timing_report.htm 
+hprep6 -s IEEE1149 -n SawToothDivider -i SawToothDivider 
+vhdtdtfi -lib work Sawtooth.vhd -prj ucisw2-organki -o SawToothDivider.spl -module SawToothDivider -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500xl SawToothDivider.spl C:/Users/lab/Desktop/ucisw2-organki/ucisw2-organki/SawToothDivider.sym 
+vhdtdtfi -lib work Sawtooth.vhd -prj ucisw2-organki -o SawToothDivider.spl -module SawToothDivider -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e SawToothDivider.spl C:/Users/lab/Desktop/ucisw2-organki/SawToothDivider.sym 
+vhdtdtfi -lib work Sawtooth.vhd -lib work SawToothDivider.vhd -prj ucisw2-organki -o SawToothDivider.spl -module SawToothDivider -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e SawToothDivider.spl C:/Users/lab/Desktop/ucisw2-organki/SawToothDivider.sym 

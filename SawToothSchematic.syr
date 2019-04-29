@@ -1,0 +1,628 @@
+Release 14.7 - xst P.20131013 (nt)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.17 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.17 secs
+ 
+--> Reading design: SawToothSchematic.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "SawToothSchematic.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "SawToothSchematic"
+Output Format                      : NGC
+Target Device                      : xc3s500e-4-fg320
+
+---- Source Options
+Top Module Name                    : SawToothSchematic
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 4
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "C:/Users/lab/Desktop/ucisw2-organki/SawToothDivider.vhd" in Library work.
+Architecture behavioral of Entity sawtoothdivider is up to date.
+Compiling vhdl file "C:/Users/lab/Desktop/ucisw2-organki/FreqButton.vhd" in Library work.
+Entity <freqbutton> compiled.
+Entity <freqbutton> (Architecture <behavioral>) compiled.
+Compiling vhdl file "C:/Users/lab/Desktop/ucisw2-organki/SawToothSchematic.vhf" in Library work.
+Architecture behavioral of Entity sawtoothschematic is up to date.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <SawToothSchematic> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <SawToothDivider> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <FreqButton> in library <work> (architecture <behavioral>).
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <SawToothSchematic> in library <work> (Architecture <behavioral>).
+WARNING:Xst:753 - "C:/Users/lab/Desktop/ucisw2-organki/SawToothSchematic.vhf" line 117: Unconnected output port 'Busy' of component 'DACWrite'.
+WARNING:Xst:2211 - "C:/Users/lab/Desktop/ucisw2-organki/SawToothSchematic.vhf" line 117: Instantiating black box module <DACWrite>.
+WARNING:Xst:753 - "C:/Users/lab/Desktop/ucisw2-organki/SawToothSchematic.vhf" line 145: Unconnected output port 'E0' of component 'PS2_Kbd'.
+WARNING:Xst:2211 - "C:/Users/lab/Desktop/ucisw2-organki/SawToothSchematic.vhf" line 145: Instantiating black box module <PS2_Kbd>.
+Entity <SawToothSchematic> analyzed. Unit <SawToothSchematic> generated.
+
+Analyzing Entity <SawToothDivider> in library <work> (Architecture <behavioral>).
+WARNING:Xst:819 - "C:/Users/lab/Desktop/ucisw2-organki/SawToothDivider.vhd" line 96: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+   <Freq>
+Entity <SawToothDivider> analyzed. Unit <SawToothDivider> generated.
+
+Analyzing Entity <FreqButton> in library <work> (Architecture <behavioral>).
+WARNING:Xst:819 - "C:/Users/lab/Desktop/ucisw2-organki/FreqButton.vhd" line 59: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+   <F0>
+INFO:Xst:2679 - Register <tmp> in unit <FreqButton> has a constant value of 0 during circuit operation. The register is replaced by logic.
+Entity <FreqButton> analyzed. Unit <FreqButton> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <SawToothDivider>.
+    Related source file is "C:/Users/lab/Desktop/ucisw2-organki/SawToothDivider.vhd".
+WARNING:Xst:1780 - Signal <Cmd<31:4>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:653 - Signal <Cmd<3:0>> is used but never assigned. This sourceless signal will be automatically connected to value 0011.
+WARNING:Xst:1780 - Signal <Addr<31:4>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:653 - Signal <Addr<3:0>> is used but never assigned. This sourceless signal will be automatically connected to value 0010.
+    Found 16x8-bit ROM for signal <Freq>.
+    Found 1-bit register for signal <StartOUT>.
+    Found 32-bit up counter for signal <iFreqDiv>.
+    Found 32-bit up counter for signal <iSawGen>.
+    Found 32-bit up counter for signal <stCnt>.
+    Found 1-bit register for signal <tmpFreqDiv>.
+    Found 32-bit comparator equal for signal <tmpFreqDiv$cmp_eq0000> created at line 103.
+    Summary:
+	inferred   1 ROM(s).
+	inferred   3 Counter(s).
+	inferred   2 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+Unit <SawToothDivider> synthesized.
+
+
+Synthesizing Unit <FreqButton>.
+    Related source file is "C:/Users/lab/Desktop/ucisw2-organki/FreqButton.vhd".
+WARNING:Xst:646 - Signal <tmp<0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found finite state machine <FSM_0> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 14                                             |
+    | Transitions        | 41                                             |
+    | Inputs             | 15                                             |
+    | Outputs            | 4                                              |
+    | Clock              | Clk                       (rising_edge)        |
+    | Reset              | Clr                       (positive)           |
+    | Reset type         | synchronous                                    |
+    | Reset State        | xd                                             |
+    | Power Up State     | xd                                             |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Summary:
+	inferred   1 Finite State Machine(s).
+Unit <FreqButton> synthesized.
+
+
+Synthesizing Unit <SawToothSchematic>.
+    Related source file is "C:/Users/lab/Desktop/ucisw2-organki/SawToothSchematic.vhf".
+WARNING:Xst:653 - Signal <SPI_MISO_DUMMY> is used but never assigned. This sourceless signal will be automatically connected to value 0.
+Unit <SawToothSchematic> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# ROMs                                                 : 1
+ 16x8-bit ROM                                          : 1
+# Counters                                             : 3
+ 32-bit up counter                                     : 3
+# Registers                                            : 2
+ 1-bit register                                        : 2
+# Comparators                                          : 1
+ 32-bit comparator equal                               : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Analyzing FSM <FSM_0> for best encoding.
+Optimizing FSM <XLXI_3/state/FSM> on signal <state[1:4]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ xd    | 0000
+ a     | 0001
+ w     | 0010
+ s     | 0011
+ e     | 0100
+ d     | 0101
+ f     | 0110
+ t     | 0111
+ g     | 1000
+ y     | 1001
+ h     | 1010
+ u     | 1011
+ j     | 1100
+ k     | 1101
+-------------------
+Reading core <DACWrite.ngc>.
+Reading core <PS2_Kbd.ngc>.
+Loading core <DACWrite> for timing and area information for instance <XLXI_2>.
+Loading core <PS2_Kbd> for timing and area information for instance <XLXI_7>.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# FSMs                                                 : 1
+# ROMs                                                 : 1
+ 16x8-bit ROM                                          : 1
+# Counters                                             : 3
+ 32-bit up counter                                     : 3
+# Registers                                            : 2
+ Flip-Flops                                            : 2
+# Comparators                                          : 1
+ 32-bit comparator equal                               : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:2677 - Node <stCnt_1> of sequential type is unconnected in block <SawToothDivider>.
+WARNING:Xst:2677 - Node <stCnt_2> of sequential type is unconnected in block <SawToothDivider>.
+WARNING:Xst:2677 - Node <stCnt_3> of sequential type is unconnected in block <SawToothDivider>.
+WARNING:Xst:2677 - Node <stCnt_4> of sequential type is unconnected in block <SawToothDivider>.
+WARNING:Xst:2677 - Node <stCnt_5> of sequential type is unconnected in block <SawToothDivider>.
+WARNING:Xst:2677 - Node <stCnt_6> of sequential type is unconnected in block <SawToothDivider>.
+WARNING:Xst:2677 - Node <stCnt_7> of sequential type is unconnected in block <SawToothDivider>.
+WARNING:Xst:2677 - Node <stCnt_8> of sequential type is unconnected in block <SawToothDivider>.
+WARNING:Xst:2677 - Node <stCnt_9> of sequential type is unconnected in block <SawToothDivider>.
+WARNING:Xst:2677 - Node <stCnt_10> of sequential type is unconnected in block <SawToothDivider>.
+WARNING:Xst:2677 - Node <stCnt_11> of sequential type is unconnected in block <SawToothDivider>.
+WARNING:Xst:2677 - Node <stCnt_12> of sequential type is unconnected in block <SawToothDivider>.
+WARNING:Xst:2677 - Node <stCnt_13> of sequential type is unconnected in block <SawToothDivider>.
+WARNING:Xst:2677 - Node <stCnt_14> of sequential type is unconnected in block <SawToothDivider>.
+WARNING:Xst:2677 - Node <stCnt_15> of sequential type is unconnected in block <SawToothDivider>.
+WARNING:Xst:2677 - Node <stCnt_16> of sequential type is unconnected in block <SawToothDivider>.
+WARNING:Xst:2677 - Node <stCnt_17> of sequential type is unconnected in block <SawToothDivider>.
+WARNING:Xst:2677 - Node <stCnt_18> of sequential type is unconnected in block <SawToothDivider>.
+WARNING:Xst:2677 - Node <stCnt_19> of sequential type is unconnected in block <SawToothDivider>.
+WARNING:Xst:2677 - Node <stCnt_20> of sequential type is unconnected in block <SawToothDivider>.
+WARNING:Xst:2677 - Node <stCnt_21> of sequential type is unconnected in block <SawToothDivider>.
+WARNING:Xst:2677 - Node <stCnt_22> of sequential type is unconnected in block <SawToothDivider>.
+WARNING:Xst:2677 - Node <stCnt_23> of sequential type is unconnected in block <SawToothDivider>.
+WARNING:Xst:2677 - Node <stCnt_24> of sequential type is unconnected in block <SawToothDivider>.
+WARNING:Xst:2677 - Node <stCnt_25> of sequential type is unconnected in block <SawToothDivider>.
+WARNING:Xst:2677 - Node <stCnt_26> of sequential type is unconnected in block <SawToothDivider>.
+WARNING:Xst:2677 - Node <stCnt_27> of sequential type is unconnected in block <SawToothDivider>.
+WARNING:Xst:2677 - Node <stCnt_28> of sequential type is unconnected in block <SawToothDivider>.
+WARNING:Xst:2677 - Node <stCnt_29> of sequential type is unconnected in block <SawToothDivider>.
+WARNING:Xst:2677 - Node <stCnt_30> of sequential type is unconnected in block <SawToothDivider>.
+WARNING:Xst:2677 - Node <stCnt_31> of sequential type is unconnected in block <SawToothDivider>.
+
+Optimizing unit <SawToothSchematic> ...
+
+Optimizing unit <SawToothDivider> ...
+
+Optimizing unit <FreqButton> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block SawToothSchematic, actual ratio is 3.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 71
+ Flip-Flops                                            : 71
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : SawToothSchematic.ngr
+Top Level Output File Name         : SawToothSchematic
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 14
+
+Cell Usage :
+# BELS                             : 412
+#      GND                         : 3
+#      INV                         : 12
+#      LUT1                        : 38
+#      LUT2                        : 58
+#      LUT2_D                      : 1
+#      LUT2_L                      : 1
+#      LUT3                        : 68
+#      LUT3_D                      : 1
+#      LUT3_L                      : 1
+#      LUT4                        : 52
+#      LUT4_D                      : 5
+#      LUT4_L                      : 5
+#      MUXCY                       : 87
+#      MUXF5                       : 4
+#      VCC                         : 3
+#      XORCY                       : 73
+# FlipFlops/Latches                : 163
+#      FD                          : 18
+#      FDC                         : 63
+#      FDCE                        : 2
+#      FDE                         : 58
+#      FDP                         : 1
+#      FDR                         : 6
+#      FDRE                        : 9
+#      FDRS                        : 4
+#      FDRSE                       : 2
+# Clock Buffers                    : 2
+#      BUFG                        : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 13
+#      IBUF                        : 3
+#      OBUF                        : 10
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s500efg320-4 
+
+ Number of Slices:                      144  out of   4656     3%  
+ Number of Slice Flip Flops:            163  out of   9312     1%  
+ Number of 4 input LUTs:                242  out of   9312     2%  
+ Number of IOs:                          14
+ Number of bonded IOBs:                  14  out of    232     6%  
+ Number of GCLKs:                         2  out of     24     8%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+CLK_IN                             | BUFGP                  | 131   |
+XLXI_1/tmpFreqDiv1                 | BUFG                   | 32    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+----------------------------------------------------+------------------------+-------+
+Control Signal                                      | Buffer(FF name)        | Load  |
+----------------------------------------------------+------------------------+-------+
+XLXI_1/tmpFreqDiv_or0000(XLXI_1/tmpFreqDiv_or0000:O)| NONE(XLXI_1/StartOUT)  | 34    |
+CLR_IN                                              | IBUF                   | 32    |
+----------------------------------------------------+------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 9.824ns (Maximum Frequency: 101.794MHz)
+   Minimum input arrival time before clock: 6.800ns
+   Maximum output required time after clock: 5.620ns
+   Maximum combinational path delay: 7.147ns
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'CLK_IN'
+  Clock period: 9.824ns (frequency: 101.794MHz)
+  Total number of paths / destination ports: 37498 / 199
+-------------------------------------------------------------------------
+Delay:               9.824ns (Levels of Logic = 39)
+  Source:            XLXI_3/state_FSM_FFd4 (FF)
+  Destination:       XLXI_1/iFreqDiv_31 (FF)
+  Source Clock:      CLK_IN rising
+  Destination Clock: CLK_IN rising
+
+  Data Path: XLXI_3/state_FSM_FFd4 to XLXI_1/iFreqDiv_31
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDRS:C->Q            11   0.591   1.108  XLXI_3/state_FSM_FFd4 (XLXI_3/state_FSM_FFd4)
+     LUT4:I0->O            1   0.704   0.455  XLXI_1/Mrom_Freq111 (XLXI_1/Freq<1>)
+     LUT4:I2->O            1   0.704   0.000  XLXI_1/Mcompar_tmpFreqDiv_cmp_eq0000_lut<6> (XLXI_1/Mcompar_tmpFreqDiv_cmp_eq0000_lut<6>)
+     MUXCY:S->O            1   0.464   0.000  XLXI_1/Mcompar_tmpFreqDiv_cmp_eq0000_cy<6> (XLXI_1/Mcompar_tmpFreqDiv_cmp_eq0000_cy<6>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_1/Mcompar_tmpFreqDiv_cmp_eq0000_cy<7> (XLXI_1/Mcompar_tmpFreqDiv_cmp_eq0000_cy<7>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_1/Mcompar_tmpFreqDiv_cmp_eq0000_cy<8> (XLXI_1/Mcompar_tmpFreqDiv_cmp_eq0000_cy<8>)
+     MUXCY:CI->O          37   0.331   1.299  XLXI_1/Mcompar_tmpFreqDiv_cmp_eq0000_cy<9> (XLXI_1/Mcompar_tmpFreqDiv_cmp_eq0000_cy<9>)
+     LUT3:I2->O            1   0.704   0.000  XLXI_1/Mcount_iFreqDiv_lut<0> (XLXI_1/Mcount_iFreqDiv_lut<0>)
+     MUXCY:S->O            1   0.464   0.000  XLXI_1/Mcount_iFreqDiv_cy<0> (XLXI_1/Mcount_iFreqDiv_cy<0>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_1/Mcount_iFreqDiv_cy<1> (XLXI_1/Mcount_iFreqDiv_cy<1>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_1/Mcount_iFreqDiv_cy<2> (XLXI_1/Mcount_iFreqDiv_cy<2>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_1/Mcount_iFreqDiv_cy<3> (XLXI_1/Mcount_iFreqDiv_cy<3>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_1/Mcount_iFreqDiv_cy<4> (XLXI_1/Mcount_iFreqDiv_cy<4>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_1/Mcount_iFreqDiv_cy<5> (XLXI_1/Mcount_iFreqDiv_cy<5>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_1/Mcount_iFreqDiv_cy<6> (XLXI_1/Mcount_iFreqDiv_cy<6>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_1/Mcount_iFreqDiv_cy<7> (XLXI_1/Mcount_iFreqDiv_cy<7>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_1/Mcount_iFreqDiv_cy<8> (XLXI_1/Mcount_iFreqDiv_cy<8>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_1/Mcount_iFreqDiv_cy<9> (XLXI_1/Mcount_iFreqDiv_cy<9>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_1/Mcount_iFreqDiv_cy<10> (XLXI_1/Mcount_iFreqDiv_cy<10>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_1/Mcount_iFreqDiv_cy<11> (XLXI_1/Mcount_iFreqDiv_cy<11>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_1/Mcount_iFreqDiv_cy<12> (XLXI_1/Mcount_iFreqDiv_cy<12>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_1/Mcount_iFreqDiv_cy<13> (XLXI_1/Mcount_iFreqDiv_cy<13>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_1/Mcount_iFreqDiv_cy<14> (XLXI_1/Mcount_iFreqDiv_cy<14>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_1/Mcount_iFreqDiv_cy<15> (XLXI_1/Mcount_iFreqDiv_cy<15>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_1/Mcount_iFreqDiv_cy<16> (XLXI_1/Mcount_iFreqDiv_cy<16>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_1/Mcount_iFreqDiv_cy<17> (XLXI_1/Mcount_iFreqDiv_cy<17>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_1/Mcount_iFreqDiv_cy<18> (XLXI_1/Mcount_iFreqDiv_cy<18>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_1/Mcount_iFreqDiv_cy<19> (XLXI_1/Mcount_iFreqDiv_cy<19>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_1/Mcount_iFreqDiv_cy<20> (XLXI_1/Mcount_iFreqDiv_cy<20>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_1/Mcount_iFreqDiv_cy<21> (XLXI_1/Mcount_iFreqDiv_cy<21>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_1/Mcount_iFreqDiv_cy<22> (XLXI_1/Mcount_iFreqDiv_cy<22>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_1/Mcount_iFreqDiv_cy<23> (XLXI_1/Mcount_iFreqDiv_cy<23>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_1/Mcount_iFreqDiv_cy<24> (XLXI_1/Mcount_iFreqDiv_cy<24>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_1/Mcount_iFreqDiv_cy<25> (XLXI_1/Mcount_iFreqDiv_cy<25>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_1/Mcount_iFreqDiv_cy<26> (XLXI_1/Mcount_iFreqDiv_cy<26>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_1/Mcount_iFreqDiv_cy<27> (XLXI_1/Mcount_iFreqDiv_cy<27>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_1/Mcount_iFreqDiv_cy<28> (XLXI_1/Mcount_iFreqDiv_cy<28>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_1/Mcount_iFreqDiv_cy<29> (XLXI_1/Mcount_iFreqDiv_cy<29>)
+     MUXCY:CI->O           0   0.059   0.000  XLXI_1/Mcount_iFreqDiv_cy<30> (XLXI_1/Mcount_iFreqDiv_cy<30>)
+     XORCY:CI->O           1   0.804   0.000  XLXI_1/Mcount_iFreqDiv_xor<31> (XLXI_1/Mcount_iFreqDiv31)
+     FDC:D                     0.308          XLXI_1/iFreqDiv_31
+    ----------------------------------------
+    Total                      9.824ns (6.962ns logic, 2.862ns route)
+                                       (70.9% logic, 29.1% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'XLXI_1/tmpFreqDiv1'
+  Clock period: 6.491ns (frequency: 154.059MHz)
+  Total number of paths / destination ports: 1552 / 32
+-------------------------------------------------------------------------
+Delay:               6.491ns (Levels of Logic = 33)
+  Source:            XLXI_1/iSawGen_1 (FF)
+  Destination:       XLXI_1/iSawGen_31 (FF)
+  Source Clock:      XLXI_1/tmpFreqDiv1 rising
+  Destination Clock: XLXI_1/tmpFreqDiv1 rising
+
+  Data Path: XLXI_1/iSawGen_1 to XLXI_1/iSawGen_31
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              3   0.591   0.706  XLXI_1/iSawGen_1 (XLXI_1/iSawGen_1)
+     LUT1:I0->O            1   0.704   0.000  XLXI_1/Mcount_iSawGen_cy<1>_rt (XLXI_1/Mcount_iSawGen_cy<1>_rt)
+     MUXCY:S->O            1   0.464   0.000  XLXI_1/Mcount_iSawGen_cy<1> (XLXI_1/Mcount_iSawGen_cy<1>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_1/Mcount_iSawGen_cy<2> (XLXI_1/Mcount_iSawGen_cy<2>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_1/Mcount_iSawGen_cy<3> (XLXI_1/Mcount_iSawGen_cy<3>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_1/Mcount_iSawGen_cy<4> (XLXI_1/Mcount_iSawGen_cy<4>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_1/Mcount_iSawGen_cy<5> (XLXI_1/Mcount_iSawGen_cy<5>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_1/Mcount_iSawGen_cy<6> (XLXI_1/Mcount_iSawGen_cy<6>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_1/Mcount_iSawGen_cy<7> (XLXI_1/Mcount_iSawGen_cy<7>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_1/Mcount_iSawGen_cy<8> (XLXI_1/Mcount_iSawGen_cy<8>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_1/Mcount_iSawGen_cy<9> (XLXI_1/Mcount_iSawGen_cy<9>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_1/Mcount_iSawGen_cy<10> (XLXI_1/Mcount_iSawGen_cy<10>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_1/Mcount_iSawGen_cy<11> (XLXI_1/Mcount_iSawGen_cy<11>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_1/Mcount_iSawGen_cy<12> (XLXI_1/Mcount_iSawGen_cy<12>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_1/Mcount_iSawGen_cy<13> (XLXI_1/Mcount_iSawGen_cy<13>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_1/Mcount_iSawGen_cy<14> (XLXI_1/Mcount_iSawGen_cy<14>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_1/Mcount_iSawGen_cy<15> (XLXI_1/Mcount_iSawGen_cy<15>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_1/Mcount_iSawGen_cy<16> (XLXI_1/Mcount_iSawGen_cy<16>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_1/Mcount_iSawGen_cy<17> (XLXI_1/Mcount_iSawGen_cy<17>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_1/Mcount_iSawGen_cy<18> (XLXI_1/Mcount_iSawGen_cy<18>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_1/Mcount_iSawGen_cy<19> (XLXI_1/Mcount_iSawGen_cy<19>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_1/Mcount_iSawGen_cy<20> (XLXI_1/Mcount_iSawGen_cy<20>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_1/Mcount_iSawGen_cy<21> (XLXI_1/Mcount_iSawGen_cy<21>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_1/Mcount_iSawGen_cy<22> (XLXI_1/Mcount_iSawGen_cy<22>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_1/Mcount_iSawGen_cy<23> (XLXI_1/Mcount_iSawGen_cy<23>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_1/Mcount_iSawGen_cy<24> (XLXI_1/Mcount_iSawGen_cy<24>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_1/Mcount_iSawGen_cy<25> (XLXI_1/Mcount_iSawGen_cy<25>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_1/Mcount_iSawGen_cy<26> (XLXI_1/Mcount_iSawGen_cy<26>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_1/Mcount_iSawGen_cy<27> (XLXI_1/Mcount_iSawGen_cy<27>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_1/Mcount_iSawGen_cy<28> (XLXI_1/Mcount_iSawGen_cy<28>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_1/Mcount_iSawGen_cy<29> (XLXI_1/Mcount_iSawGen_cy<29>)
+     MUXCY:CI->O           0   0.059   0.000  XLXI_1/Mcount_iSawGen_cy<30> (XLXI_1/Mcount_iSawGen_cy<30>)
+     XORCY:CI->O           1   0.804   0.499  XLXI_1/Mcount_iSawGen_xor<31> (XLXI_1/Result<31>1)
+     LUT2:I1->O            1   0.704   0.000  XLXI_1/Mcount_iSawGen_eqn_311 (XLXI_1/Mcount_iSawGen_eqn_31)
+     FDC:D                     0.308          XLXI_1/iSawGen_31
+    ----------------------------------------
+    Total                      6.491ns (5.286ns logic, 1.205ns route)
+                                       (81.4% logic, 18.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'CLK_IN'
+  Total number of paths / destination ports: 16 / 15
+-------------------------------------------------------------------------
+Offset:              6.800ns (Levels of Logic = 4)
+  Source:            CLR_IN (PAD)
+  Destination:       XLXI_1/stCnt_0 (FF)
+  Destination Clock: CLK_IN rising
+
+  Data Path: CLR_IN to XLXI_1/stCnt_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            41   1.218   1.440  CLR_IN_IBUF (CLR_IN_IBUF)
+     LUT4:I0->O            1   0.704   0.000  XLXI_1/tmpFreqDiv_or0000_F (N15)
+     MUXF5:I0->O          35   0.321   1.438  XLXI_1/tmpFreqDiv_or0000 (XLXI_1/tmpFreqDiv_or0000)
+     LUT2:I0->O            1   0.704   0.420  XLXI_1/stCnt_and00001 (XLXI_1/stCnt_and0000)
+     FDE:CE                    0.555          XLXI_1/stCnt_0
+    ----------------------------------------
+    Total                      6.800ns (3.502ns logic, 3.298ns route)
+                                       (51.5% logic, 48.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'CLK_IN'
+  Total number of paths / destination ports: 2 / 2
+-------------------------------------------------------------------------
+Offset:              5.620ns (Levels of Logic = 3)
+  Source:            XLXI_2/iBusy (FF)
+  Destination:       DAC_CS (PAD)
+  Source Clock:      CLK_IN rising
+
+  Data Path: XLXI_2/iBusy to DAC_CS
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDRSE:C->Q            5   0.591   0.633  iBusy (iBusy)
+     INV:I->O              1   0.704   0.420  DAC_CS1_INV_0 (DAC_CS)
+     end scope: 'XLXI_2'
+     OBUF:I->O                 3.272          DAC_CS_OBUF (DAC_CS)
+    ----------------------------------------
+    Total                      5.620ns (4.567ns logic, 1.053ns route)
+                                       (81.3% logic, 18.7% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Delay:               7.147ns (Levels of Logic = 4)
+  Source:            CLK_IN (PAD)
+  Destination:       SPI_SCK (PAD)
+
+  Data Path: CLK_IN to SPI_SCK
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     BUFGP:I->O          132   1.457   1.294  CLK_IN_BUFGP (CLK_IN_BUFGP)
+     begin scope: 'XLXI_2'
+     INV:I->O              1   0.704   0.420  SPI_SCK1_INV_0 (SPI_SCK)
+     end scope: 'XLXI_2'
+     OBUF:I->O                 3.272          SPI_SCK_OBUF (SPI_SCK)
+    ----------------------------------------
+    Total                      7.147ns (5.433ns logic, 1.714ns route)
+                                       (76.0% logic, 24.0% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 7.00 secs
+Total CPU time to Xst completion: 6.51 secs
+ 
+--> 
+
+Total memory usage is 217976 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   43 (   0 filtered)
+Number of infos    :    1 (   0 filtered)
+

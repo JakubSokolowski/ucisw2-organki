@@ -1,0 +1,726 @@
+MDF Database:  version 1.0
+MDF_INFO | SawToothDivider | XC9572XL-10-PC44
+MACROCELL | 2 | 0 | tmpFreqDiv
+ATTRIBUTES | 4367168 | 0
+OUTPUTMC | 6 | 1 | 16 | 1 | 1 | 1 | 4 | 1 | 5 | 1 | 7 | 1 | 14
+INPUTS | 32 | iFreqDiv<0>  | iFreqDiv<10>  | iFreqDiv<11>  | iFreqDiv<12>  | iFreqDiv<13>  | iFreqDiv<14>  | iFreqDiv<15>  | iFreqDiv<16>  | iFreqDiv<17>  | iFreqDiv<18>  | iFreqDiv<19>  | iFreqDiv<1>  | iFreqDiv<20>  | iFreqDiv<21>  | iFreqDiv<22>  | iFreqDiv<23>  | iFreqDiv<24>  | iFreqDiv<25>  | iFreqDiv<26>  | iFreqDiv<27>  | iFreqDiv<28>  | iFreqDiv<29>  | iFreqDiv<2>  | iFreqDiv<30>  | iFreqDiv<3>  | iFreqDiv<4>  | iFreqDiv<5>  | iFreqDiv<6>  | iFreqDiv<7>  | iFreqDiv<8>  | iFreqDiv<9>  | iFreqDiv<31>
+INPUTMC | 32 | 3 | 17 | 3 | 15 | 3 | 14 | 3 | 12 | 3 | 11 | 2 | 12 | 1 | 17 | 1 | 15 | 1 | 13 | 1 | 12 | 1 | 11 | 3 | 9 | 1 | 10 | 1 | 9 | 1 | 8 | 1 | 6 | 1 | 3 | 1 | 2 | 1 | 0 | 2 | 11 | 2 | 9 | 2 | 6 | 3 | 8 | 2 | 5 | 2 | 17 | 3 | 6 | 3 | 5 | 3 | 3 | 3 | 2 | 2 | 14 | 3 | 0 | 2 | 3
+EQ | 12 | 
+   tmpFreqDiv.T = Vcc;
+   tmpFreqDiv.CLK = Clk;	// GCK
+   tmpFreqDiv.AR = Clr;	// GSR
+   tmpFreqDiv.CE = !iFreqDiv<0> & !iFreqDiv<10> & !iFreqDiv<11> & 
+	!iFreqDiv<12> & !iFreqDiv<13> & !iFreqDiv<14> & !iFreqDiv<15> & 
+	!iFreqDiv<16> & !iFreqDiv<17> & !iFreqDiv<18> & !iFreqDiv<19> & 
+	!iFreqDiv<1> & !iFreqDiv<20> & !iFreqDiv<21> & !iFreqDiv<22> & 
+	!iFreqDiv<23> & !iFreqDiv<24> & !iFreqDiv<25> & !iFreqDiv<26> & 
+	!iFreqDiv<27> & !iFreqDiv<28> & !iFreqDiv<29> & !iFreqDiv<2> & 
+	!iFreqDiv<30> & iFreqDiv<3> & !iFreqDiv<4> & !iFreqDiv<5> & 
+	!iFreqDiv<6> & !iFreqDiv<7> & iFreqDiv<8> & !iFreqDiv<9> & 
+	!iFreqDiv<31>;
+GLOBALS | 2 | 2 | Clk | 4 | Clr
+
+MACROCELL | 1 | 16 | iSawGen<0>
+ATTRIBUTES | 4596514 | 0
+OUTPUTMC | 5 | 1 | 1 | 1 | 4 | 1 | 5 | 1 | 7 | 1 | 14
+INPUTS | 1 | tmpFreqDiv
+INPUTMC | 1 | 2 | 0
+EQ | 3 | 
+   SawtoothOUT<6>.T = Vcc;
+   SawtoothOUT<6>.CLK = tmpFreqDiv;
+   SawtoothOUT<6>.AR = Clr;	// GSR
+GLOBALS | 1 | 4 | Clr
+
+MACROCELL | 1 | 1 | iSawGen<1>
+ATTRIBUTES | 4596514 | 0
+OUTPUTMC | 4 | 1 | 4 | 1 | 5 | 1 | 7 | 1 | 14
+INPUTS | 2 | SawtoothOUT<6>  | tmpFreqDiv
+INPUTMC | 2 | 1 | 16 | 2 | 0
+EQ | 3 | 
+   SawtoothOUT<7>.T = SawtoothOUT<6>;
+   SawtoothOUT<7>.CLK = tmpFreqDiv;
+   SawtoothOUT<7>.AR = Clr;	// GSR
+GLOBALS | 1 | 4 | Clr
+
+MACROCELL | 1 | 4 | iSawGen<2>
+ATTRIBUTES | 4596514 | 0
+OUTPUTMC | 3 | 1 | 5 | 1 | 7 | 1 | 14
+INPUTS | 3 | SawtoothOUT<6>  | SawtoothOUT<7>  | tmpFreqDiv
+INPUTMC | 3 | 1 | 16 | 1 | 1 | 2 | 0
+EQ | 3 | 
+   SawtoothOUT<8>.T = SawtoothOUT<6> & SawtoothOUT<7>;
+   SawtoothOUT<8>.CLK = tmpFreqDiv;
+   SawtoothOUT<8>.AR = Clr;	// GSR
+GLOBALS | 1 | 4 | Clr
+
+MACROCELL | 1 | 5 | iSawGen<3>
+ATTRIBUTES | 4596514 | 0
+OUTPUTMC | 2 | 1 | 7 | 1 | 14
+INPUTS | 4 | SawtoothOUT<6>  | SawtoothOUT<7>  | SawtoothOUT<8>  | tmpFreqDiv
+INPUTMC | 4 | 1 | 16 | 1 | 1 | 1 | 4 | 2 | 0
+EQ | 3 | 
+   SawtoothOUT<9>.T = SawtoothOUT<6> & SawtoothOUT<7> & SawtoothOUT<8>;
+   SawtoothOUT<9>.CLK = tmpFreqDiv;
+   SawtoothOUT<9>.AR = Clr;	// GSR
+GLOBALS | 1 | 4 | Clr
+
+MACROCELL | 1 | 7 | iSawGen<4>
+ATTRIBUTES | 4596514 | 0
+OUTPUTMC | 1 | 1 | 14
+INPUTS | 5 | SawtoothOUT<6>  | SawtoothOUT<7>  | SawtoothOUT<8>  | SawtoothOUT<9>  | tmpFreqDiv
+INPUTMC | 5 | 1 | 16 | 1 | 1 | 1 | 4 | 1 | 5 | 2 | 0
+EQ | 4 | 
+   SawtoothOUT<10>.T = SawtoothOUT<6> & SawtoothOUT<7> & SawtoothOUT<8> & 
+	SawtoothOUT<9>;
+   SawtoothOUT<10>.CLK = tmpFreqDiv;
+   SawtoothOUT<10>.AR = Clr;	// GSR
+GLOBALS | 1 | 4 | Clr
+
+MACROCELL | 1 | 14 | iSawGen<5>
+ATTRIBUTES | 4465442 | 0
+INPUTS | 6 | SawtoothOUT<6>  | SawtoothOUT<7>  | SawtoothOUT<8>  | SawtoothOUT<9>  | SawtoothOUT<10>  | tmpFreqDiv
+INPUTMC | 6 | 1 | 16 | 1 | 1 | 1 | 4 | 1 | 5 | 1 | 7 | 2 | 0
+EQ | 4 | 
+   SawtoothOUT<11>.T = SawtoothOUT<6> & SawtoothOUT<7> & SawtoothOUT<8> & 
+	SawtoothOUT<9> & SawtoothOUT<10>;
+   SawtoothOUT<11>.CLK = tmpFreqDiv;
+   SawtoothOUT<11>.AR = Clr;	// GSR
+GLOBALS | 1 | 4 | Clr
+
+MACROCELL | 3 | 17 | iFreqDiv<0>
+ATTRIBUTES | 4363012 | 0
+OUTPUTMC | 34 | 2 | 0 | 3 | 15 | 3 | 14 | 3 | 12 | 3 | 11 | 2 | 12 | 1 | 17 | 1 | 15 | 1 | 13 | 1 | 12 | 1 | 11 | 3 | 9 | 1 | 10 | 1 | 9 | 1 | 8 | 1 | 6 | 1 | 3 | 1 | 2 | 1 | 0 | 2 | 11 | 2 | 9 | 2 | 6 | 3 | 8 | 2 | 5 | 2 | 17 | 3 | 6 | 3 | 5 | 3 | 3 | 3 | 2 | 2 | 14 | 3 | 0 | 2 | 3 | 2 | 2 | 0 | 1
+INPUTS | 0
+EQ | 3 | 
+   iFreqDiv<0>.T = Vcc;
+   iFreqDiv<0>.CLK = Clk;	// GCK
+   iFreqDiv<0>.AP = Clr;	// GSR
+GLOBALS | 2 | 2 | Clk | 1 | Clr
+
+MACROCELL | 3 | 15 | iFreqDiv<10>
+ATTRIBUTES | 4367104 | 0
+OUTPUTMC | 26 | 2 | 0 | 3 | 14 | 3 | 12 | 3 | 11 | 2 | 12 | 1 | 17 | 1 | 15 | 1 | 13 | 1 | 12 | 1 | 11 | 1 | 10 | 1 | 9 | 1 | 8 | 1 | 6 | 1 | 3 | 1 | 2 | 1 | 0 | 2 | 11 | 2 | 9 | 2 | 6 | 2 | 5 | 2 | 17 | 2 | 14 | 2 | 3 | 2 | 2 | 0 | 1
+INPUTS | 10 | iFreqDiv<0>  | iFreqDiv<1>  | iFreqDiv<2>  | iFreqDiv<3>  | iFreqDiv<4>  | iFreqDiv<5>  | iFreqDiv<6>  | iFreqDiv<7>  | iFreqDiv<8>  | iFreqDiv<9>
+INPUTMC | 10 | 3 | 17 | 3 | 9 | 3 | 8 | 2 | 17 | 3 | 6 | 3 | 5 | 3 | 3 | 3 | 2 | 2 | 14 | 3 | 0
+EQ | 5 | 
+   iFreqDiv<10>.T = iFreqDiv<0> & iFreqDiv<1> & iFreqDiv<2> & 
+	iFreqDiv<3> & iFreqDiv<4> & iFreqDiv<5> & iFreqDiv<6> & 
+	iFreqDiv<7> & iFreqDiv<8> & iFreqDiv<9>;
+   iFreqDiv<10>.CLK = Clk;	// GCK
+   iFreqDiv<10>.AR = Clr;	// GSR
+GLOBALS | 2 | 2 | Clk | 4 | Clr
+
+MACROCELL | 3 | 14 | iFreqDiv<11>
+ATTRIBUTES | 4367104 | 0
+OUTPUTMC | 25 | 2 | 0 | 3 | 12 | 3 | 11 | 2 | 12 | 1 | 17 | 1 | 15 | 1 | 13 | 1 | 12 | 1 | 11 | 1 | 10 | 1 | 9 | 1 | 8 | 1 | 6 | 1 | 3 | 1 | 2 | 1 | 0 | 2 | 11 | 2 | 9 | 2 | 6 | 2 | 5 | 2 | 17 | 2 | 14 | 2 | 3 | 2 | 2 | 0 | 1
+INPUTS | 11 | iFreqDiv<0>  | iFreqDiv<10>  | iFreqDiv<1>  | iFreqDiv<2>  | iFreqDiv<3>  | iFreqDiv<4>  | iFreqDiv<5>  | iFreqDiv<6>  | iFreqDiv<7>  | iFreqDiv<8>  | iFreqDiv<9>
+INPUTMC | 11 | 3 | 17 | 3 | 15 | 3 | 9 | 3 | 8 | 2 | 17 | 3 | 6 | 3 | 5 | 3 | 3 | 3 | 2 | 2 | 14 | 3 | 0
+EQ | 5 | 
+   iFreqDiv<11>.T = iFreqDiv<0> & iFreqDiv<10> & iFreqDiv<1> & 
+	iFreqDiv<2> & iFreqDiv<3> & iFreqDiv<4> & iFreqDiv<5> & 
+	iFreqDiv<6> & iFreqDiv<7> & iFreqDiv<8> & iFreqDiv<9>;
+   iFreqDiv<11>.CLK = Clk;	// GCK
+   iFreqDiv<11>.AR = Clr;	// GSR
+GLOBALS | 2 | 2 | Clk | 4 | Clr
+
+MACROCELL | 3 | 12 | iFreqDiv<12>
+ATTRIBUTES | 4367104 | 0
+OUTPUTMC | 24 | 2 | 0 | 3 | 11 | 2 | 12 | 1 | 17 | 1 | 15 | 1 | 13 | 1 | 12 | 1 | 11 | 1 | 10 | 1 | 9 | 1 | 8 | 1 | 6 | 1 | 3 | 1 | 2 | 1 | 0 | 2 | 11 | 2 | 9 | 2 | 6 | 2 | 5 | 2 | 17 | 2 | 14 | 2 | 3 | 2 | 2 | 0 | 1
+INPUTS | 12 | iFreqDiv<0>  | iFreqDiv<10>  | iFreqDiv<11>  | iFreqDiv<1>  | iFreqDiv<2>  | iFreqDiv<3>  | iFreqDiv<4>  | iFreqDiv<5>  | iFreqDiv<6>  | iFreqDiv<7>  | iFreqDiv<8>  | iFreqDiv<9>
+INPUTMC | 12 | 3 | 17 | 3 | 15 | 3 | 14 | 3 | 9 | 3 | 8 | 2 | 17 | 3 | 6 | 3 | 5 | 3 | 3 | 3 | 2 | 2 | 14 | 3 | 0
+EQ | 6 | 
+   iFreqDiv<12>.T = iFreqDiv<0> & iFreqDiv<10> & iFreqDiv<11> & 
+	iFreqDiv<1> & iFreqDiv<2> & iFreqDiv<3> & iFreqDiv<4> & 
+	iFreqDiv<5> & iFreqDiv<6> & iFreqDiv<7> & iFreqDiv<8> & 
+	iFreqDiv<9>;
+   iFreqDiv<12>.CLK = Clk;	// GCK
+   iFreqDiv<12>.AR = Clr;	// GSR
+GLOBALS | 2 | 2 | Clk | 4 | Clr
+
+MACROCELL | 3 | 11 | iFreqDiv<13>
+ATTRIBUTES | 4367104 | 0
+OUTPUTMC | 23 | 2 | 0 | 2 | 12 | 1 | 17 | 1 | 15 | 1 | 13 | 1 | 12 | 1 | 11 | 1 | 10 | 1 | 9 | 1 | 8 | 1 | 6 | 1 | 3 | 1 | 2 | 1 | 0 | 2 | 11 | 2 | 9 | 2 | 6 | 2 | 5 | 2 | 17 | 2 | 14 | 2 | 3 | 2 | 2 | 0 | 1
+INPUTS | 13 | iFreqDiv<0>  | iFreqDiv<10>  | iFreqDiv<11>  | iFreqDiv<12>  | iFreqDiv<1>  | iFreqDiv<2>  | iFreqDiv<3>  | iFreqDiv<4>  | iFreqDiv<5>  | iFreqDiv<6>  | iFreqDiv<7>  | iFreqDiv<8>  | iFreqDiv<9>
+INPUTMC | 13 | 3 | 17 | 3 | 15 | 3 | 14 | 3 | 12 | 3 | 9 | 3 | 8 | 2 | 17 | 3 | 6 | 3 | 5 | 3 | 3 | 3 | 2 | 2 | 14 | 3 | 0
+EQ | 6 | 
+   iFreqDiv<13>.T = iFreqDiv<0> & iFreqDiv<10> & iFreqDiv<11> & 
+	iFreqDiv<12> & iFreqDiv<1> & iFreqDiv<2> & iFreqDiv<3> & 
+	iFreqDiv<4> & iFreqDiv<5> & iFreqDiv<6> & iFreqDiv<7> & 
+	iFreqDiv<8> & iFreqDiv<9>;
+   iFreqDiv<13>.CLK = Clk;	// GCK
+   iFreqDiv<13>.AR = Clr;	// GSR
+GLOBALS | 2 | 2 | Clk | 4 | Clr
+
+MACROCELL | 2 | 12 | iFreqDiv<14>
+ATTRIBUTES | 4367104 | 0
+OUTPUTMC | 22 | 2 | 0 | 1 | 17 | 1 | 15 | 1 | 13 | 1 | 12 | 1 | 11 | 1 | 10 | 1 | 9 | 1 | 8 | 1 | 6 | 1 | 3 | 1 | 2 | 1 | 0 | 2 | 11 | 2 | 9 | 2 | 6 | 2 | 5 | 2 | 17 | 2 | 14 | 2 | 3 | 2 | 2 | 0 | 1
+INPUTS | 14 | iFreqDiv<0>  | iFreqDiv<10>  | iFreqDiv<11>  | iFreqDiv<12>  | iFreqDiv<13>  | iFreqDiv<1>  | iFreqDiv<2>  | iFreqDiv<3>  | iFreqDiv<4>  | iFreqDiv<5>  | iFreqDiv<6>  | iFreqDiv<7>  | iFreqDiv<8>  | iFreqDiv<9>
+INPUTMC | 14 | 3 | 17 | 3 | 15 | 3 | 14 | 3 | 12 | 3 | 11 | 3 | 9 | 3 | 8 | 2 | 17 | 3 | 6 | 3 | 5 | 3 | 3 | 3 | 2 | 2 | 14 | 3 | 0
+EQ | 6 | 
+   iFreqDiv<14>.T = iFreqDiv<0> & iFreqDiv<10> & iFreqDiv<11> & 
+	iFreqDiv<12> & iFreqDiv<13> & iFreqDiv<1> & iFreqDiv<2> & 
+	iFreqDiv<3> & iFreqDiv<4> & iFreqDiv<5> & iFreqDiv<6> & 
+	iFreqDiv<7> & iFreqDiv<8> & iFreqDiv<9>;
+   iFreqDiv<14>.CLK = Clk;	// GCK
+   iFreqDiv<14>.AR = Clr;	// GSR
+GLOBALS | 2 | 2 | Clk | 4 | Clr
+
+MACROCELL | 1 | 17 | iFreqDiv<15>
+ATTRIBUTES | 4367104 | 0
+OUTPUTMC | 21 | 2 | 0 | 1 | 15 | 1 | 13 | 1 | 12 | 1 | 11 | 1 | 10 | 1 | 9 | 1 | 8 | 1 | 6 | 1 | 3 | 1 | 2 | 1 | 0 | 2 | 11 | 2 | 9 | 2 | 6 | 2 | 5 | 2 | 17 | 2 | 14 | 2 | 3 | 2 | 2 | 0 | 1
+INPUTS | 15 | iFreqDiv<0>  | iFreqDiv<10>  | iFreqDiv<11>  | iFreqDiv<12>  | iFreqDiv<13>  | iFreqDiv<14>  | iFreqDiv<1>  | iFreqDiv<2>  | iFreqDiv<3>  | iFreqDiv<4>  | iFreqDiv<5>  | iFreqDiv<6>  | iFreqDiv<7>  | iFreqDiv<8>  | iFreqDiv<9>
+INPUTMC | 15 | 3 | 17 | 3 | 15 | 3 | 14 | 3 | 12 | 3 | 11 | 2 | 12 | 3 | 9 | 3 | 8 | 2 | 17 | 3 | 6 | 3 | 5 | 3 | 3 | 3 | 2 | 2 | 14 | 3 | 0
+EQ | 6 | 
+   iFreqDiv<15>.T = iFreqDiv<0> & iFreqDiv<10> & iFreqDiv<11> & 
+	iFreqDiv<12> & iFreqDiv<13> & iFreqDiv<14> & iFreqDiv<1> & 
+	iFreqDiv<2> & iFreqDiv<3> & iFreqDiv<4> & iFreqDiv<5> & 
+	iFreqDiv<6> & iFreqDiv<7> & iFreqDiv<8> & iFreqDiv<9>;
+   iFreqDiv<15>.CLK = Clk;	// GCK
+   iFreqDiv<15>.AR = Clr;	// GSR
+GLOBALS | 2 | 2 | Clk | 4 | Clr
+
+MACROCELL | 1 | 15 | iFreqDiv<16>
+ATTRIBUTES | 4367104 | 0
+OUTPUTMC | 20 | 2 | 0 | 1 | 13 | 1 | 12 | 1 | 11 | 1 | 10 | 1 | 9 | 1 | 8 | 1 | 6 | 1 | 3 | 1 | 2 | 1 | 0 | 2 | 11 | 2 | 9 | 2 | 6 | 2 | 5 | 2 | 17 | 2 | 14 | 2 | 3 | 2 | 2 | 0 | 1
+INPUTS | 16 | iFreqDiv<0>  | iFreqDiv<10>  | iFreqDiv<11>  | iFreqDiv<12>  | iFreqDiv<13>  | iFreqDiv<14>  | iFreqDiv<15>  | iFreqDiv<1>  | iFreqDiv<2>  | iFreqDiv<3>  | iFreqDiv<4>  | iFreqDiv<5>  | iFreqDiv<6>  | iFreqDiv<7>  | iFreqDiv<8>  | iFreqDiv<9>
+INPUTMC | 16 | 3 | 17 | 3 | 15 | 3 | 14 | 3 | 12 | 3 | 11 | 2 | 12 | 1 | 17 | 3 | 9 | 3 | 8 | 2 | 17 | 3 | 6 | 3 | 5 | 3 | 3 | 3 | 2 | 2 | 14 | 3 | 0
+EQ | 7 | 
+   iFreqDiv<16>.T = iFreqDiv<0> & iFreqDiv<10> & iFreqDiv<11> & 
+	iFreqDiv<12> & iFreqDiv<13> & iFreqDiv<14> & iFreqDiv<15> & 
+	iFreqDiv<1> & iFreqDiv<2> & iFreqDiv<3> & iFreqDiv<4> & 
+	iFreqDiv<5> & iFreqDiv<6> & iFreqDiv<7> & iFreqDiv<8> & 
+	iFreqDiv<9>;
+   iFreqDiv<16>.CLK = Clk;	// GCK
+   iFreqDiv<16>.AR = Clr;	// GSR
+GLOBALS | 2 | 2 | Clk | 4 | Clr
+
+MACROCELL | 1 | 13 | iFreqDiv<17>
+ATTRIBUTES | 4367104 | 0
+OUTPUTMC | 19 | 2 | 0 | 1 | 12 | 1 | 11 | 1 | 10 | 1 | 9 | 1 | 8 | 1 | 6 | 1 | 3 | 1 | 2 | 1 | 0 | 2 | 11 | 2 | 9 | 2 | 6 | 2 | 5 | 2 | 17 | 2 | 14 | 2 | 3 | 2 | 2 | 0 | 1
+INPUTS | 17 | iFreqDiv<0>  | iFreqDiv<10>  | iFreqDiv<11>  | iFreqDiv<12>  | iFreqDiv<13>  | iFreqDiv<14>  | iFreqDiv<15>  | iFreqDiv<16>  | iFreqDiv<1>  | iFreqDiv<2>  | iFreqDiv<3>  | iFreqDiv<4>  | iFreqDiv<5>  | iFreqDiv<6>  | iFreqDiv<7>  | iFreqDiv<8>  | iFreqDiv<9>
+INPUTMC | 17 | 3 | 17 | 3 | 15 | 3 | 14 | 3 | 12 | 3 | 11 | 2 | 12 | 1 | 17 | 1 | 15 | 3 | 9 | 3 | 8 | 2 | 17 | 3 | 6 | 3 | 5 | 3 | 3 | 3 | 2 | 2 | 14 | 3 | 0
+EQ | 7 | 
+   iFreqDiv<17>.T = iFreqDiv<0> & iFreqDiv<10> & iFreqDiv<11> & 
+	iFreqDiv<12> & iFreqDiv<13> & iFreqDiv<14> & iFreqDiv<15> & 
+	iFreqDiv<16> & iFreqDiv<1> & iFreqDiv<2> & iFreqDiv<3> & 
+	iFreqDiv<4> & iFreqDiv<5> & iFreqDiv<6> & iFreqDiv<7> & 
+	iFreqDiv<8> & iFreqDiv<9>;
+   iFreqDiv<17>.CLK = Clk;	// GCK
+   iFreqDiv<17>.AR = Clr;	// GSR
+GLOBALS | 2 | 2 | Clk | 4 | Clr
+
+MACROCELL | 1 | 12 | iFreqDiv<18>
+ATTRIBUTES | 4367104 | 0
+OUTPUTMC | 18 | 2 | 0 | 1 | 11 | 1 | 10 | 1 | 9 | 1 | 8 | 1 | 6 | 1 | 3 | 1 | 2 | 1 | 0 | 2 | 11 | 2 | 9 | 2 | 6 | 2 | 5 | 2 | 17 | 2 | 14 | 2 | 3 | 2 | 2 | 0 | 1
+INPUTS | 18 | iFreqDiv<0>  | iFreqDiv<10>  | iFreqDiv<11>  | iFreqDiv<12>  | iFreqDiv<13>  | iFreqDiv<14>  | iFreqDiv<15>  | iFreqDiv<16>  | iFreqDiv<17>  | iFreqDiv<1>  | iFreqDiv<2>  | iFreqDiv<3>  | iFreqDiv<4>  | iFreqDiv<5>  | iFreqDiv<6>  | iFreqDiv<7>  | iFreqDiv<8>  | iFreqDiv<9>
+INPUTMC | 18 | 3 | 17 | 3 | 15 | 3 | 14 | 3 | 12 | 3 | 11 | 2 | 12 | 1 | 17 | 1 | 15 | 1 | 13 | 3 | 9 | 3 | 8 | 2 | 17 | 3 | 6 | 3 | 5 | 3 | 3 | 3 | 2 | 2 | 14 | 3 | 0
+EQ | 7 | 
+   iFreqDiv<18>.T = iFreqDiv<0> & iFreqDiv<10> & iFreqDiv<11> & 
+	iFreqDiv<12> & iFreqDiv<13> & iFreqDiv<14> & iFreqDiv<15> & 
+	iFreqDiv<16> & iFreqDiv<17> & iFreqDiv<1> & iFreqDiv<2> & 
+	iFreqDiv<3> & iFreqDiv<4> & iFreqDiv<5> & iFreqDiv<6> & 
+	iFreqDiv<7> & iFreqDiv<8> & iFreqDiv<9>;
+   iFreqDiv<18>.CLK = Clk;	// GCK
+   iFreqDiv<18>.AR = Clr;	// GSR
+GLOBALS | 2 | 2 | Clk | 4 | Clr
+
+MACROCELL | 1 | 11 | iFreqDiv<19>
+ATTRIBUTES | 4367104 | 0
+OUTPUTMC | 17 | 2 | 0 | 1 | 10 | 1 | 9 | 1 | 8 | 1 | 6 | 1 | 3 | 1 | 2 | 1 | 0 | 2 | 11 | 2 | 9 | 2 | 6 | 2 | 5 | 2 | 17 | 2 | 14 | 2 | 3 | 2 | 2 | 0 | 1
+INPUTS | 19 | iFreqDiv<0>  | iFreqDiv<10>  | iFreqDiv<11>  | iFreqDiv<12>  | iFreqDiv<13>  | iFreqDiv<14>  | iFreqDiv<15>  | iFreqDiv<16>  | iFreqDiv<17>  | iFreqDiv<18>  | iFreqDiv<1>  | iFreqDiv<2>  | iFreqDiv<3>  | iFreqDiv<4>  | iFreqDiv<5>  | iFreqDiv<6>  | iFreqDiv<7>  | iFreqDiv<8>  | iFreqDiv<9>
+INPUTMC | 19 | 3 | 17 | 3 | 15 | 3 | 14 | 3 | 12 | 3 | 11 | 2 | 12 | 1 | 17 | 1 | 15 | 1 | 13 | 1 | 12 | 3 | 9 | 3 | 8 | 2 | 17 | 3 | 6 | 3 | 5 | 3 | 3 | 3 | 2 | 2 | 14 | 3 | 0
+EQ | 7 | 
+   iFreqDiv<19>.T = iFreqDiv<0> & iFreqDiv<10> & iFreqDiv<11> & 
+	iFreqDiv<12> & iFreqDiv<13> & iFreqDiv<14> & iFreqDiv<15> & 
+	iFreqDiv<16> & iFreqDiv<17> & iFreqDiv<18> & iFreqDiv<1> & 
+	iFreqDiv<2> & iFreqDiv<3> & iFreqDiv<4> & iFreqDiv<5> & 
+	iFreqDiv<6> & iFreqDiv<7> & iFreqDiv<8> & iFreqDiv<9>;
+   iFreqDiv<19>.CLK = Clk;	// GCK
+   iFreqDiv<19>.AR = Clr;	// GSR
+GLOBALS | 2 | 2 | Clk | 4 | Clr
+
+MACROCELL | 3 | 9 | iFreqDiv<1>
+ATTRIBUTES | 4367104 | 0
+OUTPUTMC | 33 | 2 | 0 | 3 | 15 | 3 | 14 | 3 | 12 | 3 | 11 | 2 | 12 | 1 | 17 | 1 | 15 | 1 | 13 | 1 | 12 | 1 | 11 | 1 | 10 | 1 | 9 | 1 | 8 | 1 | 6 | 1 | 3 | 1 | 2 | 1 | 0 | 2 | 11 | 2 | 9 | 2 | 6 | 3 | 8 | 2 | 5 | 2 | 17 | 3 | 6 | 3 | 5 | 3 | 3 | 3 | 2 | 2 | 14 | 3 | 0 | 2 | 3 | 2 | 2 | 0 | 1
+INPUTS | 1 | iFreqDiv<0>
+INPUTMC | 1 | 3 | 17
+EQ | 3 | 
+   iFreqDiv<1>.T = iFreqDiv<0>;
+   iFreqDiv<1>.CLK = Clk;	// GCK
+   iFreqDiv<1>.AR = Clr;	// GSR
+GLOBALS | 2 | 2 | Clk | 4 | Clr
+
+MACROCELL | 1 | 10 | iFreqDiv<20>
+ATTRIBUTES | 4367104 | 0
+OUTPUTMC | 16 | 2 | 0 | 1 | 9 | 1 | 8 | 1 | 6 | 1 | 3 | 1 | 2 | 1 | 0 | 2 | 11 | 2 | 9 | 2 | 6 | 2 | 5 | 2 | 17 | 2 | 14 | 2 | 3 | 2 | 2 | 0 | 1
+INPUTS | 20 | iFreqDiv<0>  | iFreqDiv<10>  | iFreqDiv<11>  | iFreqDiv<12>  | iFreqDiv<13>  | iFreqDiv<14>  | iFreqDiv<15>  | iFreqDiv<16>  | iFreqDiv<17>  | iFreqDiv<18>  | iFreqDiv<19>  | iFreqDiv<1>  | iFreqDiv<2>  | iFreqDiv<3>  | iFreqDiv<4>  | iFreqDiv<5>  | iFreqDiv<6>  | iFreqDiv<7>  | iFreqDiv<8>  | iFreqDiv<9>
+INPUTMC | 20 | 3 | 17 | 3 | 15 | 3 | 14 | 3 | 12 | 3 | 11 | 2 | 12 | 1 | 17 | 1 | 15 | 1 | 13 | 1 | 12 | 1 | 11 | 3 | 9 | 3 | 8 | 2 | 17 | 3 | 6 | 3 | 5 | 3 | 3 | 3 | 2 | 2 | 14 | 3 | 0
+EQ | 8 | 
+   iFreqDiv<20>.T = iFreqDiv<0> & iFreqDiv<10> & iFreqDiv<11> & 
+	iFreqDiv<12> & iFreqDiv<13> & iFreqDiv<14> & iFreqDiv<15> & 
+	iFreqDiv<16> & iFreqDiv<17> & iFreqDiv<18> & iFreqDiv<19> & 
+	iFreqDiv<1> & iFreqDiv<2> & iFreqDiv<3> & iFreqDiv<4> & 
+	iFreqDiv<5> & iFreqDiv<6> & iFreqDiv<7> & iFreqDiv<8> & 
+	iFreqDiv<9>;
+   iFreqDiv<20>.CLK = Clk;	// GCK
+   iFreqDiv<20>.AR = Clr;	// GSR
+GLOBALS | 2 | 2 | Clk | 4 | Clr
+
+MACROCELL | 1 | 9 | iFreqDiv<21>
+ATTRIBUTES | 4367104 | 0
+OUTPUTMC | 15 | 2 | 0 | 1 | 8 | 1 | 6 | 1 | 3 | 1 | 2 | 1 | 0 | 2 | 11 | 2 | 9 | 2 | 6 | 2 | 5 | 2 | 17 | 2 | 14 | 2 | 3 | 2 | 2 | 0 | 1
+INPUTS | 21 | iFreqDiv<0>  | iFreqDiv<10>  | iFreqDiv<11>  | iFreqDiv<12>  | iFreqDiv<13>  | iFreqDiv<14>  | iFreqDiv<15>  | iFreqDiv<16>  | iFreqDiv<17>  | iFreqDiv<18>  | iFreqDiv<19>  | iFreqDiv<1>  | iFreqDiv<20>  | iFreqDiv<2>  | iFreqDiv<3>  | iFreqDiv<4>  | iFreqDiv<5>  | iFreqDiv<6>  | iFreqDiv<7>  | iFreqDiv<8>  | iFreqDiv<9>
+INPUTMC | 21 | 3 | 17 | 3 | 15 | 3 | 14 | 3 | 12 | 3 | 11 | 2 | 12 | 1 | 17 | 1 | 15 | 1 | 13 | 1 | 12 | 1 | 11 | 3 | 9 | 1 | 10 | 3 | 8 | 2 | 17 | 3 | 6 | 3 | 5 | 3 | 3 | 3 | 2 | 2 | 14 | 3 | 0
+EQ | 8 | 
+   iFreqDiv<21>.T = iFreqDiv<0> & iFreqDiv<10> & iFreqDiv<11> & 
+	iFreqDiv<12> & iFreqDiv<13> & iFreqDiv<14> & iFreqDiv<15> & 
+	iFreqDiv<16> & iFreqDiv<17> & iFreqDiv<18> & iFreqDiv<19> & 
+	iFreqDiv<1> & iFreqDiv<20> & iFreqDiv<2> & iFreqDiv<3> & 
+	iFreqDiv<4> & iFreqDiv<5> & iFreqDiv<6> & iFreqDiv<7> & 
+	iFreqDiv<8> & iFreqDiv<9>;
+   iFreqDiv<21>.CLK = Clk;	// GCK
+   iFreqDiv<21>.AR = Clr;	// GSR
+GLOBALS | 2 | 2 | Clk | 4 | Clr
+
+MACROCELL | 1 | 8 | iFreqDiv<22>
+ATTRIBUTES | 4367104 | 0
+OUTPUTMC | 14 | 2 | 0 | 1 | 6 | 1 | 3 | 1 | 2 | 1 | 0 | 2 | 11 | 2 | 9 | 2 | 6 | 2 | 5 | 2 | 17 | 2 | 14 | 2 | 3 | 2 | 2 | 0 | 1
+INPUTS | 22 | iFreqDiv<0>  | iFreqDiv<10>  | iFreqDiv<11>  | iFreqDiv<12>  | iFreqDiv<13>  | iFreqDiv<14>  | iFreqDiv<15>  | iFreqDiv<16>  | iFreqDiv<17>  | iFreqDiv<18>  | iFreqDiv<19>  | iFreqDiv<1>  | iFreqDiv<20>  | iFreqDiv<21>  | iFreqDiv<2>  | iFreqDiv<3>  | iFreqDiv<4>  | iFreqDiv<5>  | iFreqDiv<6>  | iFreqDiv<7>  | iFreqDiv<8>  | iFreqDiv<9>
+INPUTMC | 22 | 3 | 17 | 3 | 15 | 3 | 14 | 3 | 12 | 3 | 11 | 2 | 12 | 1 | 17 | 1 | 15 | 1 | 13 | 1 | 12 | 1 | 11 | 3 | 9 | 1 | 10 | 1 | 9 | 3 | 8 | 2 | 17 | 3 | 6 | 3 | 5 | 3 | 3 | 3 | 2 | 2 | 14 | 3 | 0
+EQ | 8 | 
+   iFreqDiv<22>.T = iFreqDiv<0> & iFreqDiv<10> & iFreqDiv<11> & 
+	iFreqDiv<12> & iFreqDiv<13> & iFreqDiv<14> & iFreqDiv<15> & 
+	iFreqDiv<16> & iFreqDiv<17> & iFreqDiv<18> & iFreqDiv<19> & 
+	iFreqDiv<1> & iFreqDiv<20> & iFreqDiv<21> & iFreqDiv<2> & 
+	iFreqDiv<3> & iFreqDiv<4> & iFreqDiv<5> & iFreqDiv<6> & 
+	iFreqDiv<7> & iFreqDiv<8> & iFreqDiv<9>;
+   iFreqDiv<22>.CLK = Clk;	// GCK
+   iFreqDiv<22>.AR = Clr;	// GSR
+GLOBALS | 2 | 2 | Clk | 4 | Clr
+
+MACROCELL | 1 | 6 | iFreqDiv<23>
+ATTRIBUTES | 4367104 | 0
+OUTPUTMC | 13 | 2 | 0 | 1 | 3 | 1 | 2 | 1 | 0 | 2 | 11 | 2 | 9 | 2 | 6 | 2 | 5 | 2 | 17 | 2 | 14 | 2 | 3 | 2 | 2 | 0 | 1
+INPUTS | 23 | iFreqDiv<0>  | iFreqDiv<10>  | iFreqDiv<11>  | iFreqDiv<12>  | iFreqDiv<13>  | iFreqDiv<14>  | iFreqDiv<15>  | iFreqDiv<16>  | iFreqDiv<17>  | iFreqDiv<18>  | iFreqDiv<19>  | iFreqDiv<1>  | iFreqDiv<20>  | iFreqDiv<21>  | iFreqDiv<22>  | iFreqDiv<2>  | iFreqDiv<3>  | iFreqDiv<4>  | iFreqDiv<5>  | iFreqDiv<6>  | iFreqDiv<7>  | iFreqDiv<8>  | iFreqDiv<9>
+INPUTMC | 23 | 3 | 17 | 3 | 15 | 3 | 14 | 3 | 12 | 3 | 11 | 2 | 12 | 1 | 17 | 1 | 15 | 1 | 13 | 1 | 12 | 1 | 11 | 3 | 9 | 1 | 10 | 1 | 9 | 1 | 8 | 3 | 8 | 2 | 17 | 3 | 6 | 3 | 5 | 3 | 3 | 3 | 2 | 2 | 14 | 3 | 0
+EQ | 8 | 
+   iFreqDiv<23>.T = iFreqDiv<0> & iFreqDiv<10> & iFreqDiv<11> & 
+	iFreqDiv<12> & iFreqDiv<13> & iFreqDiv<14> & iFreqDiv<15> & 
+	iFreqDiv<16> & iFreqDiv<17> & iFreqDiv<18> & iFreqDiv<19> & 
+	iFreqDiv<1> & iFreqDiv<20> & iFreqDiv<21> & iFreqDiv<22> & 
+	iFreqDiv<2> & iFreqDiv<3> & iFreqDiv<4> & iFreqDiv<5> & 
+	iFreqDiv<6> & iFreqDiv<7> & iFreqDiv<8> & iFreqDiv<9>;
+   iFreqDiv<23>.CLK = Clk;	// GCK
+   iFreqDiv<23>.AR = Clr;	// GSR
+GLOBALS | 2 | 2 | Clk | 4 | Clr
+
+MACROCELL | 1 | 3 | iFreqDiv<24>
+ATTRIBUTES | 4367104 | 0
+OUTPUTMC | 12 | 2 | 0 | 1 | 2 | 1 | 0 | 2 | 11 | 2 | 9 | 2 | 6 | 2 | 5 | 2 | 17 | 2 | 14 | 2 | 3 | 2 | 2 | 0 | 1
+INPUTS | 24 | iFreqDiv<0>  | iFreqDiv<10>  | iFreqDiv<11>  | iFreqDiv<12>  | iFreqDiv<13>  | iFreqDiv<14>  | iFreqDiv<15>  | iFreqDiv<16>  | iFreqDiv<17>  | iFreqDiv<18>  | iFreqDiv<19>  | iFreqDiv<1>  | iFreqDiv<20>  | iFreqDiv<21>  | iFreqDiv<22>  | iFreqDiv<23>  | iFreqDiv<2>  | iFreqDiv<3>  | iFreqDiv<4>  | iFreqDiv<5>  | iFreqDiv<6>  | iFreqDiv<7>  | iFreqDiv<8>  | iFreqDiv<9>
+INPUTMC | 24 | 3 | 17 | 3 | 15 | 3 | 14 | 3 | 12 | 3 | 11 | 2 | 12 | 1 | 17 | 1 | 15 | 1 | 13 | 1 | 12 | 1 | 11 | 3 | 9 | 1 | 10 | 1 | 9 | 1 | 8 | 1 | 6 | 3 | 8 | 2 | 17 | 3 | 6 | 3 | 5 | 3 | 3 | 3 | 2 | 2 | 14 | 3 | 0
+EQ | 9 | 
+   iFreqDiv<24>.T = iFreqDiv<0> & iFreqDiv<10> & iFreqDiv<11> & 
+	iFreqDiv<12> & iFreqDiv<13> & iFreqDiv<14> & iFreqDiv<15> & 
+	iFreqDiv<16> & iFreqDiv<17> & iFreqDiv<18> & iFreqDiv<19> & 
+	iFreqDiv<1> & iFreqDiv<20> & iFreqDiv<21> & iFreqDiv<22> & 
+	iFreqDiv<23> & iFreqDiv<2> & iFreqDiv<3> & iFreqDiv<4> & 
+	iFreqDiv<5> & iFreqDiv<6> & iFreqDiv<7> & iFreqDiv<8> & 
+	iFreqDiv<9>;
+   iFreqDiv<24>.CLK = Clk;	// GCK
+   iFreqDiv<24>.AR = Clr;	// GSR
+GLOBALS | 2 | 2 | Clk | 4 | Clr
+
+MACROCELL | 1 | 2 | iFreqDiv<25>
+ATTRIBUTES | 4367104 | 0
+OUTPUTMC | 11 | 2 | 0 | 1 | 0 | 2 | 11 | 2 | 9 | 2 | 6 | 2 | 5 | 2 | 17 | 2 | 14 | 2 | 3 | 2 | 2 | 0 | 1
+INPUTS | 25 | iFreqDiv<0>  | iFreqDiv<10>  | iFreqDiv<11>  | iFreqDiv<12>  | iFreqDiv<13>  | iFreqDiv<14>  | iFreqDiv<15>  | iFreqDiv<16>  | iFreqDiv<17>  | iFreqDiv<18>  | iFreqDiv<19>  | iFreqDiv<1>  | iFreqDiv<20>  | iFreqDiv<21>  | iFreqDiv<22>  | iFreqDiv<23>  | iFreqDiv<24>  | iFreqDiv<2>  | iFreqDiv<3>  | iFreqDiv<4>  | iFreqDiv<5>  | iFreqDiv<6>  | iFreqDiv<7>  | iFreqDiv<8>  | iFreqDiv<9>
+INPUTMC | 25 | 3 | 17 | 3 | 15 | 3 | 14 | 3 | 12 | 3 | 11 | 2 | 12 | 1 | 17 | 1 | 15 | 1 | 13 | 1 | 12 | 1 | 11 | 3 | 9 | 1 | 10 | 1 | 9 | 1 | 8 | 1 | 6 | 1 | 3 | 3 | 8 | 2 | 17 | 3 | 6 | 3 | 5 | 3 | 3 | 3 | 2 | 2 | 14 | 3 | 0
+EQ | 9 | 
+   iFreqDiv<25>.T = iFreqDiv<0> & iFreqDiv<10> & iFreqDiv<11> & 
+	iFreqDiv<12> & iFreqDiv<13> & iFreqDiv<14> & iFreqDiv<15> & 
+	iFreqDiv<16> & iFreqDiv<17> & iFreqDiv<18> & iFreqDiv<19> & 
+	iFreqDiv<1> & iFreqDiv<20> & iFreqDiv<21> & iFreqDiv<22> & 
+	iFreqDiv<23> & iFreqDiv<24> & iFreqDiv<2> & iFreqDiv<3> & 
+	iFreqDiv<4> & iFreqDiv<5> & iFreqDiv<6> & iFreqDiv<7> & 
+	iFreqDiv<8> & iFreqDiv<9>;
+   iFreqDiv<25>.CLK = Clk;	// GCK
+   iFreqDiv<25>.AR = Clr;	// GSR
+GLOBALS | 2 | 2 | Clk | 4 | Clr
+
+MACROCELL | 1 | 0 | iFreqDiv<26>
+ATTRIBUTES | 4367104 | 0
+OUTPUTMC | 10 | 2 | 0 | 2 | 11 | 2 | 9 | 2 | 6 | 2 | 5 | 2 | 17 | 2 | 14 | 2 | 3 | 2 | 2 | 0 | 1
+INPUTS | 26 | iFreqDiv<0>  | iFreqDiv<10>  | iFreqDiv<11>  | iFreqDiv<12>  | iFreqDiv<13>  | iFreqDiv<14>  | iFreqDiv<15>  | iFreqDiv<16>  | iFreqDiv<17>  | iFreqDiv<18>  | iFreqDiv<19>  | iFreqDiv<1>  | iFreqDiv<20>  | iFreqDiv<21>  | iFreqDiv<22>  | iFreqDiv<23>  | iFreqDiv<24>  | iFreqDiv<25>  | iFreqDiv<2>  | iFreqDiv<3>  | iFreqDiv<4>  | iFreqDiv<5>  | iFreqDiv<6>  | iFreqDiv<7>  | iFreqDiv<8>  | iFreqDiv<9>
+INPUTMC | 26 | 3 | 17 | 3 | 15 | 3 | 14 | 3 | 12 | 3 | 11 | 2 | 12 | 1 | 17 | 1 | 15 | 1 | 13 | 1 | 12 | 1 | 11 | 3 | 9 | 1 | 10 | 1 | 9 | 1 | 8 | 1 | 6 | 1 | 3 | 1 | 2 | 3 | 8 | 2 | 17 | 3 | 6 | 3 | 5 | 3 | 3 | 3 | 2 | 2 | 14 | 3 | 0
+EQ | 9 | 
+   iFreqDiv<26>.T = iFreqDiv<0> & iFreqDiv<10> & iFreqDiv<11> & 
+	iFreqDiv<12> & iFreqDiv<13> & iFreqDiv<14> & iFreqDiv<15> & 
+	iFreqDiv<16> & iFreqDiv<17> & iFreqDiv<18> & iFreqDiv<19> & 
+	iFreqDiv<1> & iFreqDiv<20> & iFreqDiv<21> & iFreqDiv<22> & 
+	iFreqDiv<23> & iFreqDiv<24> & iFreqDiv<25> & iFreqDiv<2> & 
+	iFreqDiv<3> & iFreqDiv<4> & iFreqDiv<5> & iFreqDiv<6> & 
+	iFreqDiv<7> & iFreqDiv<8> & iFreqDiv<9>;
+   iFreqDiv<26>.CLK = Clk;	// GCK
+   iFreqDiv<26>.AR = Clr;	// GSR
+GLOBALS | 2 | 2 | Clk | 4 | Clr
+
+MACROCELL | 2 | 11 | iFreqDiv<27>
+ATTRIBUTES | 4367104 | 0
+OUTPUTMC | 9 | 2 | 0 | 2 | 9 | 2 | 6 | 2 | 5 | 2 | 17 | 2 | 14 | 2 | 3 | 2 | 2 | 0 | 1
+INPUTS | 27 | iFreqDiv<0>  | iFreqDiv<10>  | iFreqDiv<11>  | iFreqDiv<12>  | iFreqDiv<13>  | iFreqDiv<14>  | iFreqDiv<15>  | iFreqDiv<16>  | iFreqDiv<17>  | iFreqDiv<18>  | iFreqDiv<19>  | iFreqDiv<1>  | iFreqDiv<20>  | iFreqDiv<21>  | iFreqDiv<22>  | iFreqDiv<23>  | iFreqDiv<24>  | iFreqDiv<25>  | iFreqDiv<26>  | iFreqDiv<2>  | iFreqDiv<3>  | iFreqDiv<4>  | iFreqDiv<5>  | iFreqDiv<6>  | iFreqDiv<7>  | iFreqDiv<8>  | iFreqDiv<9>
+INPUTMC | 27 | 3 | 17 | 3 | 15 | 3 | 14 | 3 | 12 | 3 | 11 | 2 | 12 | 1 | 17 | 1 | 15 | 1 | 13 | 1 | 12 | 1 | 11 | 3 | 9 | 1 | 10 | 1 | 9 | 1 | 8 | 1 | 6 | 1 | 3 | 1 | 2 | 1 | 0 | 3 | 8 | 2 | 17 | 3 | 6 | 3 | 5 | 3 | 3 | 3 | 2 | 2 | 14 | 3 | 0
+EQ | 9 | 
+   iFreqDiv<27>.T = iFreqDiv<0> & iFreqDiv<10> & iFreqDiv<11> & 
+	iFreqDiv<12> & iFreqDiv<13> & iFreqDiv<14> & iFreqDiv<15> & 
+	iFreqDiv<16> & iFreqDiv<17> & iFreqDiv<18> & iFreqDiv<19> & 
+	iFreqDiv<1> & iFreqDiv<20> & iFreqDiv<21> & iFreqDiv<22> & 
+	iFreqDiv<23> & iFreqDiv<24> & iFreqDiv<25> & iFreqDiv<26> & 
+	iFreqDiv<2> & iFreqDiv<3> & iFreqDiv<4> & iFreqDiv<5> & 
+	iFreqDiv<6> & iFreqDiv<7> & iFreqDiv<8> & iFreqDiv<9>;
+   iFreqDiv<27>.CLK = Clk;	// GCK
+   iFreqDiv<27>.AR = Clr;	// GSR
+GLOBALS | 2 | 2 | Clk | 4 | Clr
+
+MACROCELL | 2 | 9 | iFreqDiv<28>
+ATTRIBUTES | 4367104 | 0
+OUTPUTMC | 8 | 2 | 0 | 2 | 6 | 2 | 5 | 2 | 17 | 2 | 14 | 2 | 3 | 2 | 2 | 0 | 1
+INPUTS | 28 | iFreqDiv<0>  | iFreqDiv<10>  | iFreqDiv<11>  | iFreqDiv<12>  | iFreqDiv<13>  | iFreqDiv<14>  | iFreqDiv<15>  | iFreqDiv<16>  | iFreqDiv<17>  | iFreqDiv<18>  | iFreqDiv<19>  | iFreqDiv<1>  | iFreqDiv<20>  | iFreqDiv<21>  | iFreqDiv<22>  | iFreqDiv<23>  | iFreqDiv<24>  | iFreqDiv<25>  | iFreqDiv<26>  | iFreqDiv<27>  | iFreqDiv<2>  | iFreqDiv<3>  | iFreqDiv<4>  | iFreqDiv<5>  | iFreqDiv<6>  | iFreqDiv<7>  | iFreqDiv<8>  | iFreqDiv<9>
+INPUTMC | 28 | 3 | 17 | 3 | 15 | 3 | 14 | 3 | 12 | 3 | 11 | 2 | 12 | 1 | 17 | 1 | 15 | 1 | 13 | 1 | 12 | 1 | 11 | 3 | 9 | 1 | 10 | 1 | 9 | 1 | 8 | 1 | 6 | 1 | 3 | 1 | 2 | 1 | 0 | 2 | 11 | 3 | 8 | 2 | 17 | 3 | 6 | 3 | 5 | 3 | 3 | 3 | 2 | 2 | 14 | 3 | 0
+EQ | 10 | 
+   iFreqDiv<28>.T = iFreqDiv<0> & iFreqDiv<10> & iFreqDiv<11> & 
+	iFreqDiv<12> & iFreqDiv<13> & iFreqDiv<14> & iFreqDiv<15> & 
+	iFreqDiv<16> & iFreqDiv<17> & iFreqDiv<18> & iFreqDiv<19> & 
+	iFreqDiv<1> & iFreqDiv<20> & iFreqDiv<21> & iFreqDiv<22> & 
+	iFreqDiv<23> & iFreqDiv<24> & iFreqDiv<25> & iFreqDiv<26> & 
+	iFreqDiv<27> & iFreqDiv<2> & iFreqDiv<3> & iFreqDiv<4> & 
+	iFreqDiv<5> & iFreqDiv<6> & iFreqDiv<7> & iFreqDiv<8> & 
+	iFreqDiv<9>;
+   iFreqDiv<28>.CLK = Clk;	// GCK
+   iFreqDiv<28>.AR = Clr;	// GSR
+GLOBALS | 2 | 2 | Clk | 4 | Clr
+
+MACROCELL | 2 | 6 | iFreqDiv<29>
+ATTRIBUTES | 4367104 | 0
+OUTPUTMC | 7 | 2 | 0 | 2 | 5 | 2 | 17 | 2 | 14 | 2 | 3 | 2 | 2 | 0 | 1
+INPUTS | 29 | iFreqDiv<0>  | iFreqDiv<10>  | iFreqDiv<11>  | iFreqDiv<12>  | iFreqDiv<13>  | iFreqDiv<14>  | iFreqDiv<15>  | iFreqDiv<16>  | iFreqDiv<17>  | iFreqDiv<18>  | iFreqDiv<19>  | iFreqDiv<1>  | iFreqDiv<20>  | iFreqDiv<21>  | iFreqDiv<22>  | iFreqDiv<23>  | iFreqDiv<24>  | iFreqDiv<25>  | iFreqDiv<26>  | iFreqDiv<27>  | iFreqDiv<28>  | iFreqDiv<2>  | iFreqDiv<3>  | iFreqDiv<4>  | iFreqDiv<5>  | iFreqDiv<6>  | iFreqDiv<7>  | iFreqDiv<8>  | iFreqDiv<9>
+INPUTMC | 29 | 3 | 17 | 3 | 15 | 3 | 14 | 3 | 12 | 3 | 11 | 2 | 12 | 1 | 17 | 1 | 15 | 1 | 13 | 1 | 12 | 1 | 11 | 3 | 9 | 1 | 10 | 1 | 9 | 1 | 8 | 1 | 6 | 1 | 3 | 1 | 2 | 1 | 0 | 2 | 11 | 2 | 9 | 3 | 8 | 2 | 17 | 3 | 6 | 3 | 5 | 3 | 3 | 3 | 2 | 2 | 14 | 3 | 0
+EQ | 10 | 
+   iFreqDiv<29>.T = iFreqDiv<0> & iFreqDiv<10> & iFreqDiv<11> & 
+	iFreqDiv<12> & iFreqDiv<13> & iFreqDiv<14> & iFreqDiv<15> & 
+	iFreqDiv<16> & iFreqDiv<17> & iFreqDiv<18> & iFreqDiv<19> & 
+	iFreqDiv<1> & iFreqDiv<20> & iFreqDiv<21> & iFreqDiv<22> & 
+	iFreqDiv<23> & iFreqDiv<24> & iFreqDiv<25> & iFreqDiv<26> & 
+	iFreqDiv<27> & iFreqDiv<28> & iFreqDiv<2> & iFreqDiv<3> & 
+	iFreqDiv<4> & iFreqDiv<5> & iFreqDiv<6> & iFreqDiv<7> & 
+	iFreqDiv<8> & iFreqDiv<9>;
+   iFreqDiv<29>.CLK = Clk;	// GCK
+   iFreqDiv<29>.AR = Clr;	// GSR
+GLOBALS | 2 | 2 | Clk | 4 | Clr
+
+MACROCELL | 3 | 8 | iFreqDiv<2>
+ATTRIBUTES | 4367104 | 0
+OUTPUTMC | 32 | 2 | 0 | 3 | 15 | 3 | 14 | 3 | 12 | 3 | 11 | 2 | 12 | 1 | 17 | 1 | 15 | 1 | 13 | 1 | 12 | 1 | 11 | 1 | 10 | 1 | 9 | 1 | 8 | 1 | 6 | 1 | 3 | 1 | 2 | 1 | 0 | 2 | 11 | 2 | 9 | 2 | 6 | 2 | 5 | 2 | 17 | 3 | 6 | 3 | 5 | 3 | 3 | 3 | 2 | 2 | 14 | 3 | 0 | 2 | 3 | 2 | 2 | 0 | 1
+INPUTS | 2 | iFreqDiv<0>  | iFreqDiv<1>
+INPUTMC | 2 | 3 | 17 | 3 | 9
+EQ | 3 | 
+   iFreqDiv<2>.T = iFreqDiv<0> & iFreqDiv<1>;
+   iFreqDiv<2>.CLK = Clk;	// GCK
+   iFreqDiv<2>.AR = Clr;	// GSR
+GLOBALS | 2 | 2 | Clk | 4 | Clr
+
+MACROCELL | 2 | 5 | iFreqDiv<30>
+ATTRIBUTES | 4367104 | 0
+OUTPUTMC | 6 | 2 | 0 | 2 | 17 | 2 | 14 | 2 | 3 | 2 | 2 | 0 | 1
+INPUTS | 30 | iFreqDiv<0>  | iFreqDiv<10>  | iFreqDiv<11>  | iFreqDiv<12>  | iFreqDiv<13>  | iFreqDiv<14>  | iFreqDiv<15>  | iFreqDiv<16>  | iFreqDiv<17>  | iFreqDiv<18>  | iFreqDiv<19>  | iFreqDiv<1>  | iFreqDiv<20>  | iFreqDiv<21>  | iFreqDiv<22>  | iFreqDiv<23>  | iFreqDiv<24>  | iFreqDiv<25>  | iFreqDiv<26>  | iFreqDiv<27>  | iFreqDiv<28>  | iFreqDiv<29>  | iFreqDiv<2>  | iFreqDiv<3>  | iFreqDiv<4>  | iFreqDiv<5>  | iFreqDiv<6>  | iFreqDiv<7>  | iFreqDiv<8>  | iFreqDiv<9>
+INPUTMC | 30 | 3 | 17 | 3 | 15 | 3 | 14 | 3 | 12 | 3 | 11 | 2 | 12 | 1 | 17 | 1 | 15 | 1 | 13 | 1 | 12 | 1 | 11 | 3 | 9 | 1 | 10 | 1 | 9 | 1 | 8 | 1 | 6 | 1 | 3 | 1 | 2 | 1 | 0 | 2 | 11 | 2 | 9 | 2 | 6 | 3 | 8 | 2 | 17 | 3 | 6 | 3 | 5 | 3 | 3 | 3 | 2 | 2 | 14 | 3 | 0
+EQ | 10 | 
+   iFreqDiv<30>.T = iFreqDiv<0> & iFreqDiv<10> & iFreqDiv<11> & 
+	iFreqDiv<12> & iFreqDiv<13> & iFreqDiv<14> & iFreqDiv<15> & 
+	iFreqDiv<16> & iFreqDiv<17> & iFreqDiv<18> & iFreqDiv<19> & 
+	iFreqDiv<1> & iFreqDiv<20> & iFreqDiv<21> & iFreqDiv<22> & 
+	iFreqDiv<23> & iFreqDiv<24> & iFreqDiv<25> & iFreqDiv<26> & 
+	iFreqDiv<27> & iFreqDiv<28> & iFreqDiv<29> & iFreqDiv<2> & 
+	iFreqDiv<3> & iFreqDiv<4> & iFreqDiv<5> & iFreqDiv<6> & 
+	iFreqDiv<7> & iFreqDiv<8> & iFreqDiv<9>;
+   iFreqDiv<30>.CLK = Clk;	// GCK
+   iFreqDiv<30>.AR = Clr;	// GSR
+GLOBALS | 2 | 2 | Clk | 4 | Clr
+
+MACROCELL | 2 | 17 | iFreqDiv<3>
+ATTRIBUTES | 4367104 | 0
+OUTPUTMC | 32 | 2 | 0 | 3 | 15 | 3 | 14 | 3 | 12 | 3 | 11 | 2 | 12 | 1 | 17 | 1 | 15 | 1 | 13 | 1 | 12 | 1 | 11 | 1 | 10 | 1 | 9 | 1 | 8 | 1 | 6 | 1 | 3 | 1 | 2 | 1 | 0 | 2 | 11 | 2 | 9 | 2 | 6 | 2 | 5 | 2 | 17 | 3 | 6 | 3 | 5 | 3 | 3 | 3 | 2 | 2 | 14 | 3 | 0 | 2 | 3 | 2 | 2 | 0 | 1
+INPUTS | 32 | iFreqDiv<0>  | iFreqDiv<1>  | iFreqDiv<2>  | iFreqDiv<10>  | iFreqDiv<11>  | iFreqDiv<12>  | iFreqDiv<13>  | iFreqDiv<14>  | iFreqDiv<15>  | iFreqDiv<16>  | iFreqDiv<17>  | iFreqDiv<18>  | iFreqDiv<19>  | iFreqDiv<20>  | iFreqDiv<21>  | iFreqDiv<22>  | iFreqDiv<23>  | iFreqDiv<24>  | iFreqDiv<25>  | iFreqDiv<26>  | iFreqDiv<27>  | iFreqDiv<28>  | iFreqDiv<29>  | iFreqDiv<30>  | iFreqDiv<3>  | iFreqDiv<4>  | iFreqDiv<5>  | iFreqDiv<6>  | iFreqDiv<7>  | iFreqDiv<8>  | iFreqDiv<9>  | iFreqDiv<31>
+INPUTMC | 32 | 3 | 17 | 3 | 9 | 3 | 8 | 3 | 15 | 3 | 14 | 3 | 12 | 3 | 11 | 2 | 12 | 1 | 17 | 1 | 15 | 1 | 13 | 1 | 12 | 1 | 11 | 1 | 10 | 1 | 9 | 1 | 8 | 1 | 6 | 1 | 3 | 1 | 2 | 1 | 0 | 2 | 11 | 2 | 9 | 2 | 6 | 2 | 5 | 2 | 17 | 3 | 6 | 3 | 5 | 3 | 3 | 3 | 2 | 2 | 14 | 3 | 0 | 2 | 3
+EQ | 12 | 
+   iFreqDiv<3>.T = iFreqDiv<0> & iFreqDiv<1> & iFreqDiv<2>
+	# !iFreqDiv<0> & !iFreqDiv<10> & !iFreqDiv<11> & 
+	!iFreqDiv<12> & !iFreqDiv<13> & !iFreqDiv<14> & !iFreqDiv<15> & 
+	!iFreqDiv<16> & !iFreqDiv<17> & !iFreqDiv<18> & !iFreqDiv<19> & 
+	!iFreqDiv<1> & !iFreqDiv<20> & !iFreqDiv<21> & !iFreqDiv<22> & 
+	!iFreqDiv<23> & !iFreqDiv<24> & !iFreqDiv<25> & !iFreqDiv<26> & 
+	!iFreqDiv<27> & !iFreqDiv<28> & !iFreqDiv<29> & !iFreqDiv<2> & 
+	!iFreqDiv<30> & iFreqDiv<3> & !iFreqDiv<4> & !iFreqDiv<5> & 
+	!iFreqDiv<6> & !iFreqDiv<7> & iFreqDiv<8> & !iFreqDiv<9> & 
+	!iFreqDiv<31>;
+   iFreqDiv<3>.CLK = Clk;	// GCK
+   iFreqDiv<3>.AR = Clr;	// GSR
+GLOBALS | 2 | 2 | Clk | 4 | Clr
+
+MACROCELL | 3 | 6 | iFreqDiv<4>
+ATTRIBUTES | 4367104 | 0
+OUTPUTMC | 31 | 2 | 0 | 3 | 15 | 3 | 14 | 3 | 12 | 3 | 11 | 2 | 12 | 1 | 17 | 1 | 15 | 1 | 13 | 1 | 12 | 1 | 11 | 1 | 10 | 1 | 9 | 1 | 8 | 1 | 6 | 1 | 3 | 1 | 2 | 1 | 0 | 2 | 11 | 2 | 9 | 2 | 6 | 2 | 5 | 2 | 17 | 3 | 5 | 3 | 3 | 3 | 2 | 2 | 14 | 3 | 0 | 2 | 3 | 2 | 2 | 0 | 1
+INPUTS | 4 | iFreqDiv<0>  | iFreqDiv<1>  | iFreqDiv<2>  | iFreqDiv<3>
+INPUTMC | 4 | 3 | 17 | 3 | 9 | 3 | 8 | 2 | 17
+EQ | 4 | 
+   iFreqDiv<4>.T = iFreqDiv<0> & iFreqDiv<1> & iFreqDiv<2> & 
+	iFreqDiv<3>;
+   iFreqDiv<4>.CLK = Clk;	// GCK
+   iFreqDiv<4>.AR = Clr;	// GSR
+GLOBALS | 2 | 2 | Clk | 4 | Clr
+
+MACROCELL | 3 | 5 | iFreqDiv<5>
+ATTRIBUTES | 4367104 | 0
+OUTPUTMC | 30 | 2 | 0 | 3 | 15 | 3 | 14 | 3 | 12 | 3 | 11 | 2 | 12 | 1 | 17 | 1 | 15 | 1 | 13 | 1 | 12 | 1 | 11 | 1 | 10 | 1 | 9 | 1 | 8 | 1 | 6 | 1 | 3 | 1 | 2 | 1 | 0 | 2 | 11 | 2 | 9 | 2 | 6 | 2 | 5 | 2 | 17 | 3 | 3 | 3 | 2 | 2 | 14 | 3 | 0 | 2 | 3 | 2 | 2 | 0 | 1
+INPUTS | 5 | iFreqDiv<0>  | iFreqDiv<1>  | iFreqDiv<2>  | iFreqDiv<3>  | iFreqDiv<4>
+INPUTMC | 5 | 3 | 17 | 3 | 9 | 3 | 8 | 2 | 17 | 3 | 6
+EQ | 4 | 
+   iFreqDiv<5>.T = iFreqDiv<0> & iFreqDiv<1> & iFreqDiv<2> & 
+	iFreqDiv<3> & iFreqDiv<4>;
+   iFreqDiv<5>.CLK = Clk;	// GCK
+   iFreqDiv<5>.AR = Clr;	// GSR
+GLOBALS | 2 | 2 | Clk | 4 | Clr
+
+MACROCELL | 3 | 3 | iFreqDiv<6>
+ATTRIBUTES | 4367104 | 0
+OUTPUTMC | 29 | 2 | 0 | 3 | 15 | 3 | 14 | 3 | 12 | 3 | 11 | 2 | 12 | 1 | 17 | 1 | 15 | 1 | 13 | 1 | 12 | 1 | 11 | 1 | 10 | 1 | 9 | 1 | 8 | 1 | 6 | 1 | 3 | 1 | 2 | 1 | 0 | 2 | 11 | 2 | 9 | 2 | 6 | 2 | 5 | 2 | 17 | 3 | 2 | 2 | 14 | 3 | 0 | 2 | 3 | 2 | 2 | 0 | 1
+INPUTS | 6 | iFreqDiv<0>  | iFreqDiv<1>  | iFreqDiv<2>  | iFreqDiv<3>  | iFreqDiv<4>  | iFreqDiv<5>
+INPUTMC | 6 | 3 | 17 | 3 | 9 | 3 | 8 | 2 | 17 | 3 | 6 | 3 | 5
+EQ | 4 | 
+   iFreqDiv<6>.T = iFreqDiv<0> & iFreqDiv<1> & iFreqDiv<2> & 
+	iFreqDiv<3> & iFreqDiv<4> & iFreqDiv<5>;
+   iFreqDiv<6>.CLK = Clk;	// GCK
+   iFreqDiv<6>.AR = Clr;	// GSR
+GLOBALS | 2 | 2 | Clk | 4 | Clr
+
+MACROCELL | 3 | 2 | iFreqDiv<7>
+ATTRIBUTES | 4367104 | 0
+OUTPUTMC | 28 | 2 | 0 | 3 | 15 | 3 | 14 | 3 | 12 | 3 | 11 | 2 | 12 | 1 | 17 | 1 | 15 | 1 | 13 | 1 | 12 | 1 | 11 | 1 | 10 | 1 | 9 | 1 | 8 | 1 | 6 | 1 | 3 | 1 | 2 | 1 | 0 | 2 | 11 | 2 | 9 | 2 | 6 | 2 | 5 | 2 | 17 | 2 | 14 | 3 | 0 | 2 | 3 | 2 | 2 | 0 | 1
+INPUTS | 7 | iFreqDiv<0>  | iFreqDiv<1>  | iFreqDiv<2>  | iFreqDiv<3>  | iFreqDiv<4>  | iFreqDiv<5>  | iFreqDiv<6>
+INPUTMC | 7 | 3 | 17 | 3 | 9 | 3 | 8 | 2 | 17 | 3 | 6 | 3 | 5 | 3 | 3
+EQ | 4 | 
+   iFreqDiv<7>.T = iFreqDiv<0> & iFreqDiv<1> & iFreqDiv<2> & 
+	iFreqDiv<3> & iFreqDiv<4> & iFreqDiv<5> & iFreqDiv<6>;
+   iFreqDiv<7>.CLK = Clk;	// GCK
+   iFreqDiv<7>.AR = Clr;	// GSR
+GLOBALS | 2 | 2 | Clk | 4 | Clr
+
+MACROCELL | 2 | 14 | iFreqDiv<8>
+ATTRIBUTES | 4367104 | 0
+OUTPUTMC | 28 | 2 | 0 | 3 | 15 | 3 | 14 | 3 | 12 | 3 | 11 | 2 | 12 | 1 | 17 | 1 | 15 | 1 | 13 | 1 | 12 | 1 | 11 | 1 | 10 | 1 | 9 | 1 | 8 | 1 | 6 | 1 | 3 | 1 | 2 | 1 | 0 | 2 | 11 | 2 | 9 | 2 | 6 | 2 | 5 | 2 | 17 | 2 | 14 | 3 | 0 | 2 | 3 | 2 | 2 | 0 | 1
+INPUTS | 32 | iFreqDiv<0>  | iFreqDiv<1>  | iFreqDiv<2>  | iFreqDiv<3>  | iFreqDiv<4>  | iFreqDiv<5>  | iFreqDiv<6>  | iFreqDiv<7>  | iFreqDiv<10>  | iFreqDiv<11>  | iFreqDiv<12>  | iFreqDiv<13>  | iFreqDiv<14>  | iFreqDiv<15>  | iFreqDiv<16>  | iFreqDiv<17>  | iFreqDiv<18>  | iFreqDiv<19>  | iFreqDiv<20>  | iFreqDiv<21>  | iFreqDiv<22>  | iFreqDiv<23>  | iFreqDiv<24>  | iFreqDiv<25>  | iFreqDiv<26>  | iFreqDiv<27>  | iFreqDiv<28>  | iFreqDiv<29>  | iFreqDiv<30>  | iFreqDiv<8>  | iFreqDiv<9>  | iFreqDiv<31>
+INPUTMC | 32 | 3 | 17 | 3 | 9 | 3 | 8 | 2 | 17 | 3 | 6 | 3 | 5 | 3 | 3 | 3 | 2 | 3 | 15 | 3 | 14 | 3 | 12 | 3 | 11 | 2 | 12 | 1 | 17 | 1 | 15 | 1 | 13 | 1 | 12 | 1 | 11 | 1 | 10 | 1 | 9 | 1 | 8 | 1 | 6 | 1 | 3 | 1 | 2 | 1 | 0 | 2 | 11 | 2 | 9 | 2 | 6 | 2 | 5 | 2 | 14 | 3 | 0 | 2 | 3
+EQ | 14 | 
+   iFreqDiv<8>.T = iFreqDiv<0> & iFreqDiv<1> & iFreqDiv<2> & 
+	iFreqDiv<3> & iFreqDiv<4> & iFreqDiv<5> & iFreqDiv<6> & 
+	iFreqDiv<7>
+	# !iFreqDiv<0> & !iFreqDiv<10> & !iFreqDiv<11> & 
+	!iFreqDiv<12> & !iFreqDiv<13> & !iFreqDiv<14> & !iFreqDiv<15> & 
+	!iFreqDiv<16> & !iFreqDiv<17> & !iFreqDiv<18> & !iFreqDiv<19> & 
+	!iFreqDiv<1> & !iFreqDiv<20> & !iFreqDiv<21> & !iFreqDiv<22> & 
+	!iFreqDiv<23> & !iFreqDiv<24> & !iFreqDiv<25> & !iFreqDiv<26> & 
+	!iFreqDiv<27> & !iFreqDiv<28> & !iFreqDiv<29> & !iFreqDiv<2> & 
+	!iFreqDiv<30> & iFreqDiv<3> & !iFreqDiv<4> & !iFreqDiv<5> & 
+	!iFreqDiv<6> & !iFreqDiv<7> & iFreqDiv<8> & !iFreqDiv<9> & 
+	!iFreqDiv<31>;
+   iFreqDiv<8>.CLK = Clk;	// GCK
+   iFreqDiv<8>.AR = Clr;	// GSR
+GLOBALS | 2 | 2 | Clk | 4 | Clr
+
+MACROCELL | 3 | 0 | iFreqDiv<9>
+ATTRIBUTES | 4367104 | 0
+OUTPUTMC | 27 | 2 | 0 | 3 | 15 | 3 | 14 | 3 | 12 | 3 | 11 | 2 | 12 | 1 | 17 | 1 | 15 | 1 | 13 | 1 | 12 | 1 | 11 | 1 | 10 | 1 | 9 | 1 | 8 | 1 | 6 | 1 | 3 | 1 | 2 | 1 | 0 | 2 | 11 | 2 | 9 | 2 | 6 | 2 | 5 | 2 | 17 | 2 | 14 | 2 | 3 | 2 | 2 | 0 | 1
+INPUTS | 9 | iFreqDiv<0>  | iFreqDiv<1>  | iFreqDiv<2>  | iFreqDiv<3>  | iFreqDiv<4>  | iFreqDiv<5>  | iFreqDiv<6>  | iFreqDiv<7>  | iFreqDiv<8>
+INPUTMC | 9 | 3 | 17 | 3 | 9 | 3 | 8 | 2 | 17 | 3 | 6 | 3 | 5 | 3 | 3 | 3 | 2 | 2 | 14
+EQ | 5 | 
+   iFreqDiv<9>.T = iFreqDiv<0> & iFreqDiv<1> & iFreqDiv<2> & 
+	iFreqDiv<3> & iFreqDiv<4> & iFreqDiv<5> & iFreqDiv<6> & 
+	iFreqDiv<7> & iFreqDiv<8>;
+   iFreqDiv<9>.CLK = Clk;	// GCK
+   iFreqDiv<9>.AR = Clr;	// GSR
+GLOBALS | 2 | 2 | Clk | 4 | Clr
+
+MACROCELL | 2 | 3 | iFreqDiv<31>
+ATTRIBUTES | 4367104 | 0
+OUTPUTMC | 5 | 2 | 0 | 2 | 17 | 2 | 14 | 2 | 2 | 0 | 1
+INPUTS | 31 | iFreqDiv<0>  | iFreqDiv<10>  | iFreqDiv<11>  | iFreqDiv<12>  | iFreqDiv<13>  | iFreqDiv<14>  | iFreqDiv<15>  | iFreqDiv<16>  | iFreqDiv<17>  | iFreqDiv<18>  | iFreqDiv<19>  | iFreqDiv<1>  | iFreqDiv<20>  | iFreqDiv<21>  | iFreqDiv<22>  | iFreqDiv<23>  | iFreqDiv<24>  | iFreqDiv<25>  | iFreqDiv<26>  | iFreqDiv<27>  | iFreqDiv<28>  | iFreqDiv<29>  | iFreqDiv<2>  | iFreqDiv<30>  | iFreqDiv<3>  | iFreqDiv<4>  | iFreqDiv<5>  | iFreqDiv<6>  | iFreqDiv<7>  | iFreqDiv<8>  | iFreqDiv<9>
+INPUTMC | 31 | 3 | 17 | 3 | 15 | 3 | 14 | 3 | 12 | 3 | 11 | 2 | 12 | 1 | 17 | 1 | 15 | 1 | 13 | 1 | 12 | 1 | 11 | 3 | 9 | 1 | 10 | 1 | 9 | 1 | 8 | 1 | 6 | 1 | 3 | 1 | 2 | 1 | 0 | 2 | 11 | 2 | 9 | 2 | 6 | 3 | 8 | 2 | 5 | 2 | 17 | 3 | 6 | 3 | 5 | 3 | 3 | 3 | 2 | 2 | 14 | 3 | 0
+EQ | 10 | 
+   iFreqDiv<31>.T = iFreqDiv<0> & iFreqDiv<10> & iFreqDiv<11> & 
+	iFreqDiv<12> & iFreqDiv<13> & iFreqDiv<14> & iFreqDiv<15> & 
+	iFreqDiv<16> & iFreqDiv<17> & iFreqDiv<18> & iFreqDiv<19> & 
+	iFreqDiv<1> & iFreqDiv<20> & iFreqDiv<21> & iFreqDiv<22> & 
+	iFreqDiv<23> & iFreqDiv<24> & iFreqDiv<25> & iFreqDiv<26> & 
+	iFreqDiv<27> & iFreqDiv<28> & iFreqDiv<29> & iFreqDiv<2> & 
+	iFreqDiv<30> & iFreqDiv<3> & iFreqDiv<4> & iFreqDiv<5> & 
+	iFreqDiv<6> & iFreqDiv<7> & iFreqDiv<8> & iFreqDiv<9>;
+   iFreqDiv<31>.CLK = Clk;	// GCK
+   iFreqDiv<31>.AR = Clr;	// GSR
+GLOBALS | 2 | 2 | Clk | 4 | Clr
+
+MACROCELL | 2 | 2 | stCnt<0>
+ATTRIBUTES | 4358976 | 0
+OUTPUTMC | 1 | 0 | 1
+INPUTS | 33 | Clr  | iFreqDiv<0>  | iFreqDiv<10>  | iFreqDiv<11>  | iFreqDiv<12>  | iFreqDiv<13>  | iFreqDiv<14>  | iFreqDiv<15>  | iFreqDiv<16>  | iFreqDiv<17>  | iFreqDiv<18>  | iFreqDiv<19>  | iFreqDiv<1>  | iFreqDiv<20>  | iFreqDiv<21>  | iFreqDiv<22>  | iFreqDiv<23>  | iFreqDiv<24>  | iFreqDiv<25>  | iFreqDiv<26>  | iFreqDiv<27>  | iFreqDiv<28>  | iFreqDiv<29>  | iFreqDiv<2>  | iFreqDiv<30>  | iFreqDiv<3>  | iFreqDiv<4>  | iFreqDiv<5>  | iFreqDiv<6>  | iFreqDiv<7>  | iFreqDiv<8>  | iFreqDiv<9>  | iFreqDiv<31>
+INPUTMC | 32 | 3 | 17 | 3 | 15 | 3 | 14 | 3 | 12 | 3 | 11 | 2 | 12 | 1 | 17 | 1 | 15 | 1 | 13 | 1 | 12 | 1 | 11 | 3 | 9 | 1 | 10 | 1 | 9 | 1 | 8 | 1 | 6 | 1 | 3 | 1 | 2 | 1 | 0 | 2 | 11 | 2 | 9 | 2 | 6 | 3 | 8 | 2 | 5 | 2 | 17 | 3 | 6 | 3 | 5 | 3 | 3 | 3 | 2 | 2 | 14 | 3 | 0 | 2 | 3
+INPUTP | 1 | 92
+EQ | 11 | 
+   stCnt<0>.T = Vcc;
+   stCnt<0>.CLK = Clk;	// GCK
+   stCnt<0>.CE = !Clr & !iFreqDiv<0> & !iFreqDiv<10> & !iFreqDiv<11> & 
+	!iFreqDiv<12> & !iFreqDiv<13> & !iFreqDiv<14> & !iFreqDiv<15> & 
+	!iFreqDiv<16> & !iFreqDiv<17> & !iFreqDiv<18> & !iFreqDiv<19> & 
+	!iFreqDiv<1> & !iFreqDiv<20> & !iFreqDiv<21> & !iFreqDiv<22> & 
+	!iFreqDiv<23> & !iFreqDiv<24> & !iFreqDiv<25> & !iFreqDiv<26> & 
+	!iFreqDiv<27> & !iFreqDiv<28> & !iFreqDiv<29> & !iFreqDiv<2> & 
+	!iFreqDiv<30> & iFreqDiv<3> & !iFreqDiv<4> & !iFreqDiv<5> & 
+	!iFreqDiv<6> & !iFreqDiv<7> & iFreqDiv<8> & !iFreqDiv<9> & 
+	!iFreqDiv<31>;
+GLOBALS | 1 | 2 | Clk
+
+MACROCELL | 0 | 1 | StartOUT_OBUF
+ATTRIBUTES | 8815362 | 0
+OUTPUTMC | 1 | 0 | 1
+INPUTS | 35 | iFreqDiv<0>  | iFreqDiv<10>  | iFreqDiv<11>  | iFreqDiv<12>  | iFreqDiv<13>  | iFreqDiv<14>  | iFreqDiv<15>  | iFreqDiv<16>  | iFreqDiv<17>  | iFreqDiv<18>  | iFreqDiv<19>  | iFreqDiv<1>  | iFreqDiv<20>  | iFreqDiv<21>  | iFreqDiv<22>  | iFreqDiv<23>  | iFreqDiv<24>  | iFreqDiv<25>  | iFreqDiv<26>  | iFreqDiv<27>  | iFreqDiv<28>  | iFreqDiv<29>  | iFreqDiv<2>  | iFreqDiv<30>  | iFreqDiv<3>  | iFreqDiv<4>  | iFreqDiv<5>  | iFreqDiv<6>  | iFreqDiv<7>  | iFreqDiv<8>  | iFreqDiv<9>  | iFreqDiv<31>  | StartOUT  | Clr  | stCnt<0>
+INPUTMC | 34 | 3 | 17 | 3 | 15 | 3 | 14 | 3 | 12 | 3 | 11 | 2 | 12 | 1 | 17 | 1 | 15 | 1 | 13 | 1 | 12 | 1 | 11 | 3 | 9 | 1 | 10 | 1 | 9 | 1 | 8 | 1 | 6 | 1 | 3 | 1 | 2 | 1 | 0 | 2 | 11 | 2 | 9 | 2 | 6 | 3 | 8 | 2 | 5 | 2 | 17 | 3 | 6 | 3 | 5 | 3 | 3 | 3 | 2 | 2 | 14 | 3 | 0 | 2 | 3 | 0 | 1 | 2 | 2
+INPUTP | 1 | 92
+EQ | 20 | 
+   StartOUT.D = Clr & StartOUT
+	# !iFreqDiv<0> & !iFreqDiv<10> & !iFreqDiv<11> & 
+	!iFreqDiv<12> & !iFreqDiv<13> & !iFreqDiv<14> & !iFreqDiv<15> & 
+	!iFreqDiv<16> & !iFreqDiv<17> & !iFreqDiv<18> & !iFreqDiv<19> & 
+	!iFreqDiv<1> & !iFreqDiv<20> & !iFreqDiv<21> & !iFreqDiv<22> & 
+	!iFreqDiv<23> & !iFreqDiv<24> & !iFreqDiv<25> & !iFreqDiv<26> & 
+	!iFreqDiv<27> & !iFreqDiv<28> & !iFreqDiv<29> & !iFreqDiv<2> & 
+	!iFreqDiv<30> & iFreqDiv<3> & !iFreqDiv<4> & !iFreqDiv<5> & 
+	!iFreqDiv<6> & !iFreqDiv<7> & iFreqDiv<8> & !iFreqDiv<9> & 
+	!iFreqDiv<31> & StartOUT
+	# !Clr & !iFreqDiv<0> & !iFreqDiv<10> & !iFreqDiv<11> & 
+	!iFreqDiv<12> & !iFreqDiv<13> & !iFreqDiv<14> & !iFreqDiv<15> & 
+	!iFreqDiv<16> & !iFreqDiv<17> & !iFreqDiv<18> & !iFreqDiv<19> & 
+	!iFreqDiv<1> & !iFreqDiv<20> & !iFreqDiv<21> & !iFreqDiv<22> & 
+	!iFreqDiv<23> & !iFreqDiv<24> & !iFreqDiv<25> & !iFreqDiv<26> & 
+	!iFreqDiv<27> & !iFreqDiv<28> & !iFreqDiv<29> & !iFreqDiv<2> & 
+	!iFreqDiv<30> & iFreqDiv<3> & !iFreqDiv<4> & !iFreqDiv<5> & 
+	!iFreqDiv<6> & !iFreqDiv<7> & iFreqDiv<8> & !iFreqDiv<9> & 
+	!iFreqDiv<31> & !stCnt<0>;
+   StartOUT.CLK = Clk;	// GCK
+GLOBALS | 1 | 2 | Clk
+
+MACROCELL | 3 | 16 | AddrOUT_1_OBUF
+ATTRIBUTES | 264962 | 0
+INPUTS | 0
+EQ | 1 | 
+   CmdOUT<1> = Vcc;
+
+MACROCELL | 2 | 1 | AddrOUT_1_OBUF$BUF0
+ATTRIBUTES | 264962 | 0
+INPUTS | 0
+EQ | 1 | 
+   CmdOUT<0> = Vcc;
+
+MACROCELL | 2 | 4 | AddrOUT_1_OBUF$BUF1
+ATTRIBUTES | 264962 | 0
+INPUTS | 0
+EQ | 1 | 
+   AddrOUT<1> = Vcc;
+
+MACROCELL | 2 | 7 | SawtoothOUT_0_OBUF
+ATTRIBUTES | 264962 | 0
+INPUTS | 0
+EQ | 1 | 
+   SawtoothOUT<5> = Gnd;
+
+MACROCELL | 2 | 8 | SawtoothOUT_0_OBUF$BUF0
+ATTRIBUTES | 264962 | 0
+INPUTS | 0
+EQ | 1 | 
+   SawtoothOUT<4> = Gnd;
+
+MACROCELL | 2 | 10 | SawtoothOUT_0_OBUF$BUF1
+ATTRIBUTES | 264962 | 0
+INPUTS | 0
+EQ | 1 | 
+   SawtoothOUT<3> = Gnd;
+
+MACROCELL | 2 | 13 | SawtoothOUT_0_OBUF$BUF2
+ATTRIBUTES | 264962 | 0
+INPUTS | 0
+EQ | 1 | 
+   SawtoothOUT<2> = Gnd;
+
+MACROCELL | 2 | 15 | SawtoothOUT_0_OBUF$BUF3
+ATTRIBUTES | 264962 | 0
+INPUTS | 0
+EQ | 1 | 
+   SawtoothOUT<1> = Gnd;
+
+MACROCELL | 2 | 16 | SawtoothOUT_0_OBUF$BUF4
+ATTRIBUTES | 264962 | 0
+INPUTS | 0
+EQ | 1 | 
+   SawtoothOUT<0> = Gnd;
+
+MACROCELL | 3 | 1 | SawtoothOUT_0_OBUF$BUF5
+ATTRIBUTES | 264962 | 0
+INPUTS | 0
+EQ | 1 | 
+   CmdOUT<3> = Gnd;
+
+MACROCELL | 3 | 4 | SawtoothOUT_0_OBUF$BUF6
+ATTRIBUTES | 264962 | 0
+INPUTS | 0
+EQ | 1 | 
+   CmdOUT<2> = Gnd;
+
+MACROCELL | 3 | 7 | SawtoothOUT_0_OBUF$BUF7
+ATTRIBUTES | 264962 | 0
+INPUTS | 0
+EQ | 1 | 
+   AddrOUT<3> = Gnd;
+
+MACROCELL | 3 | 10 | SawtoothOUT_0_OBUF$BUF8
+ATTRIBUTES | 264962 | 0
+INPUTS | 0
+EQ | 1 | 
+   AddrOUT<2> = Gnd;
+
+MACROCELL | 3 | 13 | SawtoothOUT_0_OBUF$BUF9
+ATTRIBUTES | 264962 | 0
+INPUTS | 0
+EQ | 1 | 
+   AddrOUT<0> = Gnd;
+
+PIN | Clk | 4096 | 0 | N/A | 20 | 35 | 2 | 0 | 3 | 17 | 3 | 15 | 3 | 14 | 3 | 12 | 3 | 11 | 2 | 12 | 1 | 17 | 1 | 15 | 1 | 13 | 1 | 12 | 1 | 11 | 3 | 9 | 1 | 10 | 1 | 9 | 1 | 8 | 1 | 6 | 1 | 3 | 1 | 2 | 1 | 0 | 2 | 11 | 2 | 9 | 2 | 6 | 3 | 8 | 2 | 5 | 2 | 17 | 3 | 6 | 3 | 5 | 3 | 3 | 3 | 2 | 2 | 14 | 3 | 0 | 2 | 3 | 2 | 2 | 0 | 1
+PIN | Clr | 65600 | 0 | N/A | 92 | 41 | 2 | 2 | 0 | 1 | 2 | 0 | 1 | 16 | 1 | 1 | 1 | 4 | 1 | 5 | 1 | 7 | 1 | 14 | 3 | 17 | 3 | 15 | 3 | 14 | 3 | 12 | 3 | 11 | 2 | 12 | 1 | 17 | 1 | 15 | 1 | 13 | 1 | 12 | 1 | 11 | 3 | 9 | 1 | 10 | 1 | 9 | 1 | 8 | 1 | 6 | 1 | 3 | 1 | 2 | 1 | 0 | 2 | 11 | 2 | 9 | 2 | 6 | 3 | 8 | 2 | 5 | 2 | 17 | 3 | 6 | 3 | 5 | 3 | 3 | 3 | 2 | 2 | 14 | 3 | 0 | 2 | 3
+PIN | SawtoothOUT<6> | 536871040 | 0 | N/A | 10
+PIN | SawtoothOUT<7> | 536871040 | 0 | N/A | 87
+PIN | SawtoothOUT<8> | 536871040 | 0 | N/A | 88
+PIN | SawtoothOUT<9> | 536871040 | 0 | N/A | 89
+PIN | SawtoothOUT<10> | 536871040 | 0 | N/A | 90
+PIN | SawtoothOUT<11> | 536871040 | 0 | N/A | 9
+PIN | StartOUT | 536871040 | 0 | N/A | 11
+PIN | CmdOUT<1> | 536871040 | 0 | N/A | 83
+PIN | CmdOUT<0> | 536871040 | 0 | N/A | 29
+PIN | AddrOUT<1> | 536871040 | 0 | N/A | 31
+PIN | SawtoothOUT<5> | 536871040 | 0 | N/A | 33
+PIN | SawtoothOUT<4> | 536871040 | 0 | N/A | 38
+PIN | SawtoothOUT<3> | 536871040 | 0 | N/A | 46
+PIN | SawtoothOUT<2> | 536871040 | 0 | N/A | 49
+PIN | SawtoothOUT<1> | 536871040 | 0 | N/A | 59
+PIN | SawtoothOUT<0> | 536871040 | 0 | N/A | 52
+PIN | CmdOUT<3> | 536871040 | 0 | N/A | 62
+PIN | CmdOUT<2> | 536871040 | 0 | N/A | 63
+PIN | AddrOUT<3> | 536871040 | 0 | N/A | 65
+PIN | AddrOUT<2> | 536871040 | 0 | N/A | 68
+PIN | AddrOUT<0> | 536871040 | 0 | N/A | 72

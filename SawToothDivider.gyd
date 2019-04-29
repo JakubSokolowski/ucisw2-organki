@@ -1,0 +1,49 @@
+Pin Freeze File:  version P.20131013
+
+9572XL44PC XC9572XL-10-PC44
+Clk S:PIN5
+Clr S:PIN39
+CmdOUT<1> S:PIN34
+CmdOUT<0> S:PIN11
+AddrOUT<1> S:PIN12
+SawtoothOUT<5> S:PIN13
+SawtoothOUT<4> S:PIN14
+SawtoothOUT<3> S:PIN18
+SawtoothOUT<2> S:PIN19
+SawtoothOUT<1> S:PIN24
+SawtoothOUT<0> S:PIN22
+CmdOUT<3> S:PIN25
+CmdOUT<2> S:PIN26
+AddrOUT<3> S:PIN27
+AddrOUT<2> S:PIN28
+AddrOUT<0> S:PIN29
+StartOUT S:PIN1
+SawtoothOUT<6> S:PIN44
+SawtoothOUT<7> S:PIN35
+SawtoothOUT<8> S:PIN36
+SawtoothOUT<9> S:PIN37
+SawtoothOUT<10> S:PIN38
+SawtoothOUT<11> S:PIN43
+
+
+;The remaining section of the .gyd file is for documentation purposes only.
+;It shows where your internal equations were placed in the last successful fit.
+
+PARTITION FB1_2 StartOUT_OBUF
+
+PARTITION FB2_1 iFreqDiv<26> iSawGen<1> iFreqDiv<25> iFreqDiv<24>
+		 iSawGen<2> iSawGen<3> iFreqDiv<23> iSawGen<4>
+		 iFreqDiv<22> iFreqDiv<21> iFreqDiv<20> iFreqDiv<19>
+		 iFreqDiv<18> iFreqDiv<17> iSawGen<5> iFreqDiv<16>
+		 iSawGen<0> iFreqDiv<15>
+PARTITION FB3_1 tmpFreqDiv AddrOUT_1_OBUF$BUF0 stCnt<0> iFreqDiv<31>
+		 AddrOUT_1_OBUF$BUF1 iFreqDiv<30> iFreqDiv<29> SawtoothOUT_0_OBUF
+		 SawtoothOUT_0_OBUF$BUF0 iFreqDiv<28> SawtoothOUT_0_OBUF$BUF1 iFreqDiv<27>
+		 iFreqDiv<14> SawtoothOUT_0_OBUF$BUF2 iFreqDiv<8> SawtoothOUT_0_OBUF$BUF3
+		 SawtoothOUT_0_OBUF$BUF4 iFreqDiv<3>
+PARTITION FB4_1 iFreqDiv<9> SawtoothOUT_0_OBUF$BUF5 iFreqDiv<7> iFreqDiv<6>
+		 SawtoothOUT_0_OBUF$BUF6 iFreqDiv<5> iFreqDiv<4> SawtoothOUT_0_OBUF$BUF7
+		 iFreqDiv<2> iFreqDiv<1> SawtoothOUT_0_OBUF$BUF8 iFreqDiv<13>
+		 iFreqDiv<12> SawtoothOUT_0_OBUF$BUF9 iFreqDiv<11> iFreqDiv<10>
+		 AddrOUT_1_OBUF iFreqDiv<0>
+

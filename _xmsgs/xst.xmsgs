@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="warning" file="Xst" num="753" delta="old" >&quot;<arg fmt="%s" index="1">C:/Users/lab/Desktop/ucisw2-organki/SawToothSchematic.vhf</arg>&quot; line <arg fmt="%d" index="2">117</arg>: Unconnected output port &apos;<arg fmt="%s" index="3">Busy</arg>&apos; of component &apos;<arg fmt="%s" index="4">DACWrite</arg>&apos;.
+</msg>
+
+<msg type="warning" file="Xst" num="2211" delta="old" >&quot;<arg fmt="%s" index="1">C:/Users/lab/Desktop/ucisw2-organki/SawToothSchematic.vhf</arg>&quot; line <arg fmt="%d" index="2">117</arg>: Instantiating black box module &lt;<arg fmt="%s" index="3">DACWrite</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="753" delta="old" >&quot;<arg fmt="%s" index="1">C:/Users/lab/Desktop/ucisw2-organki/SawToothSchematic.vhf</arg>&quot; line <arg fmt="%d" index="2">145</arg>: Unconnected output port &apos;<arg fmt="%s" index="3">E0</arg>&apos; of component &apos;<arg fmt="%s" index="4">PS2_Kbd</arg>&apos;.
+</msg>
+
+<msg type="warning" file="Xst" num="2211" delta="old" >&quot;<arg fmt="%s" index="1">C:/Users/lab/Desktop/ucisw2-organki/SawToothSchematic.vhf</arg>&quot; line <arg fmt="%d" index="2">145</arg>: Instantiating black box module &lt;<arg fmt="%s" index="3">PS2_Kbd</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="819" delta="old" >&quot;<arg fmt="%s" index="1">C:/Users/lab/Desktop/ucisw2-organki/SawToothDivider.vhd</arg>&quot; line <arg fmt="%d" index="2">96</arg>: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+<arg fmt="%s" index="3">&lt;Freq&gt;</arg>
+</msg>
+
+<msg type="warning" file="Xst" num="819" delta="old" >&quot;<arg fmt="%s" index="1">C:/Users/lab/Desktop/ucisw2-organki/FreqButton.vhd</arg>&quot; line <arg fmt="%d" index="2">59</arg>: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+<arg fmt="%s" index="3">&lt;F0&gt;</arg>
+</msg>
+
+<msg type="info" file="Xst" num="2679" delta="old" >Register &lt;<arg fmt="%s" index="1">tmp</arg>&gt; in unit &lt;<arg fmt="%s" index="2">FreqButton</arg>&gt; has a constant value of <arg fmt="%s" index="3">0</arg> during circuit operation. The register is replaced by logic.
+</msg>
+
+<msg type="warning" file="Xst" num="1780" delta="old" >Signal &lt;<arg fmt="%s" index="1">Cmd&lt;31:4&gt;</arg>&gt; is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="653" delta="old" >Signal &lt;<arg fmt="%s" index="1">Cmd&lt;3:0&gt;</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">0011</arg>.
+</msg>
+
+<msg type="warning" file="Xst" num="1780" delta="old" >Signal &lt;<arg fmt="%s" index="1">Addr&lt;31:4&gt;</arg>&gt; is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="653" delta="old" >Signal &lt;<arg fmt="%s" index="1">Addr&lt;3:0&gt;</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">0010</arg>.
+</msg>
+
+<msg type="warning" file="Xst" num="646" delta="old" >Signal &lt;<arg fmt="%s" index="1">tmp&lt;0&gt;</arg>&gt; is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="653" delta="old" >Signal &lt;<arg fmt="%s" index="1">SPI_MISO_DUMMY</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">0</arg>.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">stCnt_1</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SawToothDivider</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">stCnt_2</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SawToothDivider</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">stCnt_3</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SawToothDivider</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">stCnt_4</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SawToothDivider</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">stCnt_5</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SawToothDivider</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">stCnt_6</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SawToothDivider</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">stCnt_7</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SawToothDivider</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">stCnt_8</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SawToothDivider</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">stCnt_9</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SawToothDivider</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">stCnt_10</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SawToothDivider</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">stCnt_11</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SawToothDivider</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">stCnt_12</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SawToothDivider</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">stCnt_13</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SawToothDivider</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">stCnt_14</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SawToothDivider</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">stCnt_15</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SawToothDivider</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">stCnt_16</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SawToothDivider</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">stCnt_17</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SawToothDivider</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">stCnt_18</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SawToothDivider</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">stCnt_19</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SawToothDivider</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">stCnt_20</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SawToothDivider</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">stCnt_21</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SawToothDivider</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">stCnt_22</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SawToothDivider</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">stCnt_23</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SawToothDivider</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">stCnt_24</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SawToothDivider</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">stCnt_25</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SawToothDivider</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">stCnt_26</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SawToothDivider</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">stCnt_27</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SawToothDivider</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">stCnt_28</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SawToothDivider</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">stCnt_29</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SawToothDivider</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">stCnt_30</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SawToothDivider</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">stCnt_31</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SawToothDivider</arg>&gt;.
+</msg>
+
+</messages>
+

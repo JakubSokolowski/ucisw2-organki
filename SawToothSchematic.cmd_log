@@ -1,0 +1,113 @@
+xst -intstyle ise -ifn "C:/Users/lab/Desktop/ucisw2-organki/ucisw2-organki/SawToothSchematic.xst" -ofn "C:/Users/lab/Desktop/ucisw2-organki/ucisw2-organki/SawToothSchematic.syr" 
+xst -intstyle ise -ifn "C:/Users/lab/Desktop/ucisw2-organki/ucisw2-organki/SawToothSchematic.xst" -ofn "C:/Users/lab/Desktop/ucisw2-organki/ucisw2-organki/SawToothSchematic.syr" 
+ngdbuild -intstyle ise -dd _ngo -i -p xc9572xl-PC44-10 SawToothSchematic.ngc SawToothSchematic.ngd  
+xst -intstyle ise -ifn "C:/Users/lab/Desktop/ucisw2-organki/ucisw2-organki/SawToothSchematic.xst" -ofn "C:/Users/lab/Desktop/ucisw2-organki/ucisw2-organki/SawToothSchematic.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc ZL-9572.ucf -p xc9572xl-PC44-10 SawToothSchematic.ngc SawToothSchematic.ngd  
+xst -intstyle ise -ifn "C:/Users/lab/Desktop/ucisw2-organki/ucisw2-organki/SawToothSchematic.xst" -ofn "C:/Users/lab/Desktop/ucisw2-organki/ucisw2-organki/SawToothSchematic.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc ZL-9572.ucf -p xc9572xl-PC44-10 SawToothSchematic.ngc SawToothSchematic.ngd  
+ngdbuild -intstyle ise -dd _ngo -uc ZL-9572.ucf -p xc9572xl-PC44-10 SawToothSchematic.ngc SawToothSchematic.ngd  
+xst -intstyle ise -ifn "C:/Users/lab/Desktop/ucisw2-organki/ucisw2-organki/SawToothSchematic.xst" -ofn "C:/Users/lab/Desktop/ucisw2-organki/ucisw2-organki/SawToothSchematic.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ZL-9572.ucf -p xc3s500e-fg320-4 SawToothSchematic.ngc SawToothSchematic.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o SawToothSchematic_map.ncd SawToothSchematic.ngd SawToothSchematic.pcf 
+par -w -intstyle ise -ol high -t 1 SawToothSchematic_map.ncd SawToothSchematic.ncd SawToothSchematic.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml SawToothSchematic.twx SawToothSchematic.ncd -o SawToothSchematic.twr SawToothSchematic.pcf -ucf ZL-9572.ucf 
+bitgen -intstyle ise -f SawToothSchematic.ut SawToothSchematic.ncd 
+xst -intstyle ise -ifn "C:/Users/lab/Desktop/ucisw2-organki/ucisw2-organki/SawToothSchematic.xst" -ofn "C:/Users/lab/Desktop/ucisw2-organki/ucisw2-organki/SawToothSchematic.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ZL-9572.ucf -p xc3s500e-fg320-4 SawToothSchematic.ngc SawToothSchematic.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o SawToothSchematic_map.ncd SawToothSchematic.ngd SawToothSchematic.pcf 
+par -w -intstyle ise -ol high -t 1 SawToothSchematic_map.ncd SawToothSchematic.ncd SawToothSchematic.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml SawToothSchematic.twx SawToothSchematic.ncd -o SawToothSchematic.twr SawToothSchematic.pcf -ucf ZL-9572.ucf 
+xst -intstyle ise -ifn "C:/Users/lab/Desktop/ucisw2-organki/ucisw2-organki/SawToothSchematic.xst" -ofn "C:/Users/lab/Desktop/ucisw2-organki/ucisw2-organki/SawToothSchematic.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ZL-9572.ucf -p xc3s500e-fg320-4 SawToothSchematic.ngc SawToothSchematic.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o SawToothSchematic_map.ncd SawToothSchematic.ngd SawToothSchematic.pcf 
+par -w -intstyle ise -ol high -t 1 SawToothSchematic_map.ncd SawToothSchematic.ncd SawToothSchematic.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml SawToothSchematic.twx SawToothSchematic.ncd -o SawToothSchematic.twr SawToothSchematic.pcf -ucf ZL-9572.ucf 
+bitgen -intstyle ise -f SawToothSchematic.ut SawToothSchematic.ncd 
+xst -intstyle ise -ifn "C:/Users/lab/Desktop/ucisw2-organki/SawToothSchematic.xst" -ofn "C:/Users/lab/Desktop/ucisw2-organki/SawToothSchematic.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ZL-9572.ucf -p xc3s500e-fg320-4 SawToothSchematic.ngc SawToothSchematic.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o SawToothSchematic_map.ncd SawToothSchematic.ngd SawToothSchematic.pcf 
+par -w -intstyle ise -ol high -t 1 SawToothSchematic_map.ncd SawToothSchematic.ncd SawToothSchematic.pcf 
+xst -intstyle ise -ifn "C:/Users/lab/Desktop/ucisw2-organki/SawToothSchematic.xst" -ofn "C:/Users/lab/Desktop/ucisw2-organki/SawToothSchematic.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ZL-9572.ucf -p xc3s500e-fg320-4 SawToothSchematic.ngc SawToothSchematic.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o SawToothSchematic_map.ncd SawToothSchematic.ngd SawToothSchematic.pcf 
+par -w -intstyle ise -ol high -t 1 SawToothSchematic_map.ncd SawToothSchematic.ncd SawToothSchematic.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml SawToothSchematic.twx SawToothSchematic.ncd -o SawToothSchematic.twr SawToothSchematic.pcf -ucf ZL-9572.ucf 
+bitgen -intstyle ise -f SawToothSchematic.ut SawToothSchematic.ncd 
+xst -intstyle ise -ifn "C:/Users/lab/Desktop/ucisw2-organki/SawToothSchematic.xst" -ofn "C:/Users/lab/Desktop/ucisw2-organki/SawToothSchematic.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ZL-9572.ucf -p xc3s500e-fg320-4 SawToothSchematic.ngc SawToothSchematic.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o SawToothSchematic_map.ncd SawToothSchematic.ngd SawToothSchematic.pcf 
+par -w -intstyle ise -ol high -t 1 SawToothSchematic_map.ncd SawToothSchematic.ncd SawToothSchematic.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml SawToothSchematic.twx SawToothSchematic.ncd -o SawToothSchematic.twr SawToothSchematic.pcf -ucf ZL-9572.ucf 
+bitgen -intstyle ise -f SawToothSchematic.ut SawToothSchematic.ncd 
+xst -intstyle ise -ifn "C:/Users/lab/Desktop/ucisw2-organki/SawToothSchematic.xst" -ofn "C:/Users/lab/Desktop/ucisw2-organki/SawToothSchematic.syr" 
+xst -intstyle ise -ifn "C:/Users/lab/Desktop/ucisw2-organki/SawToothSchematic.xst" -ofn "C:/Users/lab/Desktop/ucisw2-organki/SawToothSchematic.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ZL-9572.ucf -p xc3s500e-fg320-4 SawToothSchematic.ngc SawToothSchematic.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o SawToothSchematic_map.ncd SawToothSchematic.ngd SawToothSchematic.pcf 
+par -w -intstyle ise -ol high -t 1 SawToothSchematic_map.ncd SawToothSchematic.ncd SawToothSchematic.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml SawToothSchematic.twx SawToothSchematic.ncd -o SawToothSchematic.twr SawToothSchematic.pcf -ucf ZL-9572.ucf 
+bitgen -intstyle ise -f SawToothSchematic.ut SawToothSchematic.ncd 
+xst -intstyle ise -ifn "C:/Users/lab/Desktop/ucisw2-organki/SawToothSchematic.xst" -ofn "C:/Users/lab/Desktop/ucisw2-organki/SawToothSchematic.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ZL-9572.ucf -p xc3s500e-fg320-4 SawToothSchematic.ngc SawToothSchematic.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o SawToothSchematic_map.ncd SawToothSchematic.ngd SawToothSchematic.pcf 
+par -w -intstyle ise -ol high -t 1 SawToothSchematic_map.ncd SawToothSchematic.ncd SawToothSchematic.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml SawToothSchematic.twx SawToothSchematic.ncd -o SawToothSchematic.twr SawToothSchematic.pcf -ucf ZL-9572.ucf 
+bitgen -intstyle ise -f SawToothSchematic.ut SawToothSchematic.ncd 
+xst -intstyle ise -ifn "C:/Users/lab/Desktop/ucisw2-organki/SawToothSchematic.xst" -ofn "C:/Users/lab/Desktop/ucisw2-organki/SawToothSchematic.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ZL-9572.ucf -p xc3s500e-fg320-4 SawToothSchematic.ngc SawToothSchematic.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o SawToothSchematic_map.ncd SawToothSchematic.ngd SawToothSchematic.pcf 
+par -w -intstyle ise -ol high -t 1 SawToothSchematic_map.ncd SawToothSchematic.ncd SawToothSchematic.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml SawToothSchematic.twx SawToothSchematic.ncd -o SawToothSchematic.twr SawToothSchematic.pcf -ucf ZL-9572.ucf 
+bitgen -intstyle ise -f SawToothSchematic.ut SawToothSchematic.ncd 
+xst -intstyle ise -ifn "C:/Users/lab/Desktop/ucisw2-organki/SawToothSchematic.xst" -ofn "C:/Users/lab/Desktop/ucisw2-organki/SawToothSchematic.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ZL-9572.ucf -p xc3s500e-fg320-4 SawToothSchematic.ngc SawToothSchematic.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o SawToothSchematic_map.ncd SawToothSchematic.ngd SawToothSchematic.pcf 
+par -w -intstyle ise -ol high -t 1 SawToothSchematic_map.ncd SawToothSchematic.ncd SawToothSchematic.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml SawToothSchematic.twx SawToothSchematic.ncd -o SawToothSchematic.twr SawToothSchematic.pcf -ucf ZL-9572.ucf 
+bitgen -intstyle ise -f SawToothSchematic.ut SawToothSchematic.ncd 
+xst -intstyle ise -ifn "C:/Users/lab/Desktop/ucisw2-organki/SawToothSchematic.xst" -ofn "C:/Users/lab/Desktop/ucisw2-organki/SawToothSchematic.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ZL-9572.ucf -p xc3s500e-fg320-4 SawToothSchematic.ngc SawToothSchematic.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o SawToothSchematic_map.ncd SawToothSchematic.ngd SawToothSchematic.pcf 
+par -w -intstyle ise -ol high -t 1 SawToothSchematic_map.ncd SawToothSchematic.ncd SawToothSchematic.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml SawToothSchematic.twx SawToothSchematic.ncd -o SawToothSchematic.twr SawToothSchematic.pcf -ucf ZL-9572.ucf 
+sch2sym -intstyle ise -family spartan3e -refsym SawToothSchematic C:/Users/lab/Desktop/ucisw2-organki/SawToothSchematic.sch C:/Users/lab/Desktop/ucisw2-organki/SawToothSchematic.sym 
+sch2hdl -intstyle ise -family spartan3e -flat -suppress -vhdl SawToothSchematic_drc.vhf -w C:/Users/lab/Desktop/ucisw2-organki/SawToothSchematic.sch 
+sch2sym -intstyle ise -family spartan3e -refsym SawToothSchematic C:/Users/lab/Desktop/ucisw2-organki/SawToothSchematic.sch C:/Users/lab/Desktop/ucisw2-organki/SawToothSchematic.sym 
+sch2hdl -intstyle ise -family spartan3e -flat -suppress -vhdl SawToothSchematic_drc.vhf -w C:/Users/lab/Desktop/ucisw2-organki/SawToothSchematic.sch 
+sch2sym -intstyle ise -family spartan3e -refsym SawToothSchematic C:/Users/lab/Desktop/ucisw2-organki/SawToothSchematic.sch C:/Users/lab/Desktop/ucisw2-organki/SawToothSchematic.sym 
+xst -intstyle ise -ifn "C:/Users/lab/Desktop/ucisw2-organki/SawToothSchematic.xst" -ofn "C:/Users/lab/Desktop/ucisw2-organki/SawToothSchematic.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ZL-9572.ucf -p xc3s500e-fg320-4 SawToothSchematic.ngc SawToothSchematic.ngd  
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ZL-9572.ucf -p xc3s500e-fg320-4 SawToothSchematic.ngc SawToothSchematic.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o SawToothSchematic_map.ncd SawToothSchematic.ngd SawToothSchematic.pcf 
+par -w -intstyle ise -ol high -t 1 SawToothSchematic_map.ncd SawToothSchematic.ncd SawToothSchematic.pcf 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ZL-9572.ucf -p xc3s500e-fg320-4 SawToothSchematic.ngc SawToothSchematic.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o SawToothSchematic_map.ncd SawToothSchematic.ngd SawToothSchematic.pcf 
+par -w -intstyle ise -ol high -t 1 SawToothSchematic_map.ncd SawToothSchematic.ncd SawToothSchematic.pcf 
+sch2sym -intstyle ise -family spartan3e -refsym SawToothSchematic C:/Users/lab/Desktop/ucisw2-organki/SawToothSchematic.sch C:/Users/lab/Desktop/ucisw2-organki/SawToothSchematic.sym 
+sch2hdl -intstyle ise -family spartan3e -flat -suppress -vhdl SawToothSchematic_drc.vhf -w C:/Users/lab/Desktop/ucisw2-organki/SawToothSchematic.sch 
+xst -intstyle ise -ifn "C:/Users/lab/Desktop/ucisw2-organki/SawToothSchematic.xst" -ofn "C:/Users/lab/Desktop/ucisw2-organki/SawToothSchematic.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ZL-9572.ucf -p xc3s500e-fg320-4 SawToothSchematic.ngc SawToothSchematic.ngd  
+sch2sym -intstyle ise -family spartan3e -refsym SawToothSchematic C:/Users/lab/Desktop/ucisw2-organki/SawToothSchematic.sch C:/Users/lab/Desktop/ucisw2-organki/SawToothSchematic.sym 
+sch2hdl -intstyle ise -family spartan3e -flat -suppress -vhdl SawToothSchematic_drc.vhf -w C:/Users/lab/Desktop/ucisw2-organki/SawToothSchematic.sch 
+xst -intstyle ise -ifn "C:/Users/lab/Desktop/ucisw2-organki/SawToothSchematic.xst" -ofn "C:/Users/lab/Desktop/ucisw2-organki/SawToothSchematic.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ZL-9572.ucf -p xc3s500e-fg320-4 SawToothSchematic.ngc SawToothSchematic.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o SawToothSchematic_map.ncd SawToothSchematic.ngd SawToothSchematic.pcf 
+par -w -intstyle ise -ol high -t 1 SawToothSchematic_map.ncd SawToothSchematic.ncd SawToothSchematic.pcf 
+xst -intstyle ise -ifn "C:/Users/lab/Desktop/ucisw2-organki/SawToothSchematic.xst" -ofn "C:/Users/lab/Desktop/ucisw2-organki/SawToothSchematic.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ZL-9572.ucf -p xc3s500e-fg320-4 SawToothSchematic.ngc SawToothSchematic.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o SawToothSchematic_map.ncd SawToothSchematic.ngd SawToothSchematic.pcf 
+par -w -intstyle ise -ol high -t 1 SawToothSchematic_map.ncd SawToothSchematic.ncd SawToothSchematic.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml SawToothSchematic.twx SawToothSchematic.ncd -o SawToothSchematic.twr SawToothSchematic.pcf -ucf ZL-9572.ucf 
+bitgen -intstyle ise -f SawToothSchematic.ut SawToothSchematic.ncd 
+xst -intstyle ise -ifn "C:/Users/lab/Desktop/ucisw2-organki/SawToothSchematic.xst" -ofn "C:/Users/lab/Desktop/ucisw2-organki/SawToothSchematic.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ZL-9572.ucf -p xc3s500e-fg320-4 SawToothSchematic.ngc SawToothSchematic.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o SawToothSchematic_map.ncd SawToothSchematic.ngd SawToothSchematic.pcf 
+par -w -intstyle ise -ol high -t 1 SawToothSchematic_map.ncd SawToothSchematic.ncd SawToothSchematic.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml SawToothSchematic.twx SawToothSchematic.ncd -o SawToothSchematic.twr SawToothSchematic.pcf -ucf ZL-9572.ucf 
+bitgen -intstyle ise -f SawToothSchematic.ut SawToothSchematic.ncd 
+xst -intstyle ise -ifn "C:/Users/lab/Desktop/ucisw2-organki/SawToothSchematic.xst" -ofn "C:/Users/lab/Desktop/ucisw2-organki/SawToothSchematic.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ZL-9572.ucf -p xc3s500e-fg320-4 SawToothSchematic.ngc SawToothSchematic.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o SawToothSchematic_map.ncd SawToothSchematic.ngd SawToothSchematic.pcf 
+par -w -intstyle ise -ol high -t 1 SawToothSchematic_map.ncd SawToothSchematic.ncd SawToothSchematic.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml SawToothSchematic.twx SawToothSchematic.ncd -o SawToothSchematic.twr SawToothSchematic.pcf -ucf ZL-9572.ucf 
+bitgen -intstyle ise -f SawToothSchematic.ut SawToothSchematic.ncd 
+sch2sym -intstyle ise -family spartan3e -refsym SawToothSchematic C:/Users/lab/Desktop/ucisw2-organki/SawToothSchematic.sch C:/Users/lab/Desktop/ucisw2-organki/SawToothSchematic.sym 

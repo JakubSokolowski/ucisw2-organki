@@ -1,0 +1,346 @@
+<html><head><link type='text/css' href='style.css' rel='stylesheet'></head><body class='pgBgnd'>
+<h3 align='center'>Equations</h3>
+<table width='90%' align='center' border='1' cellpadding='0' cellspacing='0'>
+<tr><td>
+</td></tr><tr><td>
+********** Mapped Logic **********
+</td></tr><tr><td>
+</td></tr><tr><td>
+AddrOUT(0) <= '0';
+</td></tr><tr><td>
+</td></tr><tr><td>
+AddrOUT(1) <= '1';
+</td></tr><tr><td>
+</td></tr><tr><td>
+AddrOUT(2) <= '0';
+</td></tr><tr><td>
+</td></tr><tr><td>
+AddrOUT(3) <= '0';
+</td></tr><tr><td>
+</td></tr><tr><td>
+CmdOUT(0) <= '1';
+</td></tr><tr><td>
+</td></tr><tr><td>
+CmdOUT(1) <= '1';
+</td></tr><tr><td>
+</td></tr><tr><td>
+CmdOUT(2) <= '0';
+</td></tr><tr><td>
+</td></tr><tr><td>
+CmdOUT(3) <= '0';
+</td></tr><tr><td>
+</td></tr><tr><td>
+SawtoothOUT(0) <= '0';
+</td></tr><tr><td>
+</td></tr><tr><td>
+SawtoothOUT(1) <= '0';
+</td></tr><tr><td>
+</td></tr><tr><td>
+SawtoothOUT(2) <= '0';
+</td></tr><tr><td>
+</td></tr><tr><td>
+SawtoothOUT(3) <= '0';
+</td></tr><tr><td>
+</td></tr><tr><td>
+SawtoothOUT(4) <= '0';
+</td></tr><tr><td>
+</td></tr><tr><td>
+SawtoothOUT(5) <= '0';
+</td></tr><tr><td>
+FTCPE_SawtoothOUT6: FTCPE port map (SawtoothOUT(6),'1',tmpFreqDiv,Clr,'0');
+</td></tr><tr><td>
+FTCPE_SawtoothOUT7: FTCPE port map (SawtoothOUT(7),SawtoothOUT(6),tmpFreqDiv,Clr,'0');
+</td></tr><tr><td>
+FTCPE_SawtoothOUT8: FTCPE port map (SawtoothOUT(8),SawtoothOUT_T(8),tmpFreqDiv,Clr,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SawtoothOUT_T(8) <= (SawtoothOUT(6) AND SawtoothOUT(7));
+</td></tr><tr><td>
+FTCPE_SawtoothOUT9: FTCPE port map (SawtoothOUT(9),SawtoothOUT_T(9),tmpFreqDiv,Clr,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SawtoothOUT_T(9) <= (SawtoothOUT(6) AND SawtoothOUT(7) AND SawtoothOUT(8));
+</td></tr><tr><td>
+FTCPE_SawtoothOUT10: FTCPE port map (SawtoothOUT(10),SawtoothOUT_T(10),tmpFreqDiv,Clr,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SawtoothOUT_T(10) <= (SawtoothOUT(6) AND SawtoothOUT(7) AND SawtoothOUT(8) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	SawtoothOUT(9));
+</td></tr><tr><td>
+FTCPE_SawtoothOUT11: FTCPE port map (SawtoothOUT(11),SawtoothOUT_T(11),tmpFreqDiv,Clr,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SawtoothOUT_T(11) <= (SawtoothOUT(6) AND SawtoothOUT(7) AND SawtoothOUT(8) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	SawtoothOUT(9) AND SawtoothOUT(10));
+</td></tr><tr><td>
+FDCPE_StartOUT: FDCPE port map (StartOUT,StartOUT_D,Clk,'0','0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;StartOUT_D <= ((Clr AND StartOUT)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT iFreqDiv(0) AND NOT iFreqDiv(10) AND NOT iFreqDiv(11) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT iFreqDiv(12) AND NOT iFreqDiv(13) AND NOT iFreqDiv(14) AND NOT iFreqDiv(15) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT iFreqDiv(16) AND NOT iFreqDiv(17) AND NOT iFreqDiv(18) AND NOT iFreqDiv(19) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT iFreqDiv(1) AND NOT iFreqDiv(20) AND NOT iFreqDiv(21) AND NOT iFreqDiv(22) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT iFreqDiv(23) AND NOT iFreqDiv(24) AND NOT iFreqDiv(25) AND NOT iFreqDiv(26) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT iFreqDiv(27) AND NOT iFreqDiv(28) AND NOT iFreqDiv(29) AND NOT iFreqDiv(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT iFreqDiv(30) AND iFreqDiv(3) AND NOT iFreqDiv(4) AND NOT iFreqDiv(5) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT iFreqDiv(6) AND NOT iFreqDiv(7) AND iFreqDiv(8) AND NOT iFreqDiv(9) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT iFreqDiv(31) AND StartOUT)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT Clr AND NOT iFreqDiv(0) AND NOT iFreqDiv(10) AND NOT iFreqDiv(11) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT iFreqDiv(12) AND NOT iFreqDiv(13) AND NOT iFreqDiv(14) AND NOT iFreqDiv(15) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT iFreqDiv(16) AND NOT iFreqDiv(17) AND NOT iFreqDiv(18) AND NOT iFreqDiv(19) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT iFreqDiv(1) AND NOT iFreqDiv(20) AND NOT iFreqDiv(21) AND NOT iFreqDiv(22) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT iFreqDiv(23) AND NOT iFreqDiv(24) AND NOT iFreqDiv(25) AND NOT iFreqDiv(26) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT iFreqDiv(27) AND NOT iFreqDiv(28) AND NOT iFreqDiv(29) AND NOT iFreqDiv(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT iFreqDiv(30) AND iFreqDiv(3) AND NOT iFreqDiv(4) AND NOT iFreqDiv(5) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT iFreqDiv(6) AND NOT iFreqDiv(7) AND iFreqDiv(8) AND NOT iFreqDiv(9) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT iFreqDiv(31) AND NOT stCnt(0)));
+</td></tr><tr><td>
+FTCPE_iFreqDiv0: FTCPE port map (iFreqDiv(0),'1',Clk,'0',Clr);
+</td></tr><tr><td>
+FTCPE_iFreqDiv1: FTCPE port map (iFreqDiv(1),iFreqDiv(0),Clk,Clr,'0');
+</td></tr><tr><td>
+FTCPE_iFreqDiv2: FTCPE port map (iFreqDiv(2),iFreqDiv_T(2),Clk,Clr,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iFreqDiv_T(2) <= (iFreqDiv(0) AND iFreqDiv(1));
+</td></tr><tr><td>
+FTCPE_iFreqDiv3: FTCPE port map (iFreqDiv(3),iFreqDiv_T(3),Clk,Clr,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iFreqDiv_T(3) <= ((iFreqDiv(0) AND iFreqDiv(1) AND iFreqDiv(2))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT iFreqDiv(0) AND NOT iFreqDiv(10) AND NOT iFreqDiv(11) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT iFreqDiv(12) AND NOT iFreqDiv(13) AND NOT iFreqDiv(14) AND NOT iFreqDiv(15) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT iFreqDiv(16) AND NOT iFreqDiv(17) AND NOT iFreqDiv(18) AND NOT iFreqDiv(19) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT iFreqDiv(1) AND NOT iFreqDiv(20) AND NOT iFreqDiv(21) AND NOT iFreqDiv(22) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT iFreqDiv(23) AND NOT iFreqDiv(24) AND NOT iFreqDiv(25) AND NOT iFreqDiv(26) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT iFreqDiv(27) AND NOT iFreqDiv(28) AND NOT iFreqDiv(29) AND NOT iFreqDiv(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT iFreqDiv(30) AND iFreqDiv(3) AND NOT iFreqDiv(4) AND NOT iFreqDiv(5) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT iFreqDiv(6) AND NOT iFreqDiv(7) AND iFreqDiv(8) AND NOT iFreqDiv(9) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT iFreqDiv(31)));
+</td></tr><tr><td>
+FTCPE_iFreqDiv4: FTCPE port map (iFreqDiv(4),iFreqDiv_T(4),Clk,Clr,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iFreqDiv_T(4) <= (iFreqDiv(0) AND iFreqDiv(1) AND iFreqDiv(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(3));
+</td></tr><tr><td>
+FTCPE_iFreqDiv5: FTCPE port map (iFreqDiv(5),iFreqDiv_T(5),Clk,Clr,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iFreqDiv_T(5) <= (iFreqDiv(0) AND iFreqDiv(1) AND iFreqDiv(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(3) AND iFreqDiv(4));
+</td></tr><tr><td>
+FTCPE_iFreqDiv6: FTCPE port map (iFreqDiv(6),iFreqDiv_T(6),Clk,Clr,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iFreqDiv_T(6) <= (iFreqDiv(0) AND iFreqDiv(1) AND iFreqDiv(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(3) AND iFreqDiv(4) AND iFreqDiv(5));
+</td></tr><tr><td>
+FTCPE_iFreqDiv7: FTCPE port map (iFreqDiv(7),iFreqDiv_T(7),Clk,Clr,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iFreqDiv_T(7) <= (iFreqDiv(0) AND iFreqDiv(1) AND iFreqDiv(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(3) AND iFreqDiv(4) AND iFreqDiv(5) AND iFreqDiv(6));
+</td></tr><tr><td>
+FTCPE_iFreqDiv8: FTCPE port map (iFreqDiv(8),iFreqDiv_T(8),Clk,Clr,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iFreqDiv_T(8) <= ((iFreqDiv(0) AND iFreqDiv(1) AND iFreqDiv(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(3) AND iFreqDiv(4) AND iFreqDiv(5) AND iFreqDiv(6) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(7))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT iFreqDiv(0) AND NOT iFreqDiv(10) AND NOT iFreqDiv(11) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT iFreqDiv(12) AND NOT iFreqDiv(13) AND NOT iFreqDiv(14) AND NOT iFreqDiv(15) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT iFreqDiv(16) AND NOT iFreqDiv(17) AND NOT iFreqDiv(18) AND NOT iFreqDiv(19) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT iFreqDiv(1) AND NOT iFreqDiv(20) AND NOT iFreqDiv(21) AND NOT iFreqDiv(22) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT iFreqDiv(23) AND NOT iFreqDiv(24) AND NOT iFreqDiv(25) AND NOT iFreqDiv(26) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT iFreqDiv(27) AND NOT iFreqDiv(28) AND NOT iFreqDiv(29) AND NOT iFreqDiv(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT iFreqDiv(30) AND iFreqDiv(3) AND NOT iFreqDiv(4) AND NOT iFreqDiv(5) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT iFreqDiv(6) AND NOT iFreqDiv(7) AND iFreqDiv(8) AND NOT iFreqDiv(9) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT iFreqDiv(31)));
+</td></tr><tr><td>
+FTCPE_iFreqDiv9: FTCPE port map (iFreqDiv(9),iFreqDiv_T(9),Clk,Clr,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iFreqDiv_T(9) <= (iFreqDiv(0) AND iFreqDiv(1) AND iFreqDiv(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(3) AND iFreqDiv(4) AND iFreqDiv(5) AND iFreqDiv(6) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(7) AND iFreqDiv(8));
+</td></tr><tr><td>
+FTCPE_iFreqDiv10: FTCPE port map (iFreqDiv(10),iFreqDiv_T(10),Clk,Clr,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iFreqDiv_T(10) <= (iFreqDiv(0) AND iFreqDiv(1) AND iFreqDiv(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(3) AND iFreqDiv(4) AND iFreqDiv(5) AND iFreqDiv(6) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(7) AND iFreqDiv(8) AND iFreqDiv(9));
+</td></tr><tr><td>
+FTCPE_iFreqDiv11: FTCPE port map (iFreqDiv(11),iFreqDiv_T(11),Clk,Clr,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iFreqDiv_T(11) <= (iFreqDiv(0) AND iFreqDiv(10) AND iFreqDiv(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(2) AND iFreqDiv(3) AND iFreqDiv(4) AND iFreqDiv(5) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(6) AND iFreqDiv(7) AND iFreqDiv(8) AND iFreqDiv(9));
+</td></tr><tr><td>
+FTCPE_iFreqDiv12: FTCPE port map (iFreqDiv(12),iFreqDiv_T(12),Clk,Clr,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iFreqDiv_T(12) <= (iFreqDiv(0) AND iFreqDiv(10) AND iFreqDiv(11) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(1) AND iFreqDiv(2) AND iFreqDiv(3) AND iFreqDiv(4) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(5) AND iFreqDiv(6) AND iFreqDiv(7) AND iFreqDiv(8) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(9));
+</td></tr><tr><td>
+FTCPE_iFreqDiv13: FTCPE port map (iFreqDiv(13),iFreqDiv_T(13),Clk,Clr,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iFreqDiv_T(13) <= (iFreqDiv(0) AND iFreqDiv(10) AND iFreqDiv(11) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(12) AND iFreqDiv(1) AND iFreqDiv(2) AND iFreqDiv(3) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(4) AND iFreqDiv(5) AND iFreqDiv(6) AND iFreqDiv(7) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(8) AND iFreqDiv(9));
+</td></tr><tr><td>
+FTCPE_iFreqDiv14: FTCPE port map (iFreqDiv(14),iFreqDiv_T(14),Clk,Clr,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iFreqDiv_T(14) <= (iFreqDiv(0) AND iFreqDiv(10) AND iFreqDiv(11) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(12) AND iFreqDiv(13) AND iFreqDiv(1) AND iFreqDiv(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(3) AND iFreqDiv(4) AND iFreqDiv(5) AND iFreqDiv(6) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(7) AND iFreqDiv(8) AND iFreqDiv(9));
+</td></tr><tr><td>
+FTCPE_iFreqDiv15: FTCPE port map (iFreqDiv(15),iFreqDiv_T(15),Clk,Clr,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iFreqDiv_T(15) <= (iFreqDiv(0) AND iFreqDiv(10) AND iFreqDiv(11) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(12) AND iFreqDiv(13) AND iFreqDiv(14) AND iFreqDiv(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(2) AND iFreqDiv(3) AND iFreqDiv(4) AND iFreqDiv(5) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(6) AND iFreqDiv(7) AND iFreqDiv(8) AND iFreqDiv(9));
+</td></tr><tr><td>
+FTCPE_iFreqDiv16: FTCPE port map (iFreqDiv(16),iFreqDiv_T(16),Clk,Clr,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iFreqDiv_T(16) <= (iFreqDiv(0) AND iFreqDiv(10) AND iFreqDiv(11) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(12) AND iFreqDiv(13) AND iFreqDiv(14) AND iFreqDiv(15) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(1) AND iFreqDiv(2) AND iFreqDiv(3) AND iFreqDiv(4) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(5) AND iFreqDiv(6) AND iFreqDiv(7) AND iFreqDiv(8) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(9));
+</td></tr><tr><td>
+FTCPE_iFreqDiv17: FTCPE port map (iFreqDiv(17),iFreqDiv_T(17),Clk,Clr,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iFreqDiv_T(17) <= (iFreqDiv(0) AND iFreqDiv(10) AND iFreqDiv(11) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(12) AND iFreqDiv(13) AND iFreqDiv(14) AND iFreqDiv(15) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(16) AND iFreqDiv(1) AND iFreqDiv(2) AND iFreqDiv(3) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(4) AND iFreqDiv(5) AND iFreqDiv(6) AND iFreqDiv(7) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(8) AND iFreqDiv(9));
+</td></tr><tr><td>
+FTCPE_iFreqDiv18: FTCPE port map (iFreqDiv(18),iFreqDiv_T(18),Clk,Clr,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iFreqDiv_T(18) <= (iFreqDiv(0) AND iFreqDiv(10) AND iFreqDiv(11) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(12) AND iFreqDiv(13) AND iFreqDiv(14) AND iFreqDiv(15) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(16) AND iFreqDiv(17) AND iFreqDiv(1) AND iFreqDiv(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(3) AND iFreqDiv(4) AND iFreqDiv(5) AND iFreqDiv(6) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(7) AND iFreqDiv(8) AND iFreqDiv(9));
+</td></tr><tr><td>
+FTCPE_iFreqDiv19: FTCPE port map (iFreqDiv(19),iFreqDiv_T(19),Clk,Clr,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iFreqDiv_T(19) <= (iFreqDiv(0) AND iFreqDiv(10) AND iFreqDiv(11) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(12) AND iFreqDiv(13) AND iFreqDiv(14) AND iFreqDiv(15) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(16) AND iFreqDiv(17) AND iFreqDiv(18) AND iFreqDiv(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(2) AND iFreqDiv(3) AND iFreqDiv(4) AND iFreqDiv(5) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(6) AND iFreqDiv(7) AND iFreqDiv(8) AND iFreqDiv(9));
+</td></tr><tr><td>
+FTCPE_iFreqDiv20: FTCPE port map (iFreqDiv(20),iFreqDiv_T(20),Clk,Clr,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iFreqDiv_T(20) <= (iFreqDiv(0) AND iFreqDiv(10) AND iFreqDiv(11) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(12) AND iFreqDiv(13) AND iFreqDiv(14) AND iFreqDiv(15) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(16) AND iFreqDiv(17) AND iFreqDiv(18) AND iFreqDiv(19) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(1) AND iFreqDiv(2) AND iFreqDiv(3) AND iFreqDiv(4) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(5) AND iFreqDiv(6) AND iFreqDiv(7) AND iFreqDiv(8) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(9));
+</td></tr><tr><td>
+FTCPE_iFreqDiv21: FTCPE port map (iFreqDiv(21),iFreqDiv_T(21),Clk,Clr,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iFreqDiv_T(21) <= (iFreqDiv(0) AND iFreqDiv(10) AND iFreqDiv(11) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(12) AND iFreqDiv(13) AND iFreqDiv(14) AND iFreqDiv(15) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(16) AND iFreqDiv(17) AND iFreqDiv(18) AND iFreqDiv(19) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(1) AND iFreqDiv(20) AND iFreqDiv(2) AND iFreqDiv(3) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(4) AND iFreqDiv(5) AND iFreqDiv(6) AND iFreqDiv(7) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(8) AND iFreqDiv(9));
+</td></tr><tr><td>
+FTCPE_iFreqDiv22: FTCPE port map (iFreqDiv(22),iFreqDiv_T(22),Clk,Clr,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iFreqDiv_T(22) <= (iFreqDiv(0) AND iFreqDiv(10) AND iFreqDiv(11) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(12) AND iFreqDiv(13) AND iFreqDiv(14) AND iFreqDiv(15) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(16) AND iFreqDiv(17) AND iFreqDiv(18) AND iFreqDiv(19) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(1) AND iFreqDiv(20) AND iFreqDiv(21) AND iFreqDiv(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(3) AND iFreqDiv(4) AND iFreqDiv(5) AND iFreqDiv(6) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(7) AND iFreqDiv(8) AND iFreqDiv(9));
+</td></tr><tr><td>
+FTCPE_iFreqDiv23: FTCPE port map (iFreqDiv(23),iFreqDiv_T(23),Clk,Clr,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iFreqDiv_T(23) <= (iFreqDiv(0) AND iFreqDiv(10) AND iFreqDiv(11) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(12) AND iFreqDiv(13) AND iFreqDiv(14) AND iFreqDiv(15) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(16) AND iFreqDiv(17) AND iFreqDiv(18) AND iFreqDiv(19) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(1) AND iFreqDiv(20) AND iFreqDiv(21) AND iFreqDiv(22) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(2) AND iFreqDiv(3) AND iFreqDiv(4) AND iFreqDiv(5) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(6) AND iFreqDiv(7) AND iFreqDiv(8) AND iFreqDiv(9));
+</td></tr><tr><td>
+FTCPE_iFreqDiv24: FTCPE port map (iFreqDiv(24),iFreqDiv_T(24),Clk,Clr,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iFreqDiv_T(24) <= (iFreqDiv(0) AND iFreqDiv(10) AND iFreqDiv(11) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(12) AND iFreqDiv(13) AND iFreqDiv(14) AND iFreqDiv(15) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(16) AND iFreqDiv(17) AND iFreqDiv(18) AND iFreqDiv(19) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(1) AND iFreqDiv(20) AND iFreqDiv(21) AND iFreqDiv(22) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(23) AND iFreqDiv(2) AND iFreqDiv(3) AND iFreqDiv(4) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(5) AND iFreqDiv(6) AND iFreqDiv(7) AND iFreqDiv(8) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(9));
+</td></tr><tr><td>
+FTCPE_iFreqDiv25: FTCPE port map (iFreqDiv(25),iFreqDiv_T(25),Clk,Clr,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iFreqDiv_T(25) <= (iFreqDiv(0) AND iFreqDiv(10) AND iFreqDiv(11) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(12) AND iFreqDiv(13) AND iFreqDiv(14) AND iFreqDiv(15) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(16) AND iFreqDiv(17) AND iFreqDiv(18) AND iFreqDiv(19) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(1) AND iFreqDiv(20) AND iFreqDiv(21) AND iFreqDiv(22) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(23) AND iFreqDiv(24) AND iFreqDiv(2) AND iFreqDiv(3) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(4) AND iFreqDiv(5) AND iFreqDiv(6) AND iFreqDiv(7) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(8) AND iFreqDiv(9));
+</td></tr><tr><td>
+FTCPE_iFreqDiv26: FTCPE port map (iFreqDiv(26),iFreqDiv_T(26),Clk,Clr,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iFreqDiv_T(26) <= (iFreqDiv(0) AND iFreqDiv(10) AND iFreqDiv(11) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(12) AND iFreqDiv(13) AND iFreqDiv(14) AND iFreqDiv(15) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(16) AND iFreqDiv(17) AND iFreqDiv(18) AND iFreqDiv(19) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(1) AND iFreqDiv(20) AND iFreqDiv(21) AND iFreqDiv(22) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(23) AND iFreqDiv(24) AND iFreqDiv(25) AND iFreqDiv(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(3) AND iFreqDiv(4) AND iFreqDiv(5) AND iFreqDiv(6) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(7) AND iFreqDiv(8) AND iFreqDiv(9));
+</td></tr><tr><td>
+FTCPE_iFreqDiv27: FTCPE port map (iFreqDiv(27),iFreqDiv_T(27),Clk,Clr,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iFreqDiv_T(27) <= (iFreqDiv(0) AND iFreqDiv(10) AND iFreqDiv(11) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(12) AND iFreqDiv(13) AND iFreqDiv(14) AND iFreqDiv(15) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(16) AND iFreqDiv(17) AND iFreqDiv(18) AND iFreqDiv(19) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(1) AND iFreqDiv(20) AND iFreqDiv(21) AND iFreqDiv(22) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(23) AND iFreqDiv(24) AND iFreqDiv(25) AND iFreqDiv(26) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(2) AND iFreqDiv(3) AND iFreqDiv(4) AND iFreqDiv(5) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(6) AND iFreqDiv(7) AND iFreqDiv(8) AND iFreqDiv(9));
+</td></tr><tr><td>
+FTCPE_iFreqDiv28: FTCPE port map (iFreqDiv(28),iFreqDiv_T(28),Clk,Clr,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iFreqDiv_T(28) <= (iFreqDiv(0) AND iFreqDiv(10) AND iFreqDiv(11) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(12) AND iFreqDiv(13) AND iFreqDiv(14) AND iFreqDiv(15) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(16) AND iFreqDiv(17) AND iFreqDiv(18) AND iFreqDiv(19) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(1) AND iFreqDiv(20) AND iFreqDiv(21) AND iFreqDiv(22) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(23) AND iFreqDiv(24) AND iFreqDiv(25) AND iFreqDiv(26) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(27) AND iFreqDiv(2) AND iFreqDiv(3) AND iFreqDiv(4) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(5) AND iFreqDiv(6) AND iFreqDiv(7) AND iFreqDiv(8) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(9));
+</td></tr><tr><td>
+FTCPE_iFreqDiv29: FTCPE port map (iFreqDiv(29),iFreqDiv_T(29),Clk,Clr,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iFreqDiv_T(29) <= (iFreqDiv(0) AND iFreqDiv(10) AND iFreqDiv(11) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(12) AND iFreqDiv(13) AND iFreqDiv(14) AND iFreqDiv(15) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(16) AND iFreqDiv(17) AND iFreqDiv(18) AND iFreqDiv(19) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(1) AND iFreqDiv(20) AND iFreqDiv(21) AND iFreqDiv(22) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(23) AND iFreqDiv(24) AND iFreqDiv(25) AND iFreqDiv(26) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(27) AND iFreqDiv(28) AND iFreqDiv(2) AND iFreqDiv(3) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(4) AND iFreqDiv(5) AND iFreqDiv(6) AND iFreqDiv(7) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(8) AND iFreqDiv(9));
+</td></tr><tr><td>
+FTCPE_iFreqDiv30: FTCPE port map (iFreqDiv(30),iFreqDiv_T(30),Clk,Clr,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iFreqDiv_T(30) <= (iFreqDiv(0) AND iFreqDiv(10) AND iFreqDiv(11) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(12) AND iFreqDiv(13) AND iFreqDiv(14) AND iFreqDiv(15) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(16) AND iFreqDiv(17) AND iFreqDiv(18) AND iFreqDiv(19) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(1) AND iFreqDiv(20) AND iFreqDiv(21) AND iFreqDiv(22) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(23) AND iFreqDiv(24) AND iFreqDiv(25) AND iFreqDiv(26) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(27) AND iFreqDiv(28) AND iFreqDiv(29) AND iFreqDiv(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(3) AND iFreqDiv(4) AND iFreqDiv(5) AND iFreqDiv(6) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(7) AND iFreqDiv(8) AND iFreqDiv(9));
+</td></tr><tr><td>
+FTCPE_iFreqDiv31: FTCPE port map (iFreqDiv(31),iFreqDiv_T(31),Clk,Clr,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iFreqDiv_T(31) <= (iFreqDiv(0) AND iFreqDiv(10) AND iFreqDiv(11) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(12) AND iFreqDiv(13) AND iFreqDiv(14) AND iFreqDiv(15) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(16) AND iFreqDiv(17) AND iFreqDiv(18) AND iFreqDiv(19) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(1) AND iFreqDiv(20) AND iFreqDiv(21) AND iFreqDiv(22) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(23) AND iFreqDiv(24) AND iFreqDiv(25) AND iFreqDiv(26) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(27) AND iFreqDiv(28) AND iFreqDiv(29) AND iFreqDiv(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(30) AND iFreqDiv(3) AND iFreqDiv(4) AND iFreqDiv(5) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	iFreqDiv(6) AND iFreqDiv(7) AND iFreqDiv(8) AND iFreqDiv(9));
+</td></tr><tr><td>
+FTCPE_stCnt0: FTCPE port map (stCnt(0),'1',Clk,'0','0',stCnt_CE(0));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stCnt_CE(0) <= (NOT Clr AND NOT iFreqDiv(0) AND NOT iFreqDiv(10) AND NOT iFreqDiv(11) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT iFreqDiv(12) AND NOT iFreqDiv(13) AND NOT iFreqDiv(14) AND NOT iFreqDiv(15) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT iFreqDiv(16) AND NOT iFreqDiv(17) AND NOT iFreqDiv(18) AND NOT iFreqDiv(19) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT iFreqDiv(1) AND NOT iFreqDiv(20) AND NOT iFreqDiv(21) AND NOT iFreqDiv(22) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT iFreqDiv(23) AND NOT iFreqDiv(24) AND NOT iFreqDiv(25) AND NOT iFreqDiv(26) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT iFreqDiv(27) AND NOT iFreqDiv(28) AND NOT iFreqDiv(29) AND NOT iFreqDiv(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT iFreqDiv(30) AND iFreqDiv(3) AND NOT iFreqDiv(4) AND NOT iFreqDiv(5) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT iFreqDiv(6) AND NOT iFreqDiv(7) AND iFreqDiv(8) AND NOT iFreqDiv(9) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT iFreqDiv(31));
+</td></tr><tr><td>
+FTCPE_tmpFreqDiv: FTCPE port map (tmpFreqDiv,'1',Clk,Clr,'0',tmpFreqDiv_CE);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tmpFreqDiv_CE <= (NOT iFreqDiv(0) AND NOT iFreqDiv(10) AND NOT iFreqDiv(11) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT iFreqDiv(12) AND NOT iFreqDiv(13) AND NOT iFreqDiv(14) AND NOT iFreqDiv(15) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT iFreqDiv(16) AND NOT iFreqDiv(17) AND NOT iFreqDiv(18) AND NOT iFreqDiv(19) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT iFreqDiv(1) AND NOT iFreqDiv(20) AND NOT iFreqDiv(21) AND NOT iFreqDiv(22) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT iFreqDiv(23) AND NOT iFreqDiv(24) AND NOT iFreqDiv(25) AND NOT iFreqDiv(26) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT iFreqDiv(27) AND NOT iFreqDiv(28) AND NOT iFreqDiv(29) AND NOT iFreqDiv(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT iFreqDiv(30) AND iFreqDiv(3) AND NOT iFreqDiv(4) AND NOT iFreqDiv(5) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT iFreqDiv(6) AND NOT iFreqDiv(7) AND iFreqDiv(8) AND NOT iFreqDiv(9) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT iFreqDiv(31));
+</td></tr><tr><td>
+Register Legend:
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FDCPE (Q,D,C,CLR,PRE,CE); 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FTCPE (Q,D,C,CLR,PRE,CE); 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; LDCP  (Q,D,G,CLR,PRE); 
+</td></tr><tr><td>
+</td></tr>
+</table>
+<form><span class="pgRef"><table width="90%" align="center"><tr>
+<td align="left"><input type="button" onclick="javascript:parent.leftnav.showTop()" onmouseover="window.status='goto top of page'; return true;" onmouseout="window.status=''" value="back to top"></td>
+<td align="right"><input type="button" onclick="window.print()" onmouseover="window.status='print page'; return true;" onmouseout="window.status=''" value="print page"></td>
+</tr></table></span></form>
+</body></html>

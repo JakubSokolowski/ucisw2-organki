@@ -1,0 +1,10 @@
+[Inputs]
+Clk
+Clr
+=FreqIN[3:0]=
+[Outputs]
+StartOUT
+=CmdOUT[3:0]=
+=AddrOUT[3:0]=
+=SawtoothOUT[11:0]=
+[BiDir]

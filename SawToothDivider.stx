@@ -1,0 +1,40 @@
+Release 14.7 - xst P.20131013 (nt)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to C:/Users/lab/Desktop/ucisw2-organki/xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.13 secs
+ 
+--> Parameter xsthdpdir set to C:/Users/lab/Desktop/ucisw2-organki/xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.13 secs
+ 
+--> WARNING:Xst:3164 - Option "-debug" found multiple times in the command line. Only the first occurence is considered.
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+WARNING:HDLParsers:3607 - Unit work/SawToothDivider/Behavioral is now defined in a different file.  It was defined in "C:/Users/lab/Desktop/ucisw2-organki/Sawtooth.vhd", and is now defined in "C:/Users/lab/Desktop/ucisw2-organki/SawToothDivider.vhd".
+WARNING:HDLParsers:3607 - Unit work/SawToothDivider is now defined in a different file.  It was defined in "C:/Users/lab/Desktop/ucisw2-organki/SawToothDivider.vhd", and is now defined in "C:/Users/lab/Desktop/ucisw2-organki/Sawtooth.vhd".
+WARNING:HDLParsers:3607 - Unit work/SawToothDivider/Behavioral is now defined in a different file.  It was defined in "C:/Users/lab/Desktop/ucisw2-organki/SawToothDivider.vhd", and is now defined in "C:/Users/lab/Desktop/ucisw2-organki/Sawtooth.vhd".
+Compiling vhdl file "C:/Users/lab/Desktop/ucisw2-organki/SawToothDivider.vhd" in Library work.
+Entity <sawtoothdivider> compiled.
+Entity <sawtoothdivider> (Architecture <behavioral>) compiled.
+Compiling vhdl file "C:/Users/lab/Desktop/ucisw2-organki/Sawtooth.vhd" in Library work.
+Architecture behavioral of Entity sawtoothdivider is up to date.
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.23 secs
+ 
+--> 
+
+Total memory usage is 174976 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    4 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

@@ -1,0 +1,3 @@
+vhdl work "SawToothDivider.vhd"
+vhdl work "FreqButton.vhd"
+vhdl work "SawToothSchematic.vhf"

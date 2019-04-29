@@ -1,0 +1,937 @@
+--------------------------------------------------------------------------------
+Release 14.7 Trace  (nt)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+C:\Xilinx\14.7\ISE_DS\ISE\bin\nt\unwrapped\trce.exe -intstyle ise -v 3 -s 4 -n
+3 -fastpaths -xml SawToothSchematic.twx SawToothSchematic.ncd -o
+SawToothSchematic.twr SawToothSchematic.pcf -ucf ZL-9572.ucf
+
+Design file:              SawToothSchematic.ncd
+Physical constraint file: SawToothSchematic.pcf
+Device,package,speed:     xc3s500e,fg320,-4 (PRODUCTION 1.27 2013-10-13)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+INFO:Timing:3390 - This architecture does not support a default System Jitter 
+   value, please add SYSTEM_JITTER constraint to the UCF to modify the Clock 
+   Uncertainty calculation.
+INFO:Timing:3389 - This architecture does not support 'Discrete Jitter' and 
+   'Phase Error' calculations, these terms will be zero in the Clock 
+   Uncertainty calculation.  Please make appropriate modification to 
+   SYSTEM_JITTER to account for the unsupported Discrete Jitter and Phase 
+   Error.
+
+================================================================================
+Timing constraint: NET "CLK_IN_BUFGP/IBUFG" PERIOD = 20 ns HIGH 50%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 37344 paths analyzed, 332 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is  10.830ns.
+--------------------------------------------------------------------------------
+
+Paths for end point XLXI_1/iFreqDiv_31 (SLICE_X53Y55.CIN), 2014 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     9.170ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               XLXI_3/state_FSM_FFd2 (FF)
+  Destination:          XLXI_1/iFreqDiv_31 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      10.783ns (Levels of Logic = 15)
+  Clock Path Skew:      -0.047ns (0.026 - 0.073)
+  Source Clock:         CLK_IN_BUFGP rising at 0.000ns
+  Destination Clock:    CLK_IN_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: XLXI_3/state_FSM_FFd2 to XLXI_1/iFreqDiv_31
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X66Y49.YQ      Tcko                  0.652   XLXI_3/state_FSM_FFd2
+                                                       XLXI_3/state_FSM_FFd2
+    SLICE_X54Y48.F4      net (fanout=12)       1.957   XLXI_3/state_FSM_FFd2
+    SLICE_X54Y48.X       Tilo                  0.759   XLXI_1/Freq<7>
+                                                       XLXI_1/Mrom_Freq71
+    SLICE_X55Y48.G1      net (fanout=1)        0.725   XLXI_1/Freq<7>
+    SLICE_X55Y48.COUT    Topcyg                1.001   XLXI_1/Mcompar_tmpFreqDiv_cmp_eq0000_cy<9>
+                                                       XLXI_1/Mcompar_tmpFreqDiv_cmp_eq0000_lut<9>
+                                                       XLXI_1/Mcompar_tmpFreqDiv_cmp_eq0000_cy<9>
+    SLICE_X53Y43.F1      net (fanout=37)       2.227   XLXI_1/Mcompar_tmpFreqDiv_cmp_eq0000_cy<9>
+    SLICE_X53Y43.COUT    Topcyf                1.162   XLXI_1/iFreqDiv<6>
+                                                       XLXI_1/Mcount_iFreqDiv_lut<6>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<6>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<7>
+    SLICE_X53Y44.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<7>
+    SLICE_X53Y44.COUT    Tbyp                  0.118   XLXI_1/iFreqDiv<8>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<8>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<9>
+    SLICE_X53Y45.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<9>
+    SLICE_X53Y45.COUT    Tbyp                  0.118   XLXI_1/iFreqDiv<10>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<10>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<11>
+    SLICE_X53Y46.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<11>
+    SLICE_X53Y46.COUT    Tbyp                  0.118   XLXI_1/iFreqDiv<12>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<12>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<13>
+    SLICE_X53Y47.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<13>
+    SLICE_X53Y47.COUT    Tbyp                  0.118   XLXI_1/iFreqDiv<14>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<14>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<15>
+    SLICE_X53Y48.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<15>
+    SLICE_X53Y48.COUT    Tbyp                  0.118   XLXI_1/iFreqDiv<16>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<16>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<17>
+    SLICE_X53Y49.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<17>
+    SLICE_X53Y49.COUT    Tbyp                  0.118   XLXI_1/iFreqDiv<18>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<18>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<19>
+    SLICE_X53Y50.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<19>
+    SLICE_X53Y50.COUT    Tbyp                  0.118   XLXI_1/iFreqDiv<20>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<20>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<21>
+    SLICE_X53Y51.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<21>
+    SLICE_X53Y51.COUT    Tbyp                  0.118   XLXI_1/iFreqDiv<22>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<22>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<23>
+    SLICE_X53Y52.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<23>
+    SLICE_X53Y52.COUT    Tbyp                  0.118   XLXI_1/iFreqDiv<24>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<24>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<25>
+    SLICE_X53Y53.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<25>
+    SLICE_X53Y53.COUT    Tbyp                  0.118   XLXI_1/iFreqDiv<26>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<26>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<27>
+    SLICE_X53Y54.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<27>
+    SLICE_X53Y54.COUT    Tbyp                  0.118   XLXI_1/iFreqDiv<28>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<28>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<29>
+    SLICE_X53Y55.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<29>
+    SLICE_X53Y55.CLK     Tcinck                1.002   XLXI_1/iFreqDiv<30>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<30>
+                                                       XLXI_1/Mcount_iFreqDiv_xor<31>
+                                                       XLXI_1/iFreqDiv_31
+    -------------------------------------------------  ---------------------------
+    Total                                     10.783ns (5.874ns logic, 4.909ns route)
+                                                       (54.5% logic, 45.5% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     9.253ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               XLXI_3/state_FSM_FFd1 (FF)
+  Destination:          XLXI_1/iFreqDiv_31 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      10.702ns (Levels of Logic = 16)
+  Clock Path Skew:      -0.045ns (0.026 - 0.071)
+  Source Clock:         CLK_IN_BUFGP rising at 0.000ns
+  Destination Clock:    CLK_IN_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: XLXI_3/state_FSM_FFd1 to XLXI_1/iFreqDiv_31
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X64Y48.YQ      Tcko                  0.652   XLXI_3/state_FSM_FFd1
+                                                       XLXI_3/state_FSM_FFd1
+    SLICE_X54Y47.G4      net (fanout=12)       2.221   XLXI_3/state_FSM_FFd1
+    SLICE_X54Y47.Y       Tilo                  0.759   XLXI_1/Freq<0>
+                                                       XLXI_1/Mrom_Freq111
+    SLICE_X55Y47.F2      net (fanout=1)        0.101   XLXI_1/Freq<1>
+    SLICE_X55Y47.COUT    Topcyf                1.162   XLXI_1/Mcompar_tmpFreqDiv_cmp_eq0000_cy<7>
+                                                       XLXI_1/Mcompar_tmpFreqDiv_cmp_eq0000_lut<6>
+                                                       XLXI_1/Mcompar_tmpFreqDiv_cmp_eq0000_cy<6>
+                                                       XLXI_1/Mcompar_tmpFreqDiv_cmp_eq0000_cy<7>
+    SLICE_X55Y48.CIN     net (fanout=1)        0.000   XLXI_1/Mcompar_tmpFreqDiv_cmp_eq0000_cy<7>
+    SLICE_X55Y48.COUT    Tbyp                  0.118   XLXI_1/Mcompar_tmpFreqDiv_cmp_eq0000_cy<9>
+                                                       XLXI_1/Mcompar_tmpFreqDiv_cmp_eq0000_cy<8>
+                                                       XLXI_1/Mcompar_tmpFreqDiv_cmp_eq0000_cy<9>
+    SLICE_X53Y43.F1      net (fanout=37)       2.227   XLXI_1/Mcompar_tmpFreqDiv_cmp_eq0000_cy<9>
+    SLICE_X53Y43.COUT    Topcyf                1.162   XLXI_1/iFreqDiv<6>
+                                                       XLXI_1/Mcount_iFreqDiv_lut<6>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<6>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<7>
+    SLICE_X53Y44.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<7>
+    SLICE_X53Y44.COUT    Tbyp                  0.118   XLXI_1/iFreqDiv<8>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<8>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<9>
+    SLICE_X53Y45.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<9>
+    SLICE_X53Y45.COUT    Tbyp                  0.118   XLXI_1/iFreqDiv<10>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<10>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<11>
+    SLICE_X53Y46.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<11>
+    SLICE_X53Y46.COUT    Tbyp                  0.118   XLXI_1/iFreqDiv<12>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<12>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<13>
+    SLICE_X53Y47.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<13>
+    SLICE_X53Y47.COUT    Tbyp                  0.118   XLXI_1/iFreqDiv<14>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<14>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<15>
+    SLICE_X53Y48.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<15>
+    SLICE_X53Y48.COUT    Tbyp                  0.118   XLXI_1/iFreqDiv<16>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<16>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<17>
+    SLICE_X53Y49.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<17>
+    SLICE_X53Y49.COUT    Tbyp                  0.118   XLXI_1/iFreqDiv<18>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<18>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<19>
+    SLICE_X53Y50.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<19>
+    SLICE_X53Y50.COUT    Tbyp                  0.118   XLXI_1/iFreqDiv<20>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<20>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<21>
+    SLICE_X53Y51.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<21>
+    SLICE_X53Y51.COUT    Tbyp                  0.118   XLXI_1/iFreqDiv<22>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<22>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<23>
+    SLICE_X53Y52.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<23>
+    SLICE_X53Y52.COUT    Tbyp                  0.118   XLXI_1/iFreqDiv<24>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<24>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<25>
+    SLICE_X53Y53.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<25>
+    SLICE_X53Y53.COUT    Tbyp                  0.118   XLXI_1/iFreqDiv<26>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<26>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<27>
+    SLICE_X53Y54.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<27>
+    SLICE_X53Y54.COUT    Tbyp                  0.118   XLXI_1/iFreqDiv<28>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<28>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<29>
+    SLICE_X53Y55.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<29>
+    SLICE_X53Y55.CLK     Tcinck                1.002   XLXI_1/iFreqDiv<30>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<30>
+                                                       XLXI_1/Mcount_iFreqDiv_xor<31>
+                                                       XLXI_1/iFreqDiv_31
+    -------------------------------------------------  ---------------------------
+    Total                                     10.702ns (6.153ns logic, 4.549ns route)
+                                                       (57.5% logic, 42.5% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     9.320ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               XLXI_3/state_FSM_FFd1 (FF)
+  Destination:          XLXI_1/iFreqDiv_31 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      10.635ns (Levels of Logic = 16)
+  Clock Path Skew:      -0.045ns (0.026 - 0.071)
+  Source Clock:         CLK_IN_BUFGP rising at 0.000ns
+  Destination Clock:    CLK_IN_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: XLXI_3/state_FSM_FFd1 to XLXI_1/iFreqDiv_31
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X64Y48.YQ      Tcko                  0.652   XLXI_3/state_FSM_FFd1
+                                                       XLXI_3/state_FSM_FFd1
+    SLICE_X54Y46.G4      net (fanout=12)       2.221   XLXI_3/state_FSM_FFd1
+    SLICE_X54Y46.Y       Tilo                  0.759   XLXI_1/Freq<6>
+                                                       XLXI_1/Mrom_Freq31
+    SLICE_X55Y47.G1      net (fanout=1)        0.195   XLXI_1/Freq<3>
+    SLICE_X55Y47.COUT    Topcyg                1.001   XLXI_1/Mcompar_tmpFreqDiv_cmp_eq0000_cy<7>
+                                                       XLXI_1/Mcompar_tmpFreqDiv_cmp_eq0000_lut<7>
+                                                       XLXI_1/Mcompar_tmpFreqDiv_cmp_eq0000_cy<7>
+    SLICE_X55Y48.CIN     net (fanout=1)        0.000   XLXI_1/Mcompar_tmpFreqDiv_cmp_eq0000_cy<7>
+    SLICE_X55Y48.COUT    Tbyp                  0.118   XLXI_1/Mcompar_tmpFreqDiv_cmp_eq0000_cy<9>
+                                                       XLXI_1/Mcompar_tmpFreqDiv_cmp_eq0000_cy<8>
+                                                       XLXI_1/Mcompar_tmpFreqDiv_cmp_eq0000_cy<9>
+    SLICE_X53Y43.F1      net (fanout=37)       2.227   XLXI_1/Mcompar_tmpFreqDiv_cmp_eq0000_cy<9>
+    SLICE_X53Y43.COUT    Topcyf                1.162   XLXI_1/iFreqDiv<6>
+                                                       XLXI_1/Mcount_iFreqDiv_lut<6>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<6>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<7>
+    SLICE_X53Y44.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<7>
+    SLICE_X53Y44.COUT    Tbyp                  0.118   XLXI_1/iFreqDiv<8>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<8>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<9>
+    SLICE_X53Y45.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<9>
+    SLICE_X53Y45.COUT    Tbyp                  0.118   XLXI_1/iFreqDiv<10>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<10>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<11>
+    SLICE_X53Y46.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<11>
+    SLICE_X53Y46.COUT    Tbyp                  0.118   XLXI_1/iFreqDiv<12>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<12>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<13>
+    SLICE_X53Y47.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<13>
+    SLICE_X53Y47.COUT    Tbyp                  0.118   XLXI_1/iFreqDiv<14>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<14>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<15>
+    SLICE_X53Y48.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<15>
+    SLICE_X53Y48.COUT    Tbyp                  0.118   XLXI_1/iFreqDiv<16>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<16>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<17>
+    SLICE_X53Y49.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<17>
+    SLICE_X53Y49.COUT    Tbyp                  0.118   XLXI_1/iFreqDiv<18>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<18>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<19>
+    SLICE_X53Y50.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<19>
+    SLICE_X53Y50.COUT    Tbyp                  0.118   XLXI_1/iFreqDiv<20>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<20>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<21>
+    SLICE_X53Y51.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<21>
+    SLICE_X53Y51.COUT    Tbyp                  0.118   XLXI_1/iFreqDiv<22>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<22>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<23>
+    SLICE_X53Y52.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<23>
+    SLICE_X53Y52.COUT    Tbyp                  0.118   XLXI_1/iFreqDiv<24>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<24>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<25>
+    SLICE_X53Y53.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<25>
+    SLICE_X53Y53.COUT    Tbyp                  0.118   XLXI_1/iFreqDiv<26>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<26>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<27>
+    SLICE_X53Y54.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<27>
+    SLICE_X53Y54.COUT    Tbyp                  0.118   XLXI_1/iFreqDiv<28>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<28>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<29>
+    SLICE_X53Y55.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<29>
+    SLICE_X53Y55.CLK     Tcinck                1.002   XLXI_1/iFreqDiv<30>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<30>
+                                                       XLXI_1/Mcount_iFreqDiv_xor<31>
+                                                       XLXI_1/iFreqDiv_31
+    -------------------------------------------------  ---------------------------
+    Total                                     10.635ns (5.992ns logic, 4.643ns route)
+                                                       (56.3% logic, 43.7% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point XLXI_1/iFreqDiv_29 (SLICE_X53Y54.CIN), 1884 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     9.288ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               XLXI_3/state_FSM_FFd2 (FF)
+  Destination:          XLXI_1/iFreqDiv_29 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      10.665ns (Levels of Logic = 14)
+  Clock Path Skew:      -0.047ns (0.026 - 0.073)
+  Source Clock:         CLK_IN_BUFGP rising at 0.000ns
+  Destination Clock:    CLK_IN_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: XLXI_3/state_FSM_FFd2 to XLXI_1/iFreqDiv_29
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X66Y49.YQ      Tcko                  0.652   XLXI_3/state_FSM_FFd2
+                                                       XLXI_3/state_FSM_FFd2
+    SLICE_X54Y48.F4      net (fanout=12)       1.957   XLXI_3/state_FSM_FFd2
+    SLICE_X54Y48.X       Tilo                  0.759   XLXI_1/Freq<7>
+                                                       XLXI_1/Mrom_Freq71
+    SLICE_X55Y48.G1      net (fanout=1)        0.725   XLXI_1/Freq<7>
+    SLICE_X55Y48.COUT    Topcyg                1.001   XLXI_1/Mcompar_tmpFreqDiv_cmp_eq0000_cy<9>
+                                                       XLXI_1/Mcompar_tmpFreqDiv_cmp_eq0000_lut<9>
+                                                       XLXI_1/Mcompar_tmpFreqDiv_cmp_eq0000_cy<9>
+    SLICE_X53Y43.F1      net (fanout=37)       2.227   XLXI_1/Mcompar_tmpFreqDiv_cmp_eq0000_cy<9>
+    SLICE_X53Y43.COUT    Topcyf                1.162   XLXI_1/iFreqDiv<6>
+                                                       XLXI_1/Mcount_iFreqDiv_lut<6>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<6>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<7>
+    SLICE_X53Y44.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<7>
+    SLICE_X53Y44.COUT    Tbyp                  0.118   XLXI_1/iFreqDiv<8>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<8>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<9>
+    SLICE_X53Y45.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<9>
+    SLICE_X53Y45.COUT    Tbyp                  0.118   XLXI_1/iFreqDiv<10>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<10>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<11>
+    SLICE_X53Y46.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<11>
+    SLICE_X53Y46.COUT    Tbyp                  0.118   XLXI_1/iFreqDiv<12>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<12>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<13>
+    SLICE_X53Y47.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<13>
+    SLICE_X53Y47.COUT    Tbyp                  0.118   XLXI_1/iFreqDiv<14>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<14>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<15>
+    SLICE_X53Y48.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<15>
+    SLICE_X53Y48.COUT    Tbyp                  0.118   XLXI_1/iFreqDiv<16>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<16>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<17>
+    SLICE_X53Y49.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<17>
+    SLICE_X53Y49.COUT    Tbyp                  0.118   XLXI_1/iFreqDiv<18>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<18>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<19>
+    SLICE_X53Y50.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<19>
+    SLICE_X53Y50.COUT    Tbyp                  0.118   XLXI_1/iFreqDiv<20>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<20>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<21>
+    SLICE_X53Y51.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<21>
+    SLICE_X53Y51.COUT    Tbyp                  0.118   XLXI_1/iFreqDiv<22>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<22>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<23>
+    SLICE_X53Y52.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<23>
+    SLICE_X53Y52.COUT    Tbyp                  0.118   XLXI_1/iFreqDiv<24>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<24>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<25>
+    SLICE_X53Y53.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<25>
+    SLICE_X53Y53.COUT    Tbyp                  0.118   XLXI_1/iFreqDiv<26>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<26>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<27>
+    SLICE_X53Y54.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<27>
+    SLICE_X53Y54.CLK     Tcinck                1.002   XLXI_1/iFreqDiv<28>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<28>
+                                                       XLXI_1/Mcount_iFreqDiv_xor<29>
+                                                       XLXI_1/iFreqDiv_29
+    -------------------------------------------------  ---------------------------
+    Total                                     10.665ns (5.756ns logic, 4.909ns route)
+                                                       (54.0% logic, 46.0% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     9.371ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               XLXI_3/state_FSM_FFd1 (FF)
+  Destination:          XLXI_1/iFreqDiv_29 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      10.584ns (Levels of Logic = 15)
+  Clock Path Skew:      -0.045ns (0.026 - 0.071)
+  Source Clock:         CLK_IN_BUFGP rising at 0.000ns
+  Destination Clock:    CLK_IN_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: XLXI_3/state_FSM_FFd1 to XLXI_1/iFreqDiv_29
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X64Y48.YQ      Tcko                  0.652   XLXI_3/state_FSM_FFd1
+                                                       XLXI_3/state_FSM_FFd1
+    SLICE_X54Y47.G4      net (fanout=12)       2.221   XLXI_3/state_FSM_FFd1
+    SLICE_X54Y47.Y       Tilo                  0.759   XLXI_1/Freq<0>
+                                                       XLXI_1/Mrom_Freq111
+    SLICE_X55Y47.F2      net (fanout=1)        0.101   XLXI_1/Freq<1>
+    SLICE_X55Y47.COUT    Topcyf                1.162   XLXI_1/Mcompar_tmpFreqDiv_cmp_eq0000_cy<7>
+                                                       XLXI_1/Mcompar_tmpFreqDiv_cmp_eq0000_lut<6>
+                                                       XLXI_1/Mcompar_tmpFreqDiv_cmp_eq0000_cy<6>
+                                                       XLXI_1/Mcompar_tmpFreqDiv_cmp_eq0000_cy<7>
+    SLICE_X55Y48.CIN     net (fanout=1)        0.000   XLXI_1/Mcompar_tmpFreqDiv_cmp_eq0000_cy<7>
+    SLICE_X55Y48.COUT    Tbyp                  0.118   XLXI_1/Mcompar_tmpFreqDiv_cmp_eq0000_cy<9>
+                                                       XLXI_1/Mcompar_tmpFreqDiv_cmp_eq0000_cy<8>
+                                                       XLXI_1/Mcompar_tmpFreqDiv_cmp_eq0000_cy<9>
+    SLICE_X53Y43.F1      net (fanout=37)       2.227   XLXI_1/Mcompar_tmpFreqDiv_cmp_eq0000_cy<9>
+    SLICE_X53Y43.COUT    Topcyf                1.162   XLXI_1/iFreqDiv<6>
+                                                       XLXI_1/Mcount_iFreqDiv_lut<6>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<6>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<7>
+    SLICE_X53Y44.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<7>
+    SLICE_X53Y44.COUT    Tbyp                  0.118   XLXI_1/iFreqDiv<8>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<8>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<9>
+    SLICE_X53Y45.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<9>
+    SLICE_X53Y45.COUT    Tbyp                  0.118   XLXI_1/iFreqDiv<10>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<10>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<11>
+    SLICE_X53Y46.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<11>
+    SLICE_X53Y46.COUT    Tbyp                  0.118   XLXI_1/iFreqDiv<12>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<12>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<13>
+    SLICE_X53Y47.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<13>
+    SLICE_X53Y47.COUT    Tbyp                  0.118   XLXI_1/iFreqDiv<14>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<14>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<15>
+    SLICE_X53Y48.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<15>
+    SLICE_X53Y48.COUT    Tbyp                  0.118   XLXI_1/iFreqDiv<16>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<16>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<17>
+    SLICE_X53Y49.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<17>
+    SLICE_X53Y49.COUT    Tbyp                  0.118   XLXI_1/iFreqDiv<18>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<18>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<19>
+    SLICE_X53Y50.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<19>
+    SLICE_X53Y50.COUT    Tbyp                  0.118   XLXI_1/iFreqDiv<20>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<20>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<21>
+    SLICE_X53Y51.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<21>
+    SLICE_X53Y51.COUT    Tbyp                  0.118   XLXI_1/iFreqDiv<22>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<22>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<23>
+    SLICE_X53Y52.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<23>
+    SLICE_X53Y52.COUT    Tbyp                  0.118   XLXI_1/iFreqDiv<24>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<24>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<25>
+    SLICE_X53Y53.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<25>
+    SLICE_X53Y53.COUT    Tbyp                  0.118   XLXI_1/iFreqDiv<26>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<26>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<27>
+    SLICE_X53Y54.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<27>
+    SLICE_X53Y54.CLK     Tcinck                1.002   XLXI_1/iFreqDiv<28>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<28>
+                                                       XLXI_1/Mcount_iFreqDiv_xor<29>
+                                                       XLXI_1/iFreqDiv_29
+    -------------------------------------------------  ---------------------------
+    Total                                     10.584ns (6.035ns logic, 4.549ns route)
+                                                       (57.0% logic, 43.0% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     9.438ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               XLXI_3/state_FSM_FFd1 (FF)
+  Destination:          XLXI_1/iFreqDiv_29 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      10.517ns (Levels of Logic = 15)
+  Clock Path Skew:      -0.045ns (0.026 - 0.071)
+  Source Clock:         CLK_IN_BUFGP rising at 0.000ns
+  Destination Clock:    CLK_IN_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: XLXI_3/state_FSM_FFd1 to XLXI_1/iFreqDiv_29
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X64Y48.YQ      Tcko                  0.652   XLXI_3/state_FSM_FFd1
+                                                       XLXI_3/state_FSM_FFd1
+    SLICE_X54Y46.G4      net (fanout=12)       2.221   XLXI_3/state_FSM_FFd1
+    SLICE_X54Y46.Y       Tilo                  0.759   XLXI_1/Freq<6>
+                                                       XLXI_1/Mrom_Freq31
+    SLICE_X55Y47.G1      net (fanout=1)        0.195   XLXI_1/Freq<3>
+    SLICE_X55Y47.COUT    Topcyg                1.001   XLXI_1/Mcompar_tmpFreqDiv_cmp_eq0000_cy<7>
+                                                       XLXI_1/Mcompar_tmpFreqDiv_cmp_eq0000_lut<7>
+                                                       XLXI_1/Mcompar_tmpFreqDiv_cmp_eq0000_cy<7>
+    SLICE_X55Y48.CIN     net (fanout=1)        0.000   XLXI_1/Mcompar_tmpFreqDiv_cmp_eq0000_cy<7>
+    SLICE_X55Y48.COUT    Tbyp                  0.118   XLXI_1/Mcompar_tmpFreqDiv_cmp_eq0000_cy<9>
+                                                       XLXI_1/Mcompar_tmpFreqDiv_cmp_eq0000_cy<8>
+                                                       XLXI_1/Mcompar_tmpFreqDiv_cmp_eq0000_cy<9>
+    SLICE_X53Y43.F1      net (fanout=37)       2.227   XLXI_1/Mcompar_tmpFreqDiv_cmp_eq0000_cy<9>
+    SLICE_X53Y43.COUT    Topcyf                1.162   XLXI_1/iFreqDiv<6>
+                                                       XLXI_1/Mcount_iFreqDiv_lut<6>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<6>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<7>
+    SLICE_X53Y44.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<7>
+    SLICE_X53Y44.COUT    Tbyp                  0.118   XLXI_1/iFreqDiv<8>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<8>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<9>
+    SLICE_X53Y45.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<9>
+    SLICE_X53Y45.COUT    Tbyp                  0.118   XLXI_1/iFreqDiv<10>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<10>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<11>
+    SLICE_X53Y46.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<11>
+    SLICE_X53Y46.COUT    Tbyp                  0.118   XLXI_1/iFreqDiv<12>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<12>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<13>
+    SLICE_X53Y47.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<13>
+    SLICE_X53Y47.COUT    Tbyp                  0.118   XLXI_1/iFreqDiv<14>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<14>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<15>
+    SLICE_X53Y48.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<15>
+    SLICE_X53Y48.COUT    Tbyp                  0.118   XLXI_1/iFreqDiv<16>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<16>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<17>
+    SLICE_X53Y49.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<17>
+    SLICE_X53Y49.COUT    Tbyp                  0.118   XLXI_1/iFreqDiv<18>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<18>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<19>
+    SLICE_X53Y50.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<19>
+    SLICE_X53Y50.COUT    Tbyp                  0.118   XLXI_1/iFreqDiv<20>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<20>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<21>
+    SLICE_X53Y51.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<21>
+    SLICE_X53Y51.COUT    Tbyp                  0.118   XLXI_1/iFreqDiv<22>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<22>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<23>
+    SLICE_X53Y52.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<23>
+    SLICE_X53Y52.COUT    Tbyp                  0.118   XLXI_1/iFreqDiv<24>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<24>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<25>
+    SLICE_X53Y53.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<25>
+    SLICE_X53Y53.COUT    Tbyp                  0.118   XLXI_1/iFreqDiv<26>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<26>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<27>
+    SLICE_X53Y54.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<27>
+    SLICE_X53Y54.CLK     Tcinck                1.002   XLXI_1/iFreqDiv<28>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<28>
+                                                       XLXI_1/Mcount_iFreqDiv_xor<29>
+                                                       XLXI_1/iFreqDiv_29
+    -------------------------------------------------  ---------------------------
+    Total                                     10.517ns (5.874ns logic, 4.643ns route)
+                                                       (55.9% logic, 44.1% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point XLXI_1/iFreqDiv_27 (SLICE_X53Y53.CIN), 1754 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     9.408ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               XLXI_3/state_FSM_FFd2 (FF)
+  Destination:          XLXI_1/iFreqDiv_27 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      10.547ns (Levels of Logic = 13)
+  Clock Path Skew:      -0.045ns (0.028 - 0.073)
+  Source Clock:         CLK_IN_BUFGP rising at 0.000ns
+  Destination Clock:    CLK_IN_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: XLXI_3/state_FSM_FFd2 to XLXI_1/iFreqDiv_27
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X66Y49.YQ      Tcko                  0.652   XLXI_3/state_FSM_FFd2
+                                                       XLXI_3/state_FSM_FFd2
+    SLICE_X54Y48.F4      net (fanout=12)       1.957   XLXI_3/state_FSM_FFd2
+    SLICE_X54Y48.X       Tilo                  0.759   XLXI_1/Freq<7>
+                                                       XLXI_1/Mrom_Freq71
+    SLICE_X55Y48.G1      net (fanout=1)        0.725   XLXI_1/Freq<7>
+    SLICE_X55Y48.COUT    Topcyg                1.001   XLXI_1/Mcompar_tmpFreqDiv_cmp_eq0000_cy<9>
+                                                       XLXI_1/Mcompar_tmpFreqDiv_cmp_eq0000_lut<9>
+                                                       XLXI_1/Mcompar_tmpFreqDiv_cmp_eq0000_cy<9>
+    SLICE_X53Y43.F1      net (fanout=37)       2.227   XLXI_1/Mcompar_tmpFreqDiv_cmp_eq0000_cy<9>
+    SLICE_X53Y43.COUT    Topcyf                1.162   XLXI_1/iFreqDiv<6>
+                                                       XLXI_1/Mcount_iFreqDiv_lut<6>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<6>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<7>
+    SLICE_X53Y44.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<7>
+    SLICE_X53Y44.COUT    Tbyp                  0.118   XLXI_1/iFreqDiv<8>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<8>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<9>
+    SLICE_X53Y45.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<9>
+    SLICE_X53Y45.COUT    Tbyp                  0.118   XLXI_1/iFreqDiv<10>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<10>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<11>
+    SLICE_X53Y46.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<11>
+    SLICE_X53Y46.COUT    Tbyp                  0.118   XLXI_1/iFreqDiv<12>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<12>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<13>
+    SLICE_X53Y47.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<13>
+    SLICE_X53Y47.COUT    Tbyp                  0.118   XLXI_1/iFreqDiv<14>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<14>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<15>
+    SLICE_X53Y48.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<15>
+    SLICE_X53Y48.COUT    Tbyp                  0.118   XLXI_1/iFreqDiv<16>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<16>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<17>
+    SLICE_X53Y49.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<17>
+    SLICE_X53Y49.COUT    Tbyp                  0.118   XLXI_1/iFreqDiv<18>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<18>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<19>
+    SLICE_X53Y50.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<19>
+    SLICE_X53Y50.COUT    Tbyp                  0.118   XLXI_1/iFreqDiv<20>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<20>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<21>
+    SLICE_X53Y51.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<21>
+    SLICE_X53Y51.COUT    Tbyp                  0.118   XLXI_1/iFreqDiv<22>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<22>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<23>
+    SLICE_X53Y52.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<23>
+    SLICE_X53Y52.COUT    Tbyp                  0.118   XLXI_1/iFreqDiv<24>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<24>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<25>
+    SLICE_X53Y53.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<25>
+    SLICE_X53Y53.CLK     Tcinck                1.002   XLXI_1/iFreqDiv<26>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<26>
+                                                       XLXI_1/Mcount_iFreqDiv_xor<27>
+                                                       XLXI_1/iFreqDiv_27
+    -------------------------------------------------  ---------------------------
+    Total                                     10.547ns (5.638ns logic, 4.909ns route)
+                                                       (53.5% logic, 46.5% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     9.491ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               XLXI_3/state_FSM_FFd1 (FF)
+  Destination:          XLXI_1/iFreqDiv_27 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      10.466ns (Levels of Logic = 14)
+  Clock Path Skew:      -0.043ns (0.028 - 0.071)
+  Source Clock:         CLK_IN_BUFGP rising at 0.000ns
+  Destination Clock:    CLK_IN_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: XLXI_3/state_FSM_FFd1 to XLXI_1/iFreqDiv_27
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X64Y48.YQ      Tcko                  0.652   XLXI_3/state_FSM_FFd1
+                                                       XLXI_3/state_FSM_FFd1
+    SLICE_X54Y47.G4      net (fanout=12)       2.221   XLXI_3/state_FSM_FFd1
+    SLICE_X54Y47.Y       Tilo                  0.759   XLXI_1/Freq<0>
+                                                       XLXI_1/Mrom_Freq111
+    SLICE_X55Y47.F2      net (fanout=1)        0.101   XLXI_1/Freq<1>
+    SLICE_X55Y47.COUT    Topcyf                1.162   XLXI_1/Mcompar_tmpFreqDiv_cmp_eq0000_cy<7>
+                                                       XLXI_1/Mcompar_tmpFreqDiv_cmp_eq0000_lut<6>
+                                                       XLXI_1/Mcompar_tmpFreqDiv_cmp_eq0000_cy<6>
+                                                       XLXI_1/Mcompar_tmpFreqDiv_cmp_eq0000_cy<7>
+    SLICE_X55Y48.CIN     net (fanout=1)        0.000   XLXI_1/Mcompar_tmpFreqDiv_cmp_eq0000_cy<7>
+    SLICE_X55Y48.COUT    Tbyp                  0.118   XLXI_1/Mcompar_tmpFreqDiv_cmp_eq0000_cy<9>
+                                                       XLXI_1/Mcompar_tmpFreqDiv_cmp_eq0000_cy<8>
+                                                       XLXI_1/Mcompar_tmpFreqDiv_cmp_eq0000_cy<9>
+    SLICE_X53Y43.F1      net (fanout=37)       2.227   XLXI_1/Mcompar_tmpFreqDiv_cmp_eq0000_cy<9>
+    SLICE_X53Y43.COUT    Topcyf                1.162   XLXI_1/iFreqDiv<6>
+                                                       XLXI_1/Mcount_iFreqDiv_lut<6>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<6>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<7>
+    SLICE_X53Y44.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<7>
+    SLICE_X53Y44.COUT    Tbyp                  0.118   XLXI_1/iFreqDiv<8>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<8>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<9>
+    SLICE_X53Y45.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<9>
+    SLICE_X53Y45.COUT    Tbyp                  0.118   XLXI_1/iFreqDiv<10>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<10>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<11>
+    SLICE_X53Y46.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<11>
+    SLICE_X53Y46.COUT    Tbyp                  0.118   XLXI_1/iFreqDiv<12>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<12>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<13>
+    SLICE_X53Y47.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<13>
+    SLICE_X53Y47.COUT    Tbyp                  0.118   XLXI_1/iFreqDiv<14>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<14>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<15>
+    SLICE_X53Y48.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<15>
+    SLICE_X53Y48.COUT    Tbyp                  0.118   XLXI_1/iFreqDiv<16>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<16>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<17>
+    SLICE_X53Y49.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<17>
+    SLICE_X53Y49.COUT    Tbyp                  0.118   XLXI_1/iFreqDiv<18>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<18>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<19>
+    SLICE_X53Y50.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<19>
+    SLICE_X53Y50.COUT    Tbyp                  0.118   XLXI_1/iFreqDiv<20>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<20>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<21>
+    SLICE_X53Y51.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<21>
+    SLICE_X53Y51.COUT    Tbyp                  0.118   XLXI_1/iFreqDiv<22>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<22>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<23>
+    SLICE_X53Y52.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<23>
+    SLICE_X53Y52.COUT    Tbyp                  0.118   XLXI_1/iFreqDiv<24>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<24>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<25>
+    SLICE_X53Y53.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<25>
+    SLICE_X53Y53.CLK     Tcinck                1.002   XLXI_1/iFreqDiv<26>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<26>
+                                                       XLXI_1/Mcount_iFreqDiv_xor<27>
+                                                       XLXI_1/iFreqDiv_27
+    -------------------------------------------------  ---------------------------
+    Total                                     10.466ns (5.917ns logic, 4.549ns route)
+                                                       (56.5% logic, 43.5% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     9.558ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               XLXI_3/state_FSM_FFd1 (FF)
+  Destination:          XLXI_1/iFreqDiv_27 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      10.399ns (Levels of Logic = 14)
+  Clock Path Skew:      -0.043ns (0.028 - 0.071)
+  Source Clock:         CLK_IN_BUFGP rising at 0.000ns
+  Destination Clock:    CLK_IN_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: XLXI_3/state_FSM_FFd1 to XLXI_1/iFreqDiv_27
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X64Y48.YQ      Tcko                  0.652   XLXI_3/state_FSM_FFd1
+                                                       XLXI_3/state_FSM_FFd1
+    SLICE_X54Y46.G4      net (fanout=12)       2.221   XLXI_3/state_FSM_FFd1
+    SLICE_X54Y46.Y       Tilo                  0.759   XLXI_1/Freq<6>
+                                                       XLXI_1/Mrom_Freq31
+    SLICE_X55Y47.G1      net (fanout=1)        0.195   XLXI_1/Freq<3>
+    SLICE_X55Y47.COUT    Topcyg                1.001   XLXI_1/Mcompar_tmpFreqDiv_cmp_eq0000_cy<7>
+                                                       XLXI_1/Mcompar_tmpFreqDiv_cmp_eq0000_lut<7>
+                                                       XLXI_1/Mcompar_tmpFreqDiv_cmp_eq0000_cy<7>
+    SLICE_X55Y48.CIN     net (fanout=1)        0.000   XLXI_1/Mcompar_tmpFreqDiv_cmp_eq0000_cy<7>
+    SLICE_X55Y48.COUT    Tbyp                  0.118   XLXI_1/Mcompar_tmpFreqDiv_cmp_eq0000_cy<9>
+                                                       XLXI_1/Mcompar_tmpFreqDiv_cmp_eq0000_cy<8>
+                                                       XLXI_1/Mcompar_tmpFreqDiv_cmp_eq0000_cy<9>
+    SLICE_X53Y43.F1      net (fanout=37)       2.227   XLXI_1/Mcompar_tmpFreqDiv_cmp_eq0000_cy<9>
+    SLICE_X53Y43.COUT    Topcyf                1.162   XLXI_1/iFreqDiv<6>
+                                                       XLXI_1/Mcount_iFreqDiv_lut<6>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<6>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<7>
+    SLICE_X53Y44.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<7>
+    SLICE_X53Y44.COUT    Tbyp                  0.118   XLXI_1/iFreqDiv<8>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<8>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<9>
+    SLICE_X53Y45.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<9>
+    SLICE_X53Y45.COUT    Tbyp                  0.118   XLXI_1/iFreqDiv<10>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<10>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<11>
+    SLICE_X53Y46.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<11>
+    SLICE_X53Y46.COUT    Tbyp                  0.118   XLXI_1/iFreqDiv<12>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<12>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<13>
+    SLICE_X53Y47.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<13>
+    SLICE_X53Y47.COUT    Tbyp                  0.118   XLXI_1/iFreqDiv<14>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<14>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<15>
+    SLICE_X53Y48.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<15>
+    SLICE_X53Y48.COUT    Tbyp                  0.118   XLXI_1/iFreqDiv<16>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<16>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<17>
+    SLICE_X53Y49.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<17>
+    SLICE_X53Y49.COUT    Tbyp                  0.118   XLXI_1/iFreqDiv<18>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<18>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<19>
+    SLICE_X53Y50.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<19>
+    SLICE_X53Y50.COUT    Tbyp                  0.118   XLXI_1/iFreqDiv<20>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<20>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<21>
+    SLICE_X53Y51.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<21>
+    SLICE_X53Y51.COUT    Tbyp                  0.118   XLXI_1/iFreqDiv<22>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<22>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<23>
+    SLICE_X53Y52.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<23>
+    SLICE_X53Y52.COUT    Tbyp                  0.118   XLXI_1/iFreqDiv<24>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<24>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<25>
+    SLICE_X53Y53.CIN     net (fanout=1)        0.000   XLXI_1/Mcount_iFreqDiv_cy<25>
+    SLICE_X53Y53.CLK     Tcinck                1.002   XLXI_1/iFreqDiv<26>
+                                                       XLXI_1/Mcount_iFreqDiv_cy<26>
+                                                       XLXI_1/Mcount_iFreqDiv_xor<27>
+                                                       XLXI_1/iFreqDiv_27
+    -------------------------------------------------  ---------------------------
+    Total                                     10.399ns (5.756ns logic, 4.643ns route)
+                                                       (55.4% logic, 44.6% route)
+
+--------------------------------------------------------------------------------
+
+Hold Paths: NET "CLK_IN_BUFGP/IBUFG" PERIOD = 20 ns HIGH 50%;
+--------------------------------------------------------------------------------
+
+Paths for end point XLXI_2/Cnt_0 (SLICE_X25Y38.BX), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      1.000ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               XLXI_2/Cnt_0 (FF)
+  Destination:          XLXI_2/Cnt_0 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      1.000ns (Levels of Logic = 0)
+  Clock Path Skew:      0.000ns
+  Source Clock:         CLK_IN_BUFGP rising at 20.000ns
+  Destination Clock:    CLK_IN_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: XLXI_2/Cnt_0 to XLXI_2/Cnt_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X25Y38.XQ      Tcko                  0.473   XLXI_2/Cnt<0>
+                                                       XLXI_2/Cnt_0
+    SLICE_X25Y38.BX      net (fanout=6)        0.434   XLXI_2/Cnt<0>
+    SLICE_X25Y38.CLK     Tckdi       (-Th)    -0.093   XLXI_2/Cnt<0>
+                                                       XLXI_2/Cnt_0
+    -------------------------------------------------  ---------------------------
+    Total                                      1.000ns (0.566ns logic, 0.434ns route)
+                                                       (56.6% logic, 43.4% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point XLXI_7/reg11b_8 (SLICE_X67Y63.BX), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      1.023ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               XLXI_7/reg11b_9 (FF)
+  Destination:          XLXI_7/reg11b_8 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      1.021ns (Levels of Logic = 0)
+  Clock Path Skew:      -0.002ns (0.001 - 0.003)
+  Source Clock:         CLK_IN_BUFGP rising at 20.000ns
+  Destination Clock:    CLK_IN_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: XLXI_7/reg11b_9 to XLXI_7/reg11b_8
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X66Y64.YQ      Tcko                  0.522   XLXI_7/reg11b<10>
+                                                       XLXI_7/reg11b_9
+    SLICE_X67Y63.BX      net (fanout=2)        0.406   XLXI_7/reg11b<9>
+    SLICE_X67Y63.CLK     Tckdi       (-Th)    -0.093   XLXN_44<7>
+                                                       XLXI_7/reg11b_8
+    -------------------------------------------------  ---------------------------
+    Total                                      1.021ns (0.615ns logic, 0.406ns route)
+                                                       (60.2% logic, 39.8% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point XLXI_7/reg11b_9 (SLICE_X66Y64.BY), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      1.054ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               XLXI_7/reg11b_10 (FF)
+  Destination:          XLXI_7/reg11b_9 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      1.054ns (Levels of Logic = 0)
+  Clock Path Skew:      0.000ns
+  Source Clock:         CLK_IN_BUFGP rising at 20.000ns
+  Destination Clock:    CLK_IN_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: XLXI_7/reg11b_10 to XLXI_7/reg11b_9
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X66Y64.XQ      Tcko                  0.474   XLXI_7/reg11b<10>
+                                                       XLXI_7/reg11b_10
+    SLICE_X66Y64.BY      net (fanout=2)        0.428   XLXI_7/reg11b<10>
+    SLICE_X66Y64.CLK     Tckdi       (-Th)    -0.152   XLXI_7/reg11b<10>
+                                                       XLXI_7/reg11b_9
+    -------------------------------------------------  ---------------------------
+    Total                                      1.054ns (0.626ns logic, 0.428ns route)
+                                                       (59.4% logic, 40.6% route)
+
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: NET "CLK_IN_BUFGP/IBUFG" PERIOD = 20 ns HIGH 50%;
+--------------------------------------------------------------------------------
+Slack: 18.348ns (period - (min low pulse limit / (low pulse / period)))
+  Period: 20.000ns
+  Low pulse: 10.000ns
+  Low pulse limit: 0.826ns (Tcl)
+  Physical resource: XLXI_2/regPISO<9>/CLK
+  Logical resource: XLXI_2/regPISO_9/CK
+  Location pin: SLICE_X24Y40.CLK
+  Clock network: CLK_IN_BUFGP
+--------------------------------------------------------------------------------
+Slack: 18.348ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 20.000ns
+  High pulse: 10.000ns
+  High pulse limit: 0.826ns (Tch)
+  Physical resource: XLXI_2/regPISO<9>/CLK
+  Logical resource: XLXI_2/regPISO_9/CK
+  Location pin: SLICE_X24Y40.CLK
+  Clock network: CLK_IN_BUFGP
+--------------------------------------------------------------------------------
+Slack: 18.348ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 1.652ns (605.327MHz) (Tcp)
+  Physical resource: XLXI_2/regPISO<9>/CLK
+  Logical resource: XLXI_2/regPISO_9/CK
+  Location pin: SLICE_X24Y40.CLK
+  Clock network: CLK_IN_BUFGP
+--------------------------------------------------------------------------------
+
+
+All constraints were met.
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Clock to Setup on destination clock CLK_IN
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+CLK_IN         |   10.830|         |         |         |
+---------------+---------+---------+---------+---------+
+
+
+Timing summary:
+---------------
+
+Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
+
+Constraints cover 37344 paths, 0 nets, and 588 connections
+
+Design statistics:
+   Minimum period:  10.830ns{1}   (Maximum frequency:  92.336MHz)
+
+
+------------------------------------Footnotes-----------------------------------
+1)  The minimum period statistic assumes all single cycle delays.
+
+Analysis completed Mon Apr 01 10:39:49 2019 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 127 MB
+
+
+

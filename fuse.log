@@ -1,0 +1,21 @@
+Running: fuse.exe -relaunch -intstyle "ise" -incremental -o "C:/Users/lab/Desktop/ucisw2-organki/ucisw2-organki/SawToothDivider_isim_beh.exe" -prj "C:/Users/lab/Desktop/ucisw2-organki/ucisw2-organki/SawToothDivider_beh.prj" "work.SawToothDivider" 
+ISim P.20131013 (signature 0x8ef4fb42)
+Number of CPUs detected in this system: 2
+Turning on mult-threading, number of parallel sub-compilation jobs: 4 
+Determining compilation order of HDL files
+Parsing VHDL file "C:/Users/lab/Desktop/ucisw2-organki/ucisw2-organki/Sawtooth.vhd" into library work
+Starting static elaboration
+Completed static elaboration
+Fuse Memory Usage: 102116 KB
+Fuse CPU Usage: 312 ms
+Compiling package standard
+Compiling package std_logic_1164
+Compiling package std_logic_arith
+Compiling package numeric_std
+Compiling architecture behavioral of entity sawtoothdivider
+Time Resolution for simulation is 1ps.
+Waiting for 1 sub-compilation(s) to finish...
+Compiled 5 VHDL Units
+Built simulation executable C:/Users/lab/Desktop/ucisw2-organki/ucisw2-organki/SawToothDivider_isim_beh.exe
+Fuse Memory Usage: 119828 KB
+Fuse CPU Usage: 530 ms

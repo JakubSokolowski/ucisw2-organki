@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -o "C:/Users/lab/Desktop/ucisw2-organki/ucisw2-organki/SawToothDivider_isim_beh.exe" -prj "C:/Users/lab/Desktop/ucisw2-organki/ucisw2-organki/SawToothDivider_beh.prj" "work.SawToothDivider" 
